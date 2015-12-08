@@ -8,11 +8,16 @@ using System.Windows.Forms;
 
 namespace HealthcareFamily
 {
-    public partial class SignInFail : Form
+    public partial class LoginFailForm : Form
     {
-        public SignInFail()
+        public LoginFailForm()
         {
             InitializeComponent();
+        }
+
+        private void cmdLoginAgain_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

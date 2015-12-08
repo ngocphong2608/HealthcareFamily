@@ -1,6 +1,6 @@
 ﻿namespace HealthcareFamily
 {
-    partial class MainPage
+    partial class MainProgramForm
     {
         /// <summary>
         /// Required designer variable.

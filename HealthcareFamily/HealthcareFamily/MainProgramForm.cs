@@ -8,14 +8,14 @@ using System.Windows.Forms;
 
 namespace HealthcareFamily
 {
-    public partial class SignIn : Form
+    public partial class MainProgramForm : Form
     {
-        public SignIn()
+        public MainProgramForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             
         }
