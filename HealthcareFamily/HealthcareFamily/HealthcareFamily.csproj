@@ -78,11 +78,11 @@
     <Compile Include="LoginFailForm.Designer.cs">
       <DependentUpon>LoginFailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SignUp1.cs">
+    <Compile Include="SignUpFirstStepForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignUp1.Designer.cs">
-      <DependentUpon>SignUp1.cs</DependentUpon>
+    <Compile Include="SignUpFirstStepForm.Designer.cs">
+      <DependentUpon>SignUpFirstStepForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SignUp2.cs">
       <SubType>Form</SubType>
@@ -129,8 +129,8 @@
     <EmbeddedResource Include="LoginFailForm.resx">
       <DependentUpon>LoginFailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignUp1.resx">
-      <DependentUpon>SignUp1.cs</DependentUpon>
+    <EmbeddedResource Include="SignUpFirstStepForm.resx">
+      <DependentUpon>SignUpFirstStepForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUp2.resx">
       <DependentUpon>SignUp2.cs</DependentUpon>

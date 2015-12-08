@@ -34,13 +34,14 @@
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.cmdSignIn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cmdSignUp = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Lime;
-            this.panel1.Location = new System.Drawing.Point(106, 12);
+            this.panel1.Location = new System.Drawing.Point(81, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(167, 54);
             this.panel1.TabIndex = 0;
@@ -48,7 +49,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 111);
+            this.label2.Location = new System.Drawing.Point(29, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 1;
@@ -57,7 +58,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 150);
+            this.label1.Location = new System.Drawing.Point(31, 150);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 2;
@@ -65,21 +66,21 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(142, 108);
+            this.txtUserName.Location = new System.Drawing.Point(117, 108);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(155, 20);
             this.txtUserName.TabIndex = 3;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(142, 147);
+            this.txtPassword.Location = new System.Drawing.Point(117, 147);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(155, 20);
             this.txtPassword.TabIndex = 4;
             // 
             // cmdSignIn
             // 
-            this.cmdSignIn.Location = new System.Drawing.Point(94, 196);
+            this.cmdSignIn.Location = new System.Drawing.Point(37, 186);
             this.cmdSignIn.Name = "cmdSignIn";
             this.cmdSignIn.Size = new System.Drawing.Size(75, 23);
             this.cmdSignIn.TabIndex = 5;
@@ -87,21 +88,33 @@
             this.cmdSignIn.UseVisualStyleBackColor = true;
             this.cmdSignIn.Click += new System.EventHandler(this.cmdSignIn_Click);
             // 
-            // button2
+            // cmdSignUp
             // 
-            this.button2.Location = new System.Drawing.Point(202, 196);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Sign Up";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cmdSignUp.Location = new System.Drawing.Point(127, 186);
+            this.cmdSignUp.Name = "cmdSignUp";
+            this.cmdSignUp.Size = new System.Drawing.Size(137, 23);
+            this.cmdSignUp.TabIndex = 6;
+            this.cmdSignUp.Text = "Create New Account";
+            this.cmdSignUp.UseVisualStyleBackColor = true;
+            this.cmdSignUp.Click += new System.EventHandler(this.cmdSignUp_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(100, 223);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(95, 13);
+            this.linkLabel1.TabIndex = 7;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Forgot Password? ";
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 255);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(314, 255);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.cmdSignUp);
             this.Controls.Add(this.cmdSignIn);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
@@ -125,7 +138,10 @@
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button cmdSignIn;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button cmdSignUp;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+
+        
     }
 }
 

@@ -48,6 +48,15 @@ namespace HealthcareFamily
 
         }
 
+        private void cmdSignUp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            var frm = new SignUpFirstStepForm();
+            frm.ShowDialog();
+            this.Show();
+        }
+
         
     }
 }
