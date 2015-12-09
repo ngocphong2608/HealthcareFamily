@@ -74,6 +74,12 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\HealthcareInformation.cs" />
+    <Compile Include="Form\HealthcareCheckingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\HealthcareCheckingForm.Designer.cs">
+      <DependentUpon>HealthcareCheckingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Form\LoginFailForm.cs">
@@ -109,6 +115,9 @@
     <Compile Include="Data\UserInformation.cs" />
     <EmbeddedResource Include="Form\DoctorInformationForm.resx">
       <DependentUpon>DoctorInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\HealthcareCheckingForm.resx">
+      <DependentUpon>HealthcareCheckingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\MainProgramForm.resx">
       <DependentUpon>MainProgramForm.cs</DependentUpon>

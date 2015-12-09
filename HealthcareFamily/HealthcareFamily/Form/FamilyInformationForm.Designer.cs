@@ -30,18 +30,18 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtHeartBeat = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtEmotion = new System.Windows.Forms.Label();
+            this.lvwMeeting = new System.Windows.Forms.ListBox();
+            this.txtCheckHeathCare = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Message = new System.Windows.Forms.Button();
+            this.txtMessage = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -64,14 +64,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Heart Beat";
             // 
-            // label3
+            // txtHeartBeat
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(107, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.txtHeartBeat.AutoSize = true;
+            this.txtHeartBeat.Location = new System.Drawing.Point(107, 20);
+            this.txtHeartBeat.Name = "txtHeartBeat";
+            this.txtHeartBeat.Size = new System.Drawing.Size(35, 13);
+            this.txtHeartBeat.TabIndex = 2;
+            this.txtHeartBeat.Text = "label3";
             // 
             // label4
             // 
@@ -82,39 +82,39 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Emotion";
             // 
-            // label5
+            // txtEmotion
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(107, 48);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "label5";
+            this.txtEmotion.AutoSize = true;
+            this.txtEmotion.Location = new System.Drawing.Point(107, 48);
+            this.txtEmotion.Name = "txtEmotion";
+            this.txtEmotion.Size = new System.Drawing.Size(35, 13);
+            this.txtEmotion.TabIndex = 4;
+            this.txtEmotion.Text = "label5";
             // 
-            // listBox1
+            // lvwMeeting
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(43, 214);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(339, 186);
-            this.listBox1.TabIndex = 5;
+            this.lvwMeeting.FormattingEnabled = true;
+            this.lvwMeeting.Location = new System.Drawing.Point(43, 228);
+            this.lvwMeeting.Name = "lvwMeeting";
+            this.lvwMeeting.Size = new System.Drawing.Size(339, 186);
+            this.lvwMeeting.TabIndex = 5;
             // 
-            // button1
+            // txtCheckHeathCare
             // 
-            this.button1.Location = new System.Drawing.Point(191, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Check Healthcare";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtCheckHeathCare.Location = new System.Drawing.Point(191, 13);
+            this.txtCheckHeathCare.Name = "txtCheckHeathCare";
+            this.txtCheckHeathCare.Size = new System.Drawing.Size(108, 23);
+            this.txtCheckHeathCare.TabIndex = 6;
+            this.txtCheckHeathCare.Text = "Check Healthcare";
+            this.txtCheckHeathCare.UseVisualStyleBackColor = true;
+            this.txtCheckHeathCare.Click += new System.EventHandler(this.txtCheckHeathCare_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtHeartBeat);
+            this.groupBox1.Controls.Add(this.txtEmotion);
             this.groupBox1.Location = new System.Drawing.Point(43, 133);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(339, 75);
@@ -123,19 +123,19 @@
             this.groupBox1.Text = "Recent Checking Heathcare";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // Message
+            // txtMessage
             // 
-            this.Message.Location = new System.Drawing.Point(307, 13);
-            this.Message.Name = "Message";
-            this.Message.Size = new System.Drawing.Size(75, 23);
-            this.Message.TabIndex = 8;
-            this.Message.Text = "Message";
-            this.Message.UseVisualStyleBackColor = true;
+            this.txtMessage.Location = new System.Drawing.Point(307, 13);
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.Size = new System.Drawing.Size(75, 23);
+            this.txtMessage.TabIndex = 8;
+            this.txtMessage.Text = "Message";
+            this.txtMessage.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtEmail);
+            this.groupBox2.Controls.Add(this.txtUsername);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(43, 45);
@@ -145,14 +145,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information";
             // 
-            // label6
+            // txtEmail
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Usermane";
+            this.txtEmail.AutoSize = true;
+            this.txtEmail.Location = new System.Drawing.Point(161, 53);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(35, 13);
+            this.txtEmail.TabIndex = 3;
+            this.txtEmail.Text = "label9";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.AutoSize = true;
+            this.txtUsername.Location = new System.Drawing.Point(161, 24);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(35, 13);
+            this.txtUsername.TabIndex = 2;
+            this.txtUsername.Text = "label8";
             // 
             // label7
             // 
@@ -163,37 +172,28 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Email";
             // 
-            // label8
+            // label6
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(161, 24);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "label8";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(161, 53);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "label9";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Usermane";
             // 
             // MainUserInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 468);
+            this.ClientSize = new System.Drawing.Size(424, 430);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.Message);
+            this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.txtCheckHeathCare);
+            this.Controls.Add(this.lvwMeeting);
             this.Controls.Add(this.label1);
             this.Name = "MainUserInformation";
-            this.Text = "MainUserInformation";
+            this.Text = "User Information";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -207,17 +207,17 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label txtHeartBeat;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label txtEmotion;
+        private System.Windows.Forms.ListBox lvwMeeting;
+        private System.Windows.Forms.Button txtCheckHeathCare;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button Message;
+        private System.Windows.Forms.Button txtMessage;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label txtEmail;
+        private System.Windows.Forms.Label txtUsername;
     }
 }

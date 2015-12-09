@@ -8,17 +8,22 @@ using System.Windows.Forms;
 
 namespace HealthcareFamily
 {
-    public partial class RelationshipSettingForm : Form
+    public partial class HealthcareCheckingForm : Form
     {
-        public RelationshipSettingForm()
+        public HealthcareCheckingForm()
         {
             InitializeComponent();
+        }
+
+        private void cmdCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
 
         private void cmdOK_Click(object sender, EventArgs e)
         {
 
-            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
