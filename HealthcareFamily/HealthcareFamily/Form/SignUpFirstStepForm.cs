@@ -49,8 +49,7 @@ namespace HealthcareFamily
 
         private void SignUpFirstStepForm_Load(object sender, EventArgs e)
         {
-            if (FormControl.closedSignUpSecondStepForm)
-                this.Close();
+            
         }
 
         private void cmdCancel_Click(object sender, EventArgs e)

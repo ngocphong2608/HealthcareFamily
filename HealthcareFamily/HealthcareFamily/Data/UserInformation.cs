@@ -12,39 +12,32 @@ namespace HealthcareFamily
         String mAge;
         String mGender;
         String mEmail;
+        int mAccountType;
 
         List<FollowerInformation> mFollower;
         List<HealthcareInformation> mHeathInfo;
 
         public UserInformation(String username, String password, String name, 
-            String age, String gender, String email)
+            String age, String gender, String email, int accountType)
         {
             mUsername = username;
             mPassword = password;
             mName = name;
             mAge = age;
             mGender = gender;
-            mEmail = email; 
+            mEmail = email;
+            mAccountType = accountType;
         }
 
-        public void setFollower()
+        public void setFollower(List<FollowerInformation> follower)
         {
-
+            mFollower = follower;
         }
 
-        public void addFollower()
+
+        public void setHeath(List<HealthcareInformation> heathInfo)
         {
-
-        }
-
-        public void addHealth()
-        {
-
-        }
-
-        public void setHeath()
-        {
-
+            mHeathInfo = heathInfo;
         }
     }
 }

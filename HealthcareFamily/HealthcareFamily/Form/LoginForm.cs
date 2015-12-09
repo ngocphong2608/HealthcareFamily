@@ -50,13 +50,13 @@ namespace HealthcareFamily
 
         private void cmdSignUp_Click(object sender, EventArgs e)
         {
-            FormControl.closedSignUpSecondStepForm = false; 
+            
             
             this.Hide();
 
             var frm = new SignUpFirstStepForm();
             frm.ShowDialog();
-            this.Show();
+            //this.Show();
         }
 
         

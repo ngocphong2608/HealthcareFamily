@@ -36,7 +36,7 @@ namespace HealthcareFamily
             ///
 
 
-            FormControl.closedSignUpSecondStepForm = true; 
+            
 
             this.Close();
             

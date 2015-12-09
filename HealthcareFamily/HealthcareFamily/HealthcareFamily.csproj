@@ -40,31 +40,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\DoctorInformation.cs">
+    <Compile Include="Data\SignUpInformation.cs" />
+    <Compile Include="Data\LoginInformation.cs" />
+    <Compile Include="Form\DoctorInformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\DoctorInformation.Designer.cs">
-      <DependentUpon>DoctorInformation.cs</DependentUpon>
+    <Compile Include="Form\DoctorInformationForm.Designer.cs">
+      <DependentUpon>DoctorInformationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FollowerInformation.cs" />
-    <Compile Include="FormControl.cs" />
+    <Compile Include="Data\FollowerInformation.cs" />
     <Compile Include="Form\MainProgramForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\MainProgramForm.Designer.cs">
       <DependentUpon>MainProgramForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\MainUserInformation.cs">
+    <Compile Include="Form\FamilyInformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\MainUserInformation.Designer.cs">
-      <DependentUpon>MainUserInformation.cs</DependentUpon>
+    <Compile Include="Form\FamilyInformationForm.Designer.cs">
+      <DependentUpon>FamilyInformationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\RelationshipSetting.cs">
+    <Compile Include="Form\RelationshipSettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\RelationshipSetting.Designer.cs">
-      <DependentUpon>RelationshipSetting.cs</DependentUpon>
+    <Compile Include="Form\RelationshipSettingForm.Designer.cs">
+      <DependentUpon>RelationshipSettingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\LoginForm.cs">
       <SubType>Form</SubType>
@@ -72,6 +73,7 @@
     <Compile Include="Form\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\HealthcareInformation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Form\LoginFailForm.cs">
@@ -92,27 +94,27 @@
     <Compile Include="Form\SignUpSecondStepForm.Designer.cs">
       <DependentUpon>SignUpSecondStepForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\UserFinding.cs">
+    <Compile Include="Form\UserFindingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\UserFinding.Designer.cs">
-      <DependentUpon>UserFinding.cs</DependentUpon>
+    <Compile Include="Form\UserFindingForm.Designer.cs">
+      <DependentUpon>UserFindingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\UserFindingResult.cs">
+    <Compile Include="Form\UserFindingResultForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\UserFindingResult.Designer.cs">
-      <DependentUpon>UserFindingResult.cs</DependentUpon>
+    <Compile Include="Form\UserFindingResultForm.Designer.cs">
+      <DependentUpon>UserFindingResultForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserInformation.cs" />
-    <EmbeddedResource Include="Form\DoctorInformation.resx">
-      <DependentUpon>DoctorInformation.cs</DependentUpon>
+    <Compile Include="Data\UserInformation.cs" />
+    <EmbeddedResource Include="Form\DoctorInformationForm.resx">
+      <DependentUpon>DoctorInformationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\MainProgramForm.resx">
       <DependentUpon>MainProgramForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\MainUserInformation.resx">
-      <DependentUpon>MainUserInformation.cs</DependentUpon>
+    <EmbeddedResource Include="Form\FamilyInformationForm.resx">
+      <DependentUpon>FamilyInformationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -123,8 +125,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form\RelationshipSetting.resx">
-      <DependentUpon>RelationshipSetting.cs</DependentUpon>
+    <EmbeddedResource Include="Form\RelationshipSettingForm.resx">
+      <DependentUpon>RelationshipSettingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -138,11 +140,11 @@
     <EmbeddedResource Include="Form\SignUpSecondStepForm.resx">
       <DependentUpon>SignUpSecondStepForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\UserFinding.resx">
-      <DependentUpon>UserFinding.cs</DependentUpon>
+    <EmbeddedResource Include="Form\UserFindingForm.resx">
+      <DependentUpon>UserFindingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\UserFindingResult.resx">
-      <DependentUpon>UserFindingResult.cs</DependentUpon>
+    <EmbeddedResource Include="Form\UserFindingResultForm.resx">
+      <DependentUpon>UserFindingResultForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -154,6 +156,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

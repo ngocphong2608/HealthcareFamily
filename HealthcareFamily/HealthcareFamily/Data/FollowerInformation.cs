@@ -7,31 +7,36 @@ namespace HealthcareFamily
     class FollowerInformation
     {
         String mUsername;
-        String mPassword;
         String mName;
         String mAge;
         String mGender;
         String mEmail; 
         String mRelationship;
+        Boolean mIsPermitAccessInfo;
 
         List<HealthcareInformation> mHeathInformation; 
 
         public FollowerInformation(
-            String username, String password, String name,
-            String age, String gender, String email, String relationship)
+            String username, 
+            String name, 
+            String age, 
+            String gender, 
+            String email, 
+            String relationship, 
+            Boolean isPermitAccessInfo)
         {
             mUsername = username;
-            mPassword = password;
             mName = name;
             mAge = age;
             mGender = gender;
             mEmail = email;
             mRelationship = relationship;
+            mIsPermitAccessInfo = isPermitAccessInfo;
         }
 
-        public void setHeath()
+        public void setHeathInformation(List<HealthcareInformation> heathInformation)
         {
-
+            mHeathInformation = heathInformation;
         }
     }
 }
