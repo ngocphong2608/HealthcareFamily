@@ -126,6 +126,7 @@
             this.cboAccountType.Name = "cboAccountType";
             this.cboAccountType.Size = new System.Drawing.Size(105, 21);
             this.cboAccountType.TabIndex = 11;
+            this.cboAccountType.SelectedIndexChanged += new System.EventHandler(this.cboAccountType_SelectedIndexChanged);
             // 
             // cmdCancel
             // 

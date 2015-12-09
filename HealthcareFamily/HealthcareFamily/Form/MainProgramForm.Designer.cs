@@ -65,6 +65,7 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(13, 98);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(70, 23);
@@ -108,7 +109,7 @@
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // MainPage
+            // MainProgramForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -122,7 +123,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.Name = "MainPage";
+            this.Name = "MainProgramForm";
             this.Text = "MainPage";
             this.ResumeLayout(false);
             this.PerformLayout();

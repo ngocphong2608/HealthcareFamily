@@ -27,18 +27,19 @@ namespace HealthcareFamily
             String passwordAgain;
             String accountType;
             String email;
-
-
-
+            
             userName = txtUserName.Text;
             password = txtPassword.Text;
             passwordAgain = txtPasswordAgain.Text;
             accountType = cboAccountType.SelectedItem.ToString();
             email = txtEmail.Text; 
 
-            if (checkedOK()
-                && password.Equals(passwordAgain))
+            if (checkedOK() && password.Equals(passwordAgain))
             {
+                this.Hide();    
+
+                var frm = new SignUpSecondStepForm();
+                frm.ShowDialog();
             }
             else 
             {
@@ -48,12 +49,19 @@ namespace HealthcareFamily
 
         private void SignUpFirstStepForm_Load(object sender, EventArgs e)
         {
-
+            if (FormControl.closedSignUpSecondStepForm)
+                this.Close();
         }
 
         private void cmdCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
         }
+
+        private void cboAccountType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

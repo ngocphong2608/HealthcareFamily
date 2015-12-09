@@ -40,75 +40,78 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DoctorInformation.cs">
+    <Compile Include="Form\DoctorInformation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoctorInformation.Designer.cs">
+    <Compile Include="Form\DoctorInformation.Designer.cs">
       <DependentUpon>DoctorInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainProgramForm.cs">
+    <Compile Include="FollowerInformation.cs" />
+    <Compile Include="FormControl.cs" />
+    <Compile Include="Form\MainProgramForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainProgramForm.Designer.cs">
+    <Compile Include="Form\MainProgramForm.Designer.cs">
       <DependentUpon>MainProgramForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainUserInformation.cs">
+    <Compile Include="Form\MainUserInformation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainUserInformation.Designer.cs">
+    <Compile Include="Form\MainUserInformation.Designer.cs">
       <DependentUpon>MainUserInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="RelationshipSetting.cs">
+    <Compile Include="Form\RelationshipSetting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RelationshipSetting.Designer.cs">
+    <Compile Include="Form\RelationshipSetting.Designer.cs">
       <DependentUpon>RelationshipSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Form\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Form\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="LoginFailForm.cs">
+    <Compile Include="Form\LoginFailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginFailForm.Designer.cs">
+    <Compile Include="Form\LoginFailForm.Designer.cs">
       <DependentUpon>LoginFailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SignUpFirstStepForm.cs">
+    <Compile Include="Form\SignUpFirstStepForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignUpFirstStepForm.Designer.cs">
+    <Compile Include="Form\SignUpFirstStepForm.Designer.cs">
       <DependentUpon>SignUpFirstStepForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SignUp2.cs">
+    <Compile Include="Form\SignUpSecondStepForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignUp2.Designer.cs">
-      <DependentUpon>SignUp2.cs</DependentUpon>
+    <Compile Include="Form\SignUpSecondStepForm.Designer.cs">
+      <DependentUpon>SignUpSecondStepForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserFinding.cs">
+    <Compile Include="Form\UserFinding.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserFinding.Designer.cs">
+    <Compile Include="Form\UserFinding.Designer.cs">
       <DependentUpon>UserFinding.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserFindingResult.cs">
+    <Compile Include="Form\UserFindingResult.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserFindingResult.Designer.cs">
+    <Compile Include="Form\UserFindingResult.Designer.cs">
       <DependentUpon>UserFindingResult.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DoctorInformation.resx">
+    <Compile Include="UserInformation.cs" />
+    <EmbeddedResource Include="Form\DoctorInformation.resx">
       <DependentUpon>DoctorInformation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainProgramForm.resx">
+    <EmbeddedResource Include="Form\MainProgramForm.resx">
       <DependentUpon>MainProgramForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainUserInformation.resx">
+    <EmbeddedResource Include="Form\MainUserInformation.resx">
       <DependentUpon>MainUserInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -120,25 +123,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RelationshipSetting.resx">
+    <EmbeddedResource Include="Form\RelationshipSetting.resx">
       <DependentUpon>RelationshipSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Form\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginFailForm.resx">
+    <EmbeddedResource Include="Form\LoginFailForm.resx">
       <DependentUpon>LoginFailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignUpFirstStepForm.resx">
+    <EmbeddedResource Include="Form\SignUpFirstStepForm.resx">
       <DependentUpon>SignUpFirstStepForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignUp2.resx">
-      <DependentUpon>SignUp2.cs</DependentUpon>
+    <EmbeddedResource Include="Form\SignUpSecondStepForm.resx">
+      <DependentUpon>SignUpSecondStepForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserFinding.resx">
+    <EmbeddedResource Include="Form\UserFinding.resx">
       <DependentUpon>UserFinding.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserFindingResult.resx">
+    <EmbeddedResource Include="Form\UserFindingResult.resx">
       <DependentUpon>UserFindingResult.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

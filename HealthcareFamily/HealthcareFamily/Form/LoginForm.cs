@@ -39,17 +39,19 @@ namespace HealthcareFamily
             }
             else
             {
-                this.Hide();
+                //this.Hide();
 
                 var frm = new LoginFailForm();
                 frm.ShowDialog();
-                this.Show();
+                
             }
 
         }
 
         private void cmdSignUp_Click(object sender, EventArgs e)
         {
+            FormControl.closedSignUpSecondStepForm = false; 
+            
             this.Hide();
 
             var frm = new SignUpFirstStepForm();
