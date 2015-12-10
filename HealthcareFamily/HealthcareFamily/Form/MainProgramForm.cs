@@ -19,5 +19,11 @@ namespace HealthcareFamily
         {
             
         }
+
+        private void cmdAddUser_Click(object sender, EventArgs e)
+        {
+            var frm = new UserFindingForm();
+            frm.Show();
+        }
     }
 }

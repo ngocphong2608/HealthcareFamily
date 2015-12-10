@@ -1,6 +1,6 @@
 ﻿namespace HealthcareFamily
 {
-    partial class DoctorInformation
+    partial class DoctorInformationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtGender = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtEmail = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lvwMeeting = new System.Windows.Forms.ListBox();
+            this.cmdMessage = new System.Windows.Forms.Button();
+            this.cmdCreateMeeting = new System.Windows.Forms.Button();
+            this.cmdDeleteMeeting = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtGender);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(34, 12);
             this.groupBox1.Name = "groupBox1";
@@ -56,6 +56,51 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Doctor Information";
+            // 
+            // txtGender
+            // 
+            this.txtGender.AutoSize = true;
+            this.txtGender.Location = new System.Drawing.Point(100, 55);
+            this.txtGender.Name = "txtGender";
+            this.txtGender.Size = new System.Drawing.Size(35, 13);
+            this.txtGender.TabIndex = 5;
+            this.txtGender.Text = "label5";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 55);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Gender";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.AutoSize = true;
+            this.txtEmail.Location = new System.Drawing.Point(100, 82);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(35, 13);
+            this.txtEmail.TabIndex = 3;
+            this.txtEmail.Text = "label4";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Email";
+            // 
+            // txtName
+            // 
+            this.txtName.AutoSize = true;
+            this.txtName.Location = new System.Drawing.Point(100, 26);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(35, 13);
+            this.txtName.TabIndex = 1;
+            this.txtName.Text = "label2";
             // 
             // label1
             // 
@@ -67,99 +112,57 @@
             this.label1.Text = "Name";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // lvwMeeting
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(100, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.lvwMeeting.FormattingEnabled = true;
+            this.lvwMeeting.Location = new System.Drawing.Point(34, 146);
+            this.lvwMeeting.Name = "lvwMeeting";
+            this.lvwMeeting.Size = new System.Drawing.Size(352, 95);
+            this.lvwMeeting.TabIndex = 1;
             // 
-            // label3
+            // cmdMessage
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Email";
+            this.cmdMessage.Enabled = false;
+            this.cmdMessage.Location = new System.Drawing.Point(268, 12);
+            this.cmdMessage.Name = "cmdMessage";
+            this.cmdMessage.Size = new System.Drawing.Size(118, 23);
+            this.cmdMessage.TabIndex = 2;
+            this.cmdMessage.Text = "Message";
+            this.cmdMessage.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // cmdCreateMeeting
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(100, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
+            this.cmdCreateMeeting.Enabled = false;
+            this.cmdCreateMeeting.Location = new System.Drawing.Point(268, 57);
+            this.cmdCreateMeeting.Name = "cmdCreateMeeting";
+            this.cmdCreateMeeting.Size = new System.Drawing.Size(118, 23);
+            this.cmdCreateMeeting.TabIndex = 3;
+            this.cmdCreateMeeting.Text = "Create Meeting";
+            this.cmdCreateMeeting.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // cmdDeleteMeeting
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(100, 55);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "label5";
+            this.cmdDeleteMeeting.Enabled = false;
+            this.cmdDeleteMeeting.Location = new System.Drawing.Point(268, 105);
+            this.cmdDeleteMeeting.Name = "cmdDeleteMeeting";
+            this.cmdDeleteMeeting.Size = new System.Drawing.Size(118, 23);
+            this.cmdDeleteMeeting.TabIndex = 4;
+            this.cmdDeleteMeeting.Text = "Delete Meeting";
+            this.cmdDeleteMeeting.UseVisualStyleBackColor = true;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 55);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Gender";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(34, 146);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(381, 95);
-            this.listBox1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(297, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Message";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(297, 57);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Create Meeting";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(297, 105);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(118, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Delete Meeting";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // DoctorInformation
+            // DoctorInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 261);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(414, 261);
+            this.Controls.Add(this.cmdDeleteMeeting);
+            this.Controls.Add(this.cmdCreateMeeting);
+            this.Controls.Add(this.cmdMessage);
+            this.Controls.Add(this.lvwMeeting);
             this.Controls.Add(this.groupBox1);
-            this.Name = "DoctorInformation";
-            this.Text = "DoctorInformation";
-            this.Load += new System.EventHandler(this.DoctorInformation_Load);
+            this.Name = "DoctorInformationForm";
+            this.Text = "Doctor Information";
+            this.Load += new System.EventHandler(this.DoctorInformationForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -171,13 +174,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label txtName;
+        private System.Windows.Forms.Label txtEmail;
+        private System.Windows.Forms.Label txtGender;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ListBox lvwMeeting;
+        private System.Windows.Forms.Button cmdMessage;
+        private System.Windows.Forms.Button cmdCreateMeeting;
+        private System.Windows.Forms.Button cmdDeleteMeeting;
     }
 }

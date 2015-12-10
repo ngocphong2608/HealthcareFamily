@@ -28,100 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.pnlAvatar = new System.Windows.Forms.Panel();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtAge = new System.Windows.Forms.TextBox();
+            this.cmdEmergency = new System.Windows.Forms.Button();
+            this.cmdAddUser = new System.Windows.Forms.Button();
+            this.lvwUserList = new System.Windows.Forms.ListView();
+            this.cmdProfile = new System.Windows.Forms.Button();
+            this.cmdRefesh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlAvatar
             // 
-            this.panel1.Location = new System.Drawing.Point(13, 13);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(65, 73);
-            this.panel1.TabIndex = 0;
+            this.pnlAvatar.Location = new System.Drawing.Point(13, 13);
+            this.pnlAvatar.Name = "pnlAvatar";
+            this.pnlAvatar.Size = new System.Drawing.Size(65, 75);
+            this.pnlAvatar.TabIndex = 0;
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Location = new System.Drawing.Point(84, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Name";
+            this.txtName.BackColor = System.Drawing.SystemColors.Control;
+            this.txtName.Location = new System.Drawing.Point(84, 13);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(136, 20);
+            this.txtName.TabIndex = 1;
+            this.txtName.Text = "Name";
             // 
-            // textBox2
+            // txtAge
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.Location = new System.Drawing.Point(84, 39);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "Age";
+            this.txtAge.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAge.Location = new System.Drawing.Point(84, 39);
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Size = new System.Drawing.Size(136, 20);
+            this.txtAge.TabIndex = 2;
+            this.txtAge.Text = "Age";
             // 
-            // button1
+            // cmdEmergency
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(13, 98);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Emergency";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cmdEmergency.Enabled = false;
+            this.cmdEmergency.Location = new System.Drawing.Point(13, 98);
+            this.cmdEmergency.Name = "cmdEmergency";
+            this.cmdEmergency.Size = new System.Drawing.Size(92, 23);
+            this.cmdEmergency.TabIndex = 3;
+            this.cmdEmergency.Text = "Emergency";
+            this.cmdEmergency.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // cmdAddUser
             // 
-            this.button2.Location = new System.Drawing.Point(89, 98);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Add user";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cmdAddUser.Location = new System.Drawing.Point(121, 98);
+            this.cmdAddUser.Name = "cmdAddUser";
+            this.cmdAddUser.Size = new System.Drawing.Size(99, 23);
+            this.cmdAddUser.TabIndex = 4;
+            this.cmdAddUser.Text = "Add user";
+            this.cmdAddUser.UseVisualStyleBackColor = true;
+            this.cmdAddUser.Click += new System.EventHandler(this.cmdAddUser_Click);
             // 
-            // listView1
+            // lvwUserList
             // 
-            this.listView1.Location = new System.Drawing.Point(13, 133);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(171, 155);
-            this.listView1.TabIndex = 5;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lvwUserList.Location = new System.Drawing.Point(13, 133);
+            this.lvwUserList.Name = "lvwUserList";
+            this.lvwUserList.Size = new System.Drawing.Size(207, 233);
+            this.lvwUserList.TabIndex = 5;
+            this.lvwUserList.UseCompatibleStateImageBehavior = false;
             // 
-            // button3
+            // cmdProfile
             // 
-            this.button3.Location = new System.Drawing.Point(84, 63);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(65, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Profile";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.cmdProfile.Location = new System.Drawing.Point(84, 65);
+            this.cmdProfile.Name = "cmdProfile";
+            this.cmdProfile.Size = new System.Drawing.Size(70, 23);
+            this.cmdProfile.TabIndex = 6;
+            this.cmdProfile.Text = "Profile";
+            this.cmdProfile.UseVisualStyleBackColor = true;
+            this.cmdProfile.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // cmdRefesh
             // 
-            this.button4.Location = new System.Drawing.Point(160, 63);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(24, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.cmdRefesh.Location = new System.Drawing.Point(160, 65);
+            this.cmdRefesh.Name = "cmdRefesh";
+            this.cmdRefesh.Size = new System.Drawing.Size(60, 23);
+            this.cmdRefesh.TabIndex = 7;
+            this.cmdRefesh.Text = "Refesh";
+            this.cmdRefesh.UseVisualStyleBackColor = true;
             // 
             // MainProgramForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(196, 300);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(232, 378);
+            this.Controls.Add(this.cmdRefesh);
+            this.Controls.Add(this.cmdProfile);
+            this.Controls.Add(this.lvwUserList);
+            this.Controls.Add(this.cmdAddUser);
+            this.Controls.Add(this.cmdEmergency);
+            this.Controls.Add(this.txtAge);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.pnlAvatar);
             this.MaximizeBox = false;
             this.Name = "MainProgramForm";
             this.Text = "MainPage";
@@ -132,13 +133,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel pnlAvatar;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtAge;
+        private System.Windows.Forms.Button cmdEmergency;
+        private System.Windows.Forms.Button cmdAddUser;
+        private System.Windows.Forms.ListView lvwUserList;
+        private System.Windows.Forms.Button cmdProfile;
+        private System.Windows.Forms.Button cmdRefesh;
     }
 }

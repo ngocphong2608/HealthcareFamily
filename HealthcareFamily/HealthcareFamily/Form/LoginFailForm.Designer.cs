@@ -73,7 +73,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginFailForm";
-            this.Text = "SignInFail";
+            this.Text = "Sign In Fail";
             this.ResumeLayout(false);
             this.PerformLayout();
 

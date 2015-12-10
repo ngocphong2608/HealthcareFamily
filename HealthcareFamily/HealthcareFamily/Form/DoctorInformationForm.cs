@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace HealthcareFamily
 {
-    public partial class DoctorInformation : Form
+    public partial class DoctorInformationForm : Form
     {
-        public DoctorInformation()
+        public DoctorInformationForm()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace HealthcareFamily
 
         }
 
-        private void DoctorInformation_Load(object sender, EventArgs e)
+        private void DoctorInformationForm_Load(object sender, EventArgs e)
         {
 
         }

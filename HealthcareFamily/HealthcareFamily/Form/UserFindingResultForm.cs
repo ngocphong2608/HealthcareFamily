@@ -8,11 +8,22 @@ using System.Windows.Forms;
 
 namespace HealthcareFamily
 {
-    public partial class UserFindingResult : Form
+    public partial class UserFindingResultForm : Form
     {
-        public UserFindingResult()
+        public UserFindingResultForm()
         {
             InitializeComponent();
+        }
+
+        private void cmdNext_Click(object sender, EventArgs e)
+        {
+            var frm = new RelationshipSettingForm();
+            frm.ShowDialog();
+        }
+
+        private void cmdBack_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
