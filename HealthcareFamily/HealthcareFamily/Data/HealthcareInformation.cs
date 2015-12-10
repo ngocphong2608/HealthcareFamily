@@ -6,9 +6,9 @@ namespace HealthcareFamily
 {
     class HealthcareInformation
     {
-        int mHeartBeat;
-        String mEmotion;
-        String mTime; 
+        public int mHeartBeat { get; set; }
+        public string mEmotion { get; set; }
+        public string mTime { get; set; }
 
         public HealthcareInformation(int heartBeat, String emotion, String time)
         {

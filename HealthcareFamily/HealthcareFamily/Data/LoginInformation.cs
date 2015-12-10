@@ -6,8 +6,8 @@ namespace HealthcareFamily.Data
 {
     class LoginInformation
     {
-        String mUsername;
-        String mPassword; 
+        public string mUsername { get; set; }
+        public string mPassword { get; set; }
 
         public LoginInformation(String username, String password)
         {

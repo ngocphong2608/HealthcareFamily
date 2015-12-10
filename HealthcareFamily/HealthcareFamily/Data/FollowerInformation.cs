@@ -6,20 +6,19 @@ namespace HealthcareFamily
 {
     class FollowerInformation
     {
-        String mUsername;
-        String mName;
-        String mAge;
-        String mGender;
-        String mEmail; 
-        String mRelationship;
-        Boolean mIsPermitAccessInfo;
-
-        List<HealthcareInformation> mHeathInformation; 
+        public string mUsername { get; set; }
+        public string mName { get; set; }
+        public string mBirthday { get; set; }
+        public string mGender { get; set; }
+        public string mEmail { get; set; }
+        public string mRelationship { get; set; }
+        public Boolean mIsPermitAccessInfo { get; set; }
+        public List<HealthcareInformation> mHeathInformation { get; set; }
 
         public FollowerInformation(
             String username, 
             String name, 
-            String age, 
+            String birth, 
             String gender, 
             String email, 
             String relationship, 
@@ -27,7 +26,7 @@ namespace HealthcareFamily
         {
             mUsername = username;
             mName = name;
-            mAge = age;
+            mBirthday = birth;
             mGender = gender;
             mEmail = email;
             mRelationship = relationship;

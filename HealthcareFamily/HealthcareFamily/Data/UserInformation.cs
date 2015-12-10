@@ -6,24 +6,25 @@ namespace HealthcareFamily
 {
     class UserInformation
     {
-        String mUsername;
-        String mPassword;
-        String mName;
-        String mAge;
-        String mGender;
-        String mEmail;
-        int mAccountType;
+        public string mUsername { get ; set; }
+        public string mPassword { get; set; }
+        public string mName { get; set; }
+        public string mBirthday { get; set; }
+        public string mGender { get; set; }
+        public string mEmail { get; set; }
+        public string mAccountType { get; set; }
 
-        List<FollowerInformation> mFollower;
-        List<HealthcareInformation> mHeathInfo;
+        public List<FollowerInformation> mFollower { get; set; }
+
+        public List<HealthcareInformation> mHeathInfo { get; set; }
 
         public UserInformation(String username, String password, String name, 
-            String age, String gender, String email, int accountType)
+            String birth, String gender, String email, int accountType)
         {
             mUsername = username;
             mPassword = password;
             mName = name;
-            mAge = age;
+            mBirthday = birth;
             mGender = gender;
             mEmail = email;
             mAccountType = accountType;
