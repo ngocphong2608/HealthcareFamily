@@ -1,6 +1,6 @@
 ﻿namespace HealthcareFamily
 {
-    partial class MainUserInformation
+    partial class FamilyInformationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,6 @@
             this.txtHeartBeat = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmotion = new System.Windows.Forms.Label();
-            this.lvwMeeting = new System.Windows.Forms.ListBox();
             this.txtCheckHeathCare = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMessage = new System.Windows.Forms.Button();
@@ -42,6 +41,11 @@
             this.txtUsername = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtFullname = new System.Windows.Forms.Label();
+            this.txtRelationship = new System.Windows.Forms.Label();
+            this.lvwHeathcareInfo = new System.Windows.Forms.ListView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -91,14 +95,6 @@
             this.txtEmotion.TabIndex = 4;
             this.txtEmotion.Text = "label5";
             // 
-            // lvwMeeting
-            // 
-            this.lvwMeeting.FormattingEnabled = true;
-            this.lvwMeeting.Location = new System.Drawing.Point(43, 228);
-            this.lvwMeeting.Name = "lvwMeeting";
-            this.lvwMeeting.Size = new System.Drawing.Size(339, 186);
-            this.lvwMeeting.TabIndex = 5;
-            // 
             // txtCheckHeathCare
             // 
             this.txtCheckHeathCare.Location = new System.Drawing.Point(191, 13);
@@ -115,7 +111,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtHeartBeat);
             this.groupBox1.Controls.Add(this.txtEmotion);
-            this.groupBox1.Location = new System.Drawing.Point(43, 133);
+            this.groupBox1.Location = new System.Drawing.Point(43, 189);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(339, 75);
             this.groupBox1.TabIndex = 7;
@@ -134,13 +130,17 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtRelationship);
+            this.groupBox2.Controls.Add(this.txtFullname);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Controls.Add(this.txtUsername);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(43, 45);
+            this.groupBox2.Location = new System.Drawing.Point(43, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(339, 82);
+            this.groupBox2.Size = new System.Drawing.Size(339, 141);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information";
@@ -148,7 +148,7 @@
             // txtEmail
             // 
             this.txtEmail.AutoSize = true;
-            this.txtEmail.Location = new System.Drawing.Point(161, 53);
+            this.txtEmail.Location = new System.Drawing.Point(161, 105);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(35, 13);
             this.txtEmail.TabIndex = 3;
@@ -166,11 +166,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 53);
+            this.label7.Location = new System.Drawing.Point(16, 78);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.Size = new System.Drawing.Size(65, 13);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Email";
+            this.label7.Text = "Relationship";
             // 
             // label6
             // 
@@ -179,21 +179,66 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Usermane";
+            this.label6.Text = "Username";
             // 
-            // MainUserInformation
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Fullname";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Email";
+            // 
+            // txtFullname
+            // 
+            this.txtFullname.AutoSize = true;
+            this.txtFullname.Location = new System.Drawing.Point(161, 51);
+            this.txtFullname.Name = "txtFullname";
+            this.txtFullname.Size = new System.Drawing.Size(35, 13);
+            this.txtFullname.TabIndex = 6;
+            this.txtFullname.Text = "label8";
+            // 
+            // txtRelationship
+            // 
+            this.txtRelationship.AutoSize = true;
+            this.txtRelationship.Location = new System.Drawing.Point(161, 78);
+            this.txtRelationship.Name = "txtRelationship";
+            this.txtRelationship.Size = new System.Drawing.Size(35, 13);
+            this.txtRelationship.TabIndex = 7;
+            this.txtRelationship.Text = "label9";
+            // 
+            // lvwHeathcareInfo
+            // 
+            this.lvwHeathcareInfo.Location = new System.Drawing.Point(43, 281);
+            this.lvwHeathcareInfo.Name = "lvwHeathcareInfo";
+            this.lvwHeathcareInfo.Size = new System.Drawing.Size(339, 179);
+            this.lvwHeathcareInfo.TabIndex = 10;
+            this.lvwHeathcareInfo.UseCompatibleStateImageBehavior = false;
+            // 
+            // FamilyInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 430);
+            this.ClientSize = new System.Drawing.Size(437, 482);
+            this.Controls.Add(this.lvwHeathcareInfo);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtCheckHeathCare);
-            this.Controls.Add(this.lvwMeeting);
             this.Controls.Add(this.label1);
-            this.Name = "MainUserInformation";
+            this.Name = "FamilyInformationForm";
             this.Text = "User Information";
+            this.Load += new System.EventHandler(this.FamilyInformationForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -210,7 +255,6 @@
         private System.Windows.Forms.Label txtHeartBeat;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label txtEmotion;
-        private System.Windows.Forms.ListBox lvwMeeting;
         private System.Windows.Forms.Button txtCheckHeathCare;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button txtMessage;
@@ -219,5 +263,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label txtEmail;
         private System.Windows.Forms.Label txtUsername;
+        private System.Windows.Forms.Label txtRelationship;
+        private System.Windows.Forms.Label txtFullname;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListView lvwHeathcareInfo;
     }
 }

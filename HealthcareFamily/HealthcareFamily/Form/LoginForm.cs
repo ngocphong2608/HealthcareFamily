@@ -35,6 +35,13 @@ namespace HealthcareFamily
 
                 var frm = new MainProgramForm();
                 frm.Closed += (s, args) => this.Close();
+
+
+                // set user name to title bar in main menu
+
+                frm.Text = "admin - username:admin";
+
+
                 frm.Show();
             }
             else
@@ -56,7 +63,9 @@ namespace HealthcareFamily
 
             var frm = new SignUpFirstStepForm();
             frm.ShowDialog();
-            //this.Show();
+
+            //this.Close();
+            this.Show();
         }
 
         

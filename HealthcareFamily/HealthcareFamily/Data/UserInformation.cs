@@ -19,7 +19,7 @@ namespace HealthcareFamily
         public List<HealthcareInformation> mHeathInfo { get; set; }
 
         public UserInformation(String username, String password, String name, 
-            String birth, String gender, String email, int accountType)
+            String birth, String gender, String email, String accountType)
         {
             mUsername = username;
             mPassword = password;
