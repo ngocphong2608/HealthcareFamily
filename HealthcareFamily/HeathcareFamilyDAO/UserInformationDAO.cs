@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace HeathcareFamilyDAO
 {
-    public class Class1
+    public class UserInformationDAO
     {
+        public void LoadInformation()
+        { 
+            
+        }
     }
 }
