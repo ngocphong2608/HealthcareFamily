@@ -29,16 +29,5 @@ namespace HealthcareFamily
             mEmail = email;
             mAccountType = accountType;
         }
-
-        public void setFollower(List<FollowerInformation> follower)
-        {
-            mFollower = follower;
-        }
-
-
-        public void setHeath(List<HealthcareInformation> heathInfo)
-        {
-            mHeathInfo = heathInfo;
-        }
     }
 }
