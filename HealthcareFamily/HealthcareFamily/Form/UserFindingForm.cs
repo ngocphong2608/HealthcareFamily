@@ -22,6 +22,12 @@ namespace HealthcareFamily
 
         private void cmdNext_Click(object sender, EventArgs e)
         {
+            String info;
+
+            // get information 
+            info = txtUserInfo.Text;
+            
+            this.Hide();
             var frm = new UserFindingResultForm();
             frm.ShowDialog();
         }

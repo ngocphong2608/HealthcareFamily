@@ -23,6 +23,10 @@ namespace HealthcareFamily
         private void DoctorInformationForm_Load(object sender, EventArgs e)
         {
 
+            // load from database
+            txtName.Text = "doctor1";
+            txtGender.Text = "male";
+            txtEmail.Text = "abc@gmail.com";
         }
     }
 }

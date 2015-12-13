@@ -178,7 +178,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SignUpFirstStepForm";
-            this.Text = "S";
+            this.Text = "Create New Account";
             this.Load += new System.EventHandler(this.SignUpFirstStepForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

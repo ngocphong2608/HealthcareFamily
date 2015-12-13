@@ -23,6 +23,17 @@ namespace HealthcareFamily
         private void cmdOK_Click(object sender, EventArgs e)
         {
 
+            String heartBeat;
+            String emotion;
+            String date;
+
+            heartBeat = txtHeartBeat.Text;
+            emotion = txtEmotion.Text;
+
+            // get current time 
+            date = DateTime.Now.Date.ToString();
+
+
             this.DialogResult = DialogResult.OK;
         }
     }

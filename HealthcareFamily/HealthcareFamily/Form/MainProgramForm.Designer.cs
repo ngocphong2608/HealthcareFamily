@@ -86,7 +86,7 @@
             this.cmdProfile.TabIndex = 6;
             this.cmdProfile.Text = "Profile";
             this.cmdProfile.UseVisualStyleBackColor = true;
-            this.cmdProfile.Click += new System.EventHandler(this.button3_Click);
+            this.cmdProfile.Click += new System.EventHandler(this.cmdProfile_Click);
             // 
             // cmdRefesh
             // 
@@ -96,6 +96,7 @@
             this.cmdRefesh.TabIndex = 7;
             this.cmdRefesh.Text = "Refesh";
             this.cmdRefesh.UseVisualStyleBackColor = true;
+            this.cmdRefesh.Click += new System.EventHandler(this.cmdRefesh_Click);
             // 
             // txtName
             // 
@@ -117,6 +118,7 @@
             // 
             // cmdMeeting
             // 
+            this.cmdMeeting.Enabled = false;
             this.cmdMeeting.Location = new System.Drawing.Point(13, 98);
             this.cmdMeeting.Name = "cmdMeeting";
             this.cmdMeeting.Size = new System.Drawing.Size(97, 23);

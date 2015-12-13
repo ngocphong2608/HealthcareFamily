@@ -56,8 +56,8 @@
             // 
             this.cboRelationship.FormattingEnabled = true;
             this.cboRelationship.Items.AddRange(new object[] {
-            "Family",
-            "Doctor"});
+            "family",
+            "doctor"});
             this.cboRelationship.Location = new System.Drawing.Point(130, 57);
             this.cboRelationship.Name = "cboRelationship";
             this.cboRelationship.Size = new System.Drawing.Size(121, 21);

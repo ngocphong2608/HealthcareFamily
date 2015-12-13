@@ -40,6 +40,7 @@ namespace HealthcareFamily
 
                 var frm = new SignUpSecondStepForm();
                 frm.ShowDialog();
+
             }
             else 
             {

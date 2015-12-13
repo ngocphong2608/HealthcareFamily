@@ -17,6 +17,16 @@ namespace HealthcareFamily
 
         private void cmdNext_Click(object sender, EventArgs e)
         {
+
+            String usr;
+
+
+            // get user
+            usr = this.lwvFindingResult.SelectedItems.ToString();
+            
+
+
+            this.Hide();
             var frm = new RelationshipSettingForm();
             frm.ShowDialog();
         }

@@ -138,7 +138,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SignUpSecondStepForm";
-            this.Text = "SignUpSecondStepForm";
+            this.Text = "Create New Account";
             this.ResumeLayout(false);
             this.PerformLayout();
 

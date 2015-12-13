@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtHeartBeat = new System.Windows.Forms.TextBox();
+            this.txtEmotion = new System.Windows.Forms.TextBox();
             this.cmdOK = new System.Windows.Forms.Button();
             this.cmdCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -54,23 +54,23 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Emotion";
             // 
-            // textBox1
+            // txtHeartBeat
             // 
-            this.textBox1.Location = new System.Drawing.Point(111, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtHeartBeat.Location = new System.Drawing.Point(111, 38);
+            this.txtHeartBeat.Name = "txtHeartBeat";
+            this.txtHeartBeat.Size = new System.Drawing.Size(153, 20);
+            this.txtHeartBeat.TabIndex = 2;
             // 
-            // textBox2
+            // txtEmotion
             // 
-            this.textBox2.Location = new System.Drawing.Point(111, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(153, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtEmotion.Location = new System.Drawing.Point(111, 71);
+            this.txtEmotion.Name = "txtEmotion";
+            this.txtEmotion.Size = new System.Drawing.Size(153, 20);
+            this.txtEmotion.TabIndex = 3;
             // 
             // cmdOK
             // 
-            this.cmdOK.Location = new System.Drawing.Point(159, 125);
+            this.cmdOK.Location = new System.Drawing.Point(45, 119);
             this.cmdOK.Name = "cmdOK";
             this.cmdOK.Size = new System.Drawing.Size(75, 23);
             this.cmdOK.TabIndex = 4;
@@ -80,7 +80,7 @@
             // 
             // cmdCancel
             // 
-            this.cmdCancel.Location = new System.Drawing.Point(49, 125);
+            this.cmdCancel.Location = new System.Drawing.Point(156, 119);
             this.cmdCancel.Name = "cmdCancel";
             this.cmdCancel.Size = new System.Drawing.Size(75, 23);
             this.cmdCancel.TabIndex = 5;
@@ -95,8 +95,8 @@
             this.ClientSize = new System.Drawing.Size(295, 180);
             this.Controls.Add(this.cmdCancel);
             this.Controls.Add(this.cmdOK);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmotion);
+            this.Controls.Add(this.txtHeartBeat);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "HealthcareCheckingForm";
@@ -110,8 +110,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtHeartBeat;
+        private System.Windows.Forms.TextBox txtEmotion;
         private System.Windows.Forms.Button cmdOK;
         private System.Windows.Forms.Button cmdCancel;
     }

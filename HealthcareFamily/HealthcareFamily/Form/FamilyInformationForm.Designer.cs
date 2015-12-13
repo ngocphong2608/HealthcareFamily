@@ -37,14 +37,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMessage = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtRelationship = new System.Windows.Forms.Label();
+            this.txtFullname = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtFullname = new System.Windows.Forms.Label();
-            this.txtRelationship = new System.Windows.Forms.Label();
             this.lvwHeathcareInfo = new System.Windows.Forms.ListView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -71,7 +71,7 @@
             // txtHeartBeat
             // 
             this.txtHeartBeat.AutoSize = true;
-            this.txtHeartBeat.Location = new System.Drawing.Point(107, 20);
+            this.txtHeartBeat.Location = new System.Drawing.Point(161, 20);
             this.txtHeartBeat.Name = "txtHeartBeat";
             this.txtHeartBeat.Size = new System.Drawing.Size(35, 13);
             this.txtHeartBeat.TabIndex = 2;
@@ -89,7 +89,7 @@
             // txtEmotion
             // 
             this.txtEmotion.AutoSize = true;
-            this.txtEmotion.Location = new System.Drawing.Point(107, 48);
+            this.txtEmotion.Location = new System.Drawing.Point(161, 48);
             this.txtEmotion.Name = "txtEmotion";
             this.txtEmotion.Size = new System.Drawing.Size(35, 13);
             this.txtEmotion.TabIndex = 4;
@@ -145,6 +145,42 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information";
             // 
+            // txtRelationship
+            // 
+            this.txtRelationship.AutoSize = true;
+            this.txtRelationship.Location = new System.Drawing.Point(161, 78);
+            this.txtRelationship.Name = "txtRelationship";
+            this.txtRelationship.Size = new System.Drawing.Size(35, 13);
+            this.txtRelationship.TabIndex = 7;
+            this.txtRelationship.Text = "label9";
+            // 
+            // txtFullname
+            // 
+            this.txtFullname.AutoSize = true;
+            this.txtFullname.Location = new System.Drawing.Point(161, 51);
+            this.txtFullname.Name = "txtFullname";
+            this.txtFullname.Size = new System.Drawing.Size(35, 13);
+            this.txtFullname.TabIndex = 6;
+            this.txtFullname.Text = "label8";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Email";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Fullname";
+            // 
             // txtEmail
             // 
             this.txtEmail.AutoSize = true;
@@ -180,42 +216,6 @@
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Username";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Fullname";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 105);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Email";
-            // 
-            // txtFullname
-            // 
-            this.txtFullname.AutoSize = true;
-            this.txtFullname.Location = new System.Drawing.Point(161, 51);
-            this.txtFullname.Name = "txtFullname";
-            this.txtFullname.Size = new System.Drawing.Size(35, 13);
-            this.txtFullname.TabIndex = 6;
-            this.txtFullname.Text = "label8";
-            // 
-            // txtRelationship
-            // 
-            this.txtRelationship.AutoSize = true;
-            this.txtRelationship.Location = new System.Drawing.Point(161, 78);
-            this.txtRelationship.Name = "txtRelationship";
-            this.txtRelationship.Size = new System.Drawing.Size(35, 13);
-            this.txtRelationship.TabIndex = 7;
-            this.txtRelationship.Text = "label9";
             // 
             // lvwHeathcareInfo
             // 

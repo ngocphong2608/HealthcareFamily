@@ -39,11 +39,15 @@
             this.cmdMessage = new System.Windows.Forms.Button();
             this.cmdCreateMeeting = new System.Windows.Forms.Button();
             this.cmdDeleteMeeting = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtUsername);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtGender);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtEmail);
@@ -52,7 +56,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(34, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 116);
+            this.groupBox1.Size = new System.Drawing.Size(200, 154);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Doctor Information";
@@ -115,15 +119,15 @@
             // lvwMeeting
             // 
             this.lvwMeeting.FormattingEnabled = true;
-            this.lvwMeeting.Location = new System.Drawing.Point(34, 146);
+            this.lvwMeeting.Location = new System.Drawing.Point(34, 191);
             this.lvwMeeting.Name = "lvwMeeting";
-            this.lvwMeeting.Size = new System.Drawing.Size(352, 95);
+            this.lvwMeeting.Size = new System.Drawing.Size(352, 147);
             this.lvwMeeting.TabIndex = 1;
             // 
             // cmdMessage
             // 
             this.cmdMessage.Enabled = false;
-            this.cmdMessage.Location = new System.Drawing.Point(268, 12);
+            this.cmdMessage.Location = new System.Drawing.Point(268, 31);
             this.cmdMessage.Name = "cmdMessage";
             this.cmdMessage.Size = new System.Drawing.Size(118, 23);
             this.cmdMessage.TabIndex = 2;
@@ -133,7 +137,7 @@
             // cmdCreateMeeting
             // 
             this.cmdCreateMeeting.Enabled = false;
-            this.cmdCreateMeeting.Location = new System.Drawing.Point(268, 57);
+            this.cmdCreateMeeting.Location = new System.Drawing.Point(268, 76);
             this.cmdCreateMeeting.Name = "cmdCreateMeeting";
             this.cmdCreateMeeting.Size = new System.Drawing.Size(118, 23);
             this.cmdCreateMeeting.TabIndex = 3;
@@ -143,18 +147,36 @@
             // cmdDeleteMeeting
             // 
             this.cmdDeleteMeeting.Enabled = false;
-            this.cmdDeleteMeeting.Location = new System.Drawing.Point(268, 105);
+            this.cmdDeleteMeeting.Location = new System.Drawing.Point(268, 124);
             this.cmdDeleteMeeting.Name = "cmdDeleteMeeting";
             this.cmdDeleteMeeting.Size = new System.Drawing.Size(118, 23);
             this.cmdDeleteMeeting.TabIndex = 4;
             this.cmdDeleteMeeting.Text = "Delete Meeting";
             this.cmdDeleteMeeting.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Username";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.AutoSize = true;
+            this.txtUsername.Location = new System.Drawing.Point(100, 111);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(35, 13);
+            this.txtUsername.TabIndex = 7;
+            this.txtUsername.Text = "label4";
+            // 
             // DoctorInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 261);
+            this.ClientSize = new System.Drawing.Size(414, 366);
             this.Controls.Add(this.cmdDeleteMeeting);
             this.Controls.Add(this.cmdCreateMeeting);
             this.Controls.Add(this.cmdMessage);
@@ -182,5 +204,7 @@
         private System.Windows.Forms.Button cmdMessage;
         private System.Windows.Forms.Button cmdCreateMeeting;
         private System.Windows.Forms.Button cmdDeleteMeeting;
+        private System.Windows.Forms.Label txtUsername;
+        private System.Windows.Forms.Label label2;
     }
 }
