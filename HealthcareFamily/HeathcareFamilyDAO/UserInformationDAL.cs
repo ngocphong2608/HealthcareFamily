@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HeathcareFamilyDAO
+namespace HeathcareFamilyDAL
 {
-    public class UserInformationDAO
+    public class UserInformationDAL
     {
         public void LoadInformation()
         { 

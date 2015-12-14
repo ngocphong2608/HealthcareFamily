@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthcareFamily", "HealthcareFamily\HealthcareFamily.csproj", "{69B83F99-9F17-443B-9535-56438E047061}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeathcareFamilyDAO", "HeathcareFamilyDAO\HeathcareFamilyDAO.csproj", "{CA1540F9-B00C-4A0F-B529-163A3688AD85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeathcareFamilyDAL", "HeathcareFamilyDAO\HeathcareFamilyDAL.csproj", "{CA1540F9-B00C-4A0F-B529-163A3688AD85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
