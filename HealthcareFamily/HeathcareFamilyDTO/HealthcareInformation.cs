@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HealthcareFamily
+namespace HealthcareFamilyDTO
 {
-    class HealthcareInformation
+    public class HealthcareInformation
     {
         public int mHeartBeat { get; set; }
         public string mEmotion { get; set; }

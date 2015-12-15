@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace HealthcareFamily
+namespace HealthcareFamilyDTO
 {
     public partial class FamilyInformationForm : Form
     {

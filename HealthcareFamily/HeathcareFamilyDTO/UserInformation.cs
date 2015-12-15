@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HealthcareFamily
+namespace HealthcareFamilyDTO
 {
-    class UserInformation
+    public class UserInformation
     {
         public string mUsername { get ; set; }
         public string mPassword { get; set; }
         public string mName { get; set; }
-        public string mBirthday { get; set; }
+        public DateTime mBirthday { get; set; }
         public string mGender { get; set; }
         public string mEmail { get; set; }
         public string mAccountType { get; set; }
@@ -19,7 +19,7 @@ namespace HealthcareFamily
         public List<HealthcareInformation> mHeathInfo { get; set; }
 
         public UserInformation(String username, String password, String name, 
-            String birth, String gender, String email, String accountType)
+            DateTime birth, String gender, String email, String accountType)
         {
             mUsername = username;
             mPassword = password;
@@ -29,5 +29,7 @@ namespace HealthcareFamily
             mEmail = email;
             mAccountType = accountType;
         }
+
+        public UserInformation() { }
     }
 }

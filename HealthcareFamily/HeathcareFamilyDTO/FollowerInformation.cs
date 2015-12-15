@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HealthcareFamily
+namespace HealthcareFamilyDTO
 {
-    class FollowerInformation
+    public class FollowerInformation
     {
         public string mUsername { get; set; }
         public string mName { get; set; }

@@ -7,7 +7,7 @@
     <ProjectGuid>{69B83F99-9F17-443B-9535-56438E047061}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HealthcareFamily</RootNamespace>
+    <RootNamespace>HealthcareFamilyDTO</RootNamespace>
     <AssemblyName>HealthcareFamily</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,15 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\SignUpInformation.cs" />
-    <Compile Include="Data\LoginInformation.cs" />
     <Compile Include="Form\DoctorInformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\DoctorInformationForm.Designer.cs">
       <DependentUpon>DoctorInformationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\FollowerInformation.cs" />
     <Compile Include="Form\MainProgramForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,7 +71,6 @@
     <Compile Include="Form\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\HealthcareInformation.cs" />
     <Compile Include="Form\HealthcareCheckingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,7 +115,6 @@
     <Compile Include="Form\UserFindingResultForm.Designer.cs">
       <DependentUpon>UserFindingResultForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\UserInformation.cs" />
     <EmbeddedResource Include="Form\DoctorInformationForm.resx">
       <DependentUpon>DoctorInformationForm.cs</DependentUpon>
     </EmbeddedResource>

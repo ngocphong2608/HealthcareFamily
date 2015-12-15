@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace HealthcareFamily
+namespace HealthcareFamilyDTO
 {
     public partial class MeetingForm : Form
     {

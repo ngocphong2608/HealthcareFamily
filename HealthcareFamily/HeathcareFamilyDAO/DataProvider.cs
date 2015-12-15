@@ -12,7 +12,7 @@ namespace HealthcareFamilyDAL
     {
         private static SqlConnection _con;
 
-        static DataProvider()
+        DataProvider()
         {
             // Get connection string from web.conf or app.conf
             string strConnection = System.Configuration.ConfigurationManager.ConnectionStrings["HeathCareFamilyDB"].ConnectionString;

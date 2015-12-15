@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CA1540F9-B00C-4A0F-B529-163A3688AD85}</ProjectGuid>
+    <ProjectGuid>{73BF178E-C896-4108-AE13-70217EDE52EF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HeathcareFamilyDAL</RootNamespace>
-    <AssemblyName>HeathcareFamilyDAO</AssemblyName>
+    <RootNamespace>HeathcareFamilyDTO</RootNamespace>
+    <AssemblyName>HeathcareFamilyDTO</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,15 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataProvider.cs" />
+    <Compile Include="FollowerInformation.cs" />
+    <Compile Include="HealthcareInformation.cs" />
+    <Compile Include="LoginInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserInformationDAL.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HeathcareFamilyDTO\HeathcareFamilyDTO.csproj">
-      <Project>{73bf178e-c896-4108-ae13-70217ede52ef}</Project>
-      <Name>HeathcareFamilyDTO</Name>
-    </ProjectReference>
+    <Compile Include="SignUpInformation.cs" />
+    <Compile Include="UserInformation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

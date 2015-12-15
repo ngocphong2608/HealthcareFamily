@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HealthcareFamily.Data
+namespace HealthcareFamilyDTO.Data
 {
-    class SignUpInformation
+    public class SignUpInformation
     {
         public string mUsername { get; set; }
         public string mPassword { get; set; }

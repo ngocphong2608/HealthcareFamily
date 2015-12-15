@@ -1,4 +1,4 @@
-﻿namespace HealthcareFamily
+﻿namespace HealthcareFamilyDTO
 {
     partial class RelationshipSettingForm
     {
