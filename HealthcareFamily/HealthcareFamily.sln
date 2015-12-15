@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeathcareFamilyDAL", "Heath
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeathcareFamilyDTO", "HeathcareFamilyDTO\HeathcareFamilyDTO.csproj", "{73BF178E-C896-4108-AE13-70217EDE52EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeathcareFamilyBUS", "HeathcareFamilyBUS\HeathcareFamilyBUS.csproj", "{DA4C205F-337A-4DA4-901B-CD18EA9474A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{73BF178E-C896-4108-AE13-70217EDE52EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73BF178E-C896-4108-AE13-70217EDE52EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73BF178E-C896-4108-AE13-70217EDE52EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA4C205F-337A-4DA4-901B-CD18EA9474A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA4C205F-337A-4DA4-901B-CD18EA9474A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA4C205F-337A-4DA4-901B-CD18EA9474A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA4C205F-337A-4DA4-901B-CD18EA9474A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
