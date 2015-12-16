@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HeathcareFamilyDAL
+namespace HealthcareFamilyDAL
 {
     public class UserInformationDAL
     {
         public UserInformation LoadUserInformation(String username)
         {
-            String query = "SELECT * FROM USER_INFORMATION WHERE USERNAME=" + username;
+            String query = "SELECT * FROM USER_INFORMATION WHERE Username='" + username + "'";
             DataTable dt = DataProvider.ExecuteQuery(query);
 
             if (dt.Rows.Count == 0)

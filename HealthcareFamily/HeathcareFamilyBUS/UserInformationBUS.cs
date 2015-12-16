@@ -1,14 +1,14 @@
 ﻿using HealthcareFamilyDTO;
-using HeathcareFamilyDAL;
+using HealthcareFamilyDAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HeathcareFamilyBUS
+namespace HealthcareFamilyBUS
 {
-    public class UserImformationBUS
+    public class UserInformationBUS
     {
         public UserInformation LoadUserInformation(String username)
         { 

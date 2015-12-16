@@ -5,11 +5,11 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthcareFamily", "HealthcareFamily\HealthcareFamily.csproj", "{69B83F99-9F17-443B-9535-56438E047061}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeathcareFamilyDAL", "HeathcareFamilyDAO\HeathcareFamilyDAL.csproj", "{CA1540F9-B00C-4A0F-B529-163A3688AD85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthcareFamilyDAL", "HeathcareFamilyDAO\HealthcareFamilyDAL.csproj", "{CA1540F9-B00C-4A0F-B529-163A3688AD85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeathcareFamilyDTO", "HeathcareFamilyDTO\HeathcareFamilyDTO.csproj", "{73BF178E-C896-4108-AE13-70217EDE52EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthcareFamilyDTO", "HeathcareFamilyDTO\HealthcareFamilyDTO.csproj", "{73BF178E-C896-4108-AE13-70217EDE52EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeathcareFamilyBUS", "HeathcareFamilyBUS\HeathcareFamilyBUS.csproj", "{DA4C205F-337A-4DA4-901B-CD18EA9474A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthcareFamilyBUS", "HeathcareFamilyBUS\HealthcareFamilyBUS.csproj", "{DA4C205F-337A-4DA4-901B-CD18EA9474A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

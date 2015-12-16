@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HealthcareFamilyBUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +37,9 @@ namespace HealthcareFamilyDTO
 
             // capture object from parent form
             //
+            UserInformationBUS bus = new UserInformationBUS();
+
+            UserInformation user = bus.LoadUserInformation("admin");
 
             txtUsername.Text = "admin1";
             txtFullname.Text = "admin - 1";
