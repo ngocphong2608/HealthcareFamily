@@ -39,12 +39,12 @@ namespace HealthcareFamilyDTO
             //
             UserInformationBUS bus = new UserInformationBUS();
 
-            UserInformation user = bus.LoadUserInformation("admin");
+            UserInformationDTO user = bus.GetUserInformation("admin");
 
-            txtUsername.Text = "admin1";
-            txtFullname.Text = "admin - 1";
-            txtRelationship.Text = "family";
-            txtEmail.Text = "abc@gmail.com";
+            txtUsername.Text = user.Username;
+            txtFullname.Text = user.Name;
+            txtRelationship.Text = user.AccountType;
+            txtEmail.Text = user.Email;
 
             txtHeartBeat.Text = "100";
             txtEmotion.Text = "fun";

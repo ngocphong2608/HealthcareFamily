@@ -10,10 +10,10 @@ namespace HealthcareFamilyBUS
 {
     public class UserInformationBUS
     {
-        public UserInformation LoadUserInformation(String username)
+        public UserInformationDTO GetUserInformation(String username)
         { 
             UserInformationDAL user = new UserInformationDAL();
-            return user.LoadUserInformation(username);
+            return user.GetUserInformation(username);
         }
     }
 }

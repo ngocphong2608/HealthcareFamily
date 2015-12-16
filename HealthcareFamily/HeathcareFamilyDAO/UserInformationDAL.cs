@@ -11,7 +11,7 @@ namespace HealthcareFamilyDAL
 {
     public class UserInformationDAL
     {
-        public UserInformation LoadUserInformation(String username)
+        public UserInformationDTO GetUserInformation(String username)
         {
             String query = "SELECT * FROM USER_INFORMATION WHERE Username='" + username + "'";
             DataTable dt = DataProvider.ExecuteQuery(query);
@@ -20,16 +20,16 @@ namespace HealthcareFamilyDAL
                 return null;
 
             DataRow dr = dt.Rows[0];
-            UserInformation user = new UserInformation();
+            UserInformationDTO user = new UserInformationDTO();
 
-            user.mUsername = dr["Username"].ToString();
-            user.mPassword = dr["Password"].ToString();
-            user.mName = dr["Name"].ToString();
-            user.mBirthday = DateTime.Parse(dr["Birthday"].ToString());
-            user.mGender = dr["Gender"].ToString();
-            user.mEmail = dr["Email"].ToString();
+            user.Username = dr["Username"].ToString();
+            user.Password = dr["Password"].ToString();
+            user.Name = dr["Name"].ToString();
+            user.Birthday = DateTime.Parse(dr["Birthday"].ToString());
+            user.Gender = dr["Gender"].ToString();
+            user.Email = dr["Email"].ToString();
             //user.mAvatar = null;
-            user.mAccountType = dr["AccountType"].ToString();
+            user.AccountType = dr["AccountType"].ToString();
 
             return user;
         }
