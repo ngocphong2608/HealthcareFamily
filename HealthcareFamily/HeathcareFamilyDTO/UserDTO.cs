@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HealthcareFamilyDTO
 {
-    public class UserInformationDTO
+    public class UserDTO
     {
         public string Username { get ; set; }
         public string Password { get; set; }
@@ -16,11 +16,11 @@ namespace HealthcareFamilyDTO
 
         public string AccountType { get; set; }
 
-        public List<FollowerInformationDTO> Followers { get; set; }
+        public List<FollowerDTO> Followers { get; set; }
 
         public List<HealthcareInformationDTO> HeathInfo { get; set; }
 
-        public UserInformationDTO(String username, String password, String name, 
+        public UserDTO(String username, String password, String name, 
             DateTime birth, String gender, String email, String accountType)
         {
             Username = username;
@@ -32,6 +32,6 @@ namespace HealthcareFamilyDTO
             AccountType = accountType;
         }
 
-        public UserInformationDTO() { }
+        public UserDTO() { }
     }
 }

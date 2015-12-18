@@ -41,14 +41,12 @@
   <ItemGroup>
     <Compile Include="AccountTypeDTO.cs" />
     <Compile Include="AppointmentScheduleDTO.cs" />
-    <Compile Include="FollowerInformationDTO.cs" />
+    <Compile Include="FollowerDTO.cs" />
     <Compile Include="HealthcareInformationDTO.cs" />
-    <Compile Include="LoginInformation.cs" />
     <Compile Include="MessageDTO.cs" />
     <Compile Include="NotificationDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SignUpInformation.cs" />
-    <Compile Include="UserInformationDTO.cs" />
+    <Compile Include="UserDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

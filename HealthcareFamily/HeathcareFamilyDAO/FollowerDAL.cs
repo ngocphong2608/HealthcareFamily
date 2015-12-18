@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace HeathcareFamilyDAL
 {
-    public class FollowerInformationDAL
+    public class FollowerDAL
     {
-        public List<FollowerInformationDTO> GetListFollowerInformation(string username)
+        public List<FollowerDTO> GetListFollowerInformation(string username)
         {
             String query = "SELECT * FROM FOLLOWER_INFORMATION WHERE USERNAME='" + username + "'";
             DataTable dt = DataProvider.ExecuteQuery(query);
@@ -19,11 +19,11 @@ namespace HeathcareFamilyDAL
             if (dt.Rows.Count == 0)
                 return null;
 
-            List<FollowerInformationDTO> ListFollower = new List<FollowerInformationDTO>();
+            List<FollowerDTO> ListFollower = new List<FollowerDTO>();
 
             foreach (DataRow dr in dt.Rows)
             {
-                FollowerInformationDTO follwer = new FollowerInformationDTO();
+                FollowerDTO follwer = new FollowerDTO();
                 follwer.FollowerUsername = dr["FollowerUsername"].ToString();
                 follwer.IsPermitAccessInfo = Boolean.Parse(dr["IsPermitAccessInfo"].ToString());
                 follwer.Relationship = dr["Relationship"].ToString();

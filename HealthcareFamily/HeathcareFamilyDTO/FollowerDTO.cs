@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HealthcareFamilyDTO
 {
-    public class FollowerInformationDTO
+    public class FollowerDTO
     {
         // public string mUsername { get; set; }
         public string FollowerUsername { get; set; }

@@ -37,9 +37,9 @@ namespace HealthcareFamilyDTO
 
             // capture object from parent form
             //
-            UserInformationBUS bus = new UserInformationBUS();
+            UserBUS bus = new UserBUS();
 
-            UserInformationDTO user = bus.GetUserInformation("admin");
+            UserDTO user = bus.GetUserInformation("admin");
 
             txtUsername.Text = user.Username;
             txtFullname.Text = user.Name;

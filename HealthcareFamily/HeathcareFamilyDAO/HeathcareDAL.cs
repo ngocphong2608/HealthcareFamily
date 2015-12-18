@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HeathcareFamilyDAL
 {
-    public class HealthcareInformationDAL
+    public class HealthcareDAL
     {
         public List<HealthcareInformationDTO> GetListHealthcareInformation(string username)
         {
