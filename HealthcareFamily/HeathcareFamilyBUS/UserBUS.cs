@@ -35,5 +35,26 @@ namespace HealthcareFamilyBUS
 
             return userDAL.SignUp(username, password, name, birthday, gender, email, AccountTypeCode);
         }
+
+        // username: username add follower
+        // email: follower email
+        public bool AddFollowerByEmail(String username, String email, String relationship)
+        {
+            UserDTO userDTO = userDAL.GetUserImformationByEmail(email);
+            if (userDTO != null)
+            {
+                return userDAL.AddFollower(username, userDTO.Username, relationship);
+            }
+            return false;
+        }
+        public bool DeleteFollowerByEmail(String username, String email)
+        {
+            UserDTO userDTO = userDAL.GetUserImformationByEmail(email);
+            if (userDTO != null)
+            {
+                return userDAL.DeleteFollower(username, userDTO.Username);
+            }
+            return false;
+        }
     }
 }

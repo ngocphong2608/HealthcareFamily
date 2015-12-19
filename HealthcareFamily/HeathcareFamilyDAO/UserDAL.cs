@@ -72,7 +72,7 @@ namespace HealthcareFamilyDAL
             query += "'" + birthday.ToString() + "',";
             query += "'" + gender + "',";
             query += "'" + email + "',";
-            query += "'" + accountType + "',";
+            query += "'" + accountType + "')";
 
             try
             {
@@ -85,5 +85,53 @@ namespace HealthcareFamilyDAL
 
             return false;
         }
+        public UserDTO GetUserImformationByEmail(String email)
+        {
+            String query = "SELECT * FROM USER_INFORMATION WHERE Email='" + email + "'";
+            DataTable dt = DataProvider.ExecuteQuery(query);
+
+            if (dt.Rows.Count == 0)
+                return null;
+
+            DataRow dr = dt.Rows[0];
+            UserDTO user = new UserDTO();
+
+            user.Username = dr["Username"].ToString();
+            user.Password = dr["Password"].ToString();
+            user.Name = dr["Name"].ToString();
+            user.Birthday = DateTime.Parse(dr["Birthday"].ToString());
+            user.Gender = dr["Gender"].ToString();
+            user.Email = dr["Email"].ToString();
+            //user.mAvatar = null;
+            user.AccountType = dr["AccountType"].ToString();
+
+            return user;
+        }
+
+        public bool AddFollower(string username, string follower, string relationship)
+        {
+            String query = "INSERT INTO FOLLOWER_INFORMATION VALUES=(";
+            query += "'" + username + "',";
+            query += "'" + follower + "',";
+            query += Convert.ToString(0) + ",";
+            query += "'" + relationship + "',";
+            query += Convert.ToString(0) + ")";
+
+            try
+            {
+                DataProvider.ExecuteNonQuery(query);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public bool DeleteFollower(string username, string follower)
+        {
+            
+        }
     }
 }
+
