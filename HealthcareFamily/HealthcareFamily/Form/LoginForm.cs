@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HealthcareFamilyBUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,15 +22,44 @@ namespace HealthcareFamilyDTO
 
         private void cmdSignIn_Click(object sender, EventArgs e)
         {
-            String userName;
-            String password;
+            //String userName;
+            //String password;
+
+            //// doi tuong login
+            //userName = txtUserName.Text;
+            //password = txtPassword.Text; 
+
+            //if (usrTesting.Equals(userName)
+            //    && password.Equals(password))
+            //{
+            //    this.Hide();
+
+            //    var frm = new MainProgramForm();
+            //    frm.Closed += (s, args) => this.Close();
+
+
+            //    // set user name to title bar in main menu
+
+            //    frm.Text = "admin - username:admin";
+
+
+            //    frm.Show();
+            //}
+            //else
+            //{
+            //    //this.Hide();
+
+            //    var frm = new LoginFailForm();
+            //    frm.ShowDialog();
+                
+            //}
 
             // doi tuong login
-            userName = txtUserName.Text;
-            password = txtPassword.Text; 
+            String userName = txtUserName.Text;
+            String password = txtPassword.Text;
+            UserBUS userBUS = new UserBUS();
 
-            if (usrTesting.Equals(userName)
-                && password.Equals(password))
+            if (userBUS.SignIn(userName, password))
             {
                 this.Hide();
 
@@ -50,7 +80,7 @@ namespace HealthcareFamilyDTO
 
                 var frm = new LoginFailForm();
                 frm.ShowDialog();
-                
+
             }
 
         }

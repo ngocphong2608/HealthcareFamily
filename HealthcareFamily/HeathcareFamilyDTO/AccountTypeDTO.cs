@@ -10,5 +10,6 @@ namespace HeathcareFamilyDTO
     {
         // Category code
         public string Name { get; set; }
+        public String Code { get; set; }
     }
 }
