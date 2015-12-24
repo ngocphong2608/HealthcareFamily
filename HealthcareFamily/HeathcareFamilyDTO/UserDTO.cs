@@ -12,6 +12,7 @@ namespace HealthcareFamilyDTO
         public DateTime Birthday { get; set; }
         public string Gender { get; set; }
         public string Email { get; set; }
+        public bool IsOnline { get; set; }
         // avatar
 
         public string AccountType { get; set; }
@@ -19,19 +20,5 @@ namespace HealthcareFamilyDTO
         public List<FollowerDTO> Followers { get; set; }
 
         public List<HealthcareInformationDTO> HeathInfo { get; set; }
-
-        public UserDTO(String username, String password, String name, 
-            DateTime birth, String gender, String email, String accountType)
-        {
-            Username = username;
-            Password = password;
-            Name = name;
-            Birthday = birth;
-            Gender = gender;
-            Email = email;
-            AccountType = accountType;
-        }
-
-        public UserDTO() { }
     }
 }

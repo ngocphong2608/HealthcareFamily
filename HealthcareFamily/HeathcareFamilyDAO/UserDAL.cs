@@ -30,8 +30,24 @@ namespace HealthcareFamilyDAL
             user.Email = dr["Email"].ToString();
             //user.mAvatar = null;
             user.AccountType = dr["AccountType"].ToString();
+            user.IsOnline = Boolean.Parse(dr["IsOnline"].ToString());
 
             return user;
+        }
+        public void SetStatus(String username, bool IsOnline)
+        {
+            String query = "UPDATE TABLE USER_INFORMATION";
+            query += "SET IsOnline=" + Convert.ToString(IsOnline);
+            query += "WHERE Username=" + username;
+
+            try
+            {
+                DataProvider.ExecuteNonQuery(query);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         public bool SignIn(String username, String password)
         {
@@ -41,7 +57,12 @@ namespace HealthcareFamilyDAL
             if (dt.Rows.Count == 0)
                 return false;
 
+            SetStatus(username, true);
             return true;
+        }
+        public void SignOut(String username)
+        {
+            SetStatus(username, false);
         }
         public bool IsUserExisted(string username)
         {
@@ -73,7 +94,7 @@ namespace HealthcareFamilyDAL
             query += "'" + gender + "',";
             query += "'" + email + "',";
             query += "'" + accountType + "')";
-
+            // IsOnline
             try
             {
                 DataProvider.ExecuteNonQuery(query);
