@@ -108,7 +108,7 @@ namespace HealthcareFamilyDAL
             return user;
         }
 
-        public bool AddFollower(string username, string follower, string relationship)
+        public bool AddFollower(String username, String follower, String relationship)
         {
             String query = "INSERT INTO FOLLOWER_INFORMATION VALUES=(";
             query += "'" + username + "',";
@@ -128,9 +128,62 @@ namespace HealthcareFamilyDAL
             }
         }
 
-        public bool DeleteFollower(string username, string follower)
+        public bool DeleteFollower(String username, String follower)
         {
-            
+            String query = "DELETE FROM FOLLOWER_INFORMATION WHERE Username=";
+            query += "'" + username + "'";
+            query += "and";
+            query += "Follower_Username='" + follower + "'";
+
+            try
+            {
+                DataProvider.ExecuteNonQuery(query);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public bool AcceptFollow(String username, String follower)
+        {
+            String query = "UPDATE TABLE FOLLOWER_INFORMATION";
+            query += "SET IsUserAccepted=1";
+            query += "WHERE Username=";
+            query += "'" + username + "'";
+            query += "AND";
+            query += "Follower_Username='" + follower + "'";
+
+            try
+            {
+                DataProvider.ExecuteNonQuery(query);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public bool AllowAccess(String username, String follower)
+        {
+            String query = "UPDATE TABLE FOLLOWER_INFORMATION";
+            query += "SET IsPermitAccessInfo=1";
+            query += "WHERE Username=";
+            query += "'" + username + "'";
+            query += "AND";
+            query += "Follower_Username='" + follower + "'";
+
+            try
+            {
+                DataProvider.ExecuteNonQuery(query);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

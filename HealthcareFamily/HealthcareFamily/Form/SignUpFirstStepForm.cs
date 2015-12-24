@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace HealthcareFamilyDTO
+namespace HealthcareFamilyGUI
 {
     public partial class SignUpFirstStepForm : Form
     {

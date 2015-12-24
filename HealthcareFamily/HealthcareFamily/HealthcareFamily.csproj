@@ -7,7 +7,7 @@
     <ProjectGuid>{69B83F99-9F17-443B-9535-56438E047061}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HealthcareFamilyDTO</RootNamespace>
+    <RootNamespace>HealthcareFamilyGUI</RootNamespace>
     <AssemblyName>HealthcareFamily</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

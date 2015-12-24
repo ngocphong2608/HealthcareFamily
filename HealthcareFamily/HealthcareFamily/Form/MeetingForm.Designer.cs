@@ -1,4 +1,4 @@
-﻿namespace HealthcareFamilyDTO
+﻿namespace HealthcareFamilyGUI
 {
     partial class MeetingForm
     {
