@@ -11,9 +11,9 @@ namespace HealthcareFamilyDAL
 {
     public class MessageDAL
     {
-        public List<MessageDTO> GetListMessage(string username)
+        public List<MessageDTO> GetListMessage(string username, string follower)
         {
-            String query = "SELECT * FROM MESSAGE WHERE USERNAME='" + username + "'";
+            String query = "SELECT * FROM MESSAGE WHERE (Sender_Username='" + username + "' AND Reciever_Username='" + follower + "') OR (Sender_Username='" + follower + "' AND Reciever_Username='" + username + "')";
             DataTable dt = DataProvider.ExecuteQuery(query);
 
             if (dt.Rows.Count == 0)
@@ -25,8 +25,9 @@ namespace HealthcareFamilyDAL
             {
                 MessageDTO message = new MessageDTO();
                 message.Detail = dr["Detail"].ToString();
-                message.FollowerUsername = dr["FollowerUsername"].ToString();
+                message.Reciever_Username = dr["Reciever_Username"].ToString();
                 message.Time = DateTime.Parse(dr["Time"].ToString());
+                message.Sender_Username = dr["Sender_Username"].ToString();
                 ListMessage.Add(message);
             }
 

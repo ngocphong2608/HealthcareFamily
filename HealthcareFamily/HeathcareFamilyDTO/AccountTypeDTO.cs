@@ -9,7 +9,7 @@ namespace HeathcareFamilyDTO
     public class AccountTypeDTO
     {
         // Category code
-        public string Name { get; set; }
+        public String Name { get; set; }
         public String Code { get; set; }
     }
 }

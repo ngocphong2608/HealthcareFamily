@@ -13,7 +13,7 @@ namespace HealthcareFamilyDAL
     {
         public List<AppointmentScheduleDTO> GetListAppointmentSchedule(string username)
         {
-            String query = "SELECT * FROM APPOINTMENT_SCHEDULE WHERE USERNAME='" + username + "'";
+            String query = "SELECT * FROM APPOINTMENT_SCHEDULE WHERE Username='" + username + "'" + "OR Partner_Username='" + username + "'";
             DataTable dt = DataProvider.ExecuteQuery(query);
 
             if (dt.Rows.Count == 0)
@@ -25,6 +25,7 @@ namespace HealthcareFamilyDAL
             {
                 AppointmentScheduleDTO app = new AppointmentScheduleDTO();
                 app.Detail = dr["Detail"].ToString();
+                app.Username = dr["Username"].ToString();
                 app.PartnerUsername = dr["PartnerUsername"].ToString();
                 app.Time = DateTime.Parse(dr["Time"].ToString());
                 ListAppointment.Add(app);

@@ -42,7 +42,7 @@
     <Compile Include="AccountTypeDTO.cs" />
     <Compile Include="AppointmentScheduleDTO.cs" />
     <Compile Include="FollowerDTO.cs" />
-    <Compile Include="HealthcareInformationDTO.cs" />
+    <Compile Include="HealthcareDTO.cs" />
     <Compile Include="MessageDTO.cs" />
     <Compile Include="NotificationDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

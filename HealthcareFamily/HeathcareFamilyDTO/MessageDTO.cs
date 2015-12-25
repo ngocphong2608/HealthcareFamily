@@ -8,8 +8,8 @@ namespace HeathcareFamilyDTO
 {
     public class MessageDTO
     {
-        // username
-        public string FollowerUsername { get; set; }
+        public string Sender_Username { get; set; }
+        public string Reciever_Username { get; set; }
         public DateTime Time { get; set; }
         public string Detail { get; set; }
     }

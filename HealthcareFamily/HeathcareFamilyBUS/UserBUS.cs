@@ -84,6 +84,16 @@ namespace HealthcareFamilyBUS
             return false;
         }
 
-
+        // username: username add follower
+        // email: follower email
+        public bool UnAllowAccessInfoByEmail(String username, String email)
+        {
+            UserDTO userDTO = userDAL.GetUserImformationByEmail(email);
+            if (userDTO != null)
+            {
+                return userDAL.UnAllowAccess(username, userDTO.Username);
+            }
+            return false;
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace HealthcareFamilyDAL
 {
     public class HealthcareDAL
     {
-        public List<HealthcareInformationDTO> GetListHealthcareInformation(string username)
+        public List<HealthcareDTO> GetListHealthcareInformation(string username)
         {
             String query = "SELECT * FROM HEATHCARE_FORMATION WHERE USERNAME='" + username + "'";
             DataTable dt = DataProvider.ExecuteQuery(query);
@@ -19,11 +19,11 @@ namespace HealthcareFamilyDAL
             if (dt.Rows.Count == 0)
                 return null;
 
-            List<HealthcareInformationDTO> ListHealth = new List<HealthcareInformationDTO>();
+            List<HealthcareDTO> ListHealth = new List<HealthcareDTO>();
 
             foreach (DataRow dr in dt.Rows)
             {
-                HealthcareInformationDTO health = new HealthcareInformationDTO();
+                HealthcareDTO health = new HealthcareDTO();
                 health.Emotion = dr["Emotion"].ToString();
                 health.HeartBeat = dr["HearthBeat"].ToString();
                 health.Time = DateTime.Parse(dr["Time"].ToString());

@@ -11,7 +11,7 @@ namespace HealthcareFamilyDAL
 {
     public class FollowerDAL
     {
-        public List<FollowerDTO> GetListFollowerInformation(string username)
+        public List<FollowerDTO> GetListFollower(string username)
         {
             String query = "SELECT * FROM FOLLOWER_INFORMATION WHERE USERNAME='" + username + "'";
             DataTable dt = DataProvider.ExecuteQuery(query);
@@ -23,11 +23,13 @@ namespace HealthcareFamilyDAL
 
             foreach (DataRow dr in dt.Rows)
             {
-                FollowerDTO follwer = new FollowerDTO();
-                follwer.FollowerUsername = dr["FollowerUsername"].ToString();
-                follwer.IsPermitAccessInfo = Boolean.Parse(dr["IsPermitAccessInfo"].ToString());
-                follwer.Relationship = dr["Relationship"].ToString();
-                ListFollower.Add(follwer);
+                FollowerDTO follower = new FollowerDTO();
+                follower.FollowerUsername = dr["FollowerUsername"].ToString();
+                follower.IsPermitAccessInfo = Boolean.Parse(dr["IsPermitAccessInfo"].ToString());
+                follower.IsUserAccepted = Boolean.Parse(dr["IsUserAccepted"].ToString());
+                follower.Relationship = dr["Relationship"].ToString();
+
+                ListFollower.Add(follower);
             }
 
             return ListFollower;

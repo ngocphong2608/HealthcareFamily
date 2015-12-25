@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HealthcareFamilyDTO
 {
-    public class HealthcareInformationDTO
+    public class HealthcareDTO
     {
         // Username ?
         public string HeartBeat { get; set; }

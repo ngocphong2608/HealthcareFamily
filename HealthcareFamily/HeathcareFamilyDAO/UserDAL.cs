@@ -36,9 +36,9 @@ namespace HealthcareFamilyDAL
         }
         public void SetStatus(String username, bool IsOnline)
         {
-            String query = "UPDATE TABLE USER_INFORMATION";
-            query += "SET IsOnline=" + Convert.ToString(IsOnline);
-            query += "WHERE Username=" + username;
+            String query = "UPDATE TABLE USER_INFORMATION ";
+            query += "SET IsOnline=" + Convert.ToString(0) + " ";
+            query += "WHERE Username='" + username + "'";
 
             try
             {
@@ -57,7 +57,7 @@ namespace HealthcareFamilyDAL
             if (dt.Rows.Count == 0)
                 return false;
 
-            SetStatus(username, true);
+            //SetStatus(username, true);
             return true;
         }
         public void SignOut(String username)
@@ -93,8 +93,9 @@ namespace HealthcareFamilyDAL
             query += "'" + birthday.ToString() + "',";
             query += "'" + gender + "',";
             query += "'" + email + "',";
-            query += "'" + accountType + "')";
-            // IsOnline
+            query += "'" + accountType + "',";
+            query += Convert.ToString(0) + ")";
+
             try
             {
                 DataProvider.ExecuteNonQuery(query);
@@ -125,6 +126,7 @@ namespace HealthcareFamilyDAL
             user.Email = dr["Email"].ToString();
             //user.mAvatar = null;
             user.AccountType = dr["AccountType"].ToString();
+            user.IsOnline = Convert.ToBoolean(dr["IsOnline"].ToString());
 
             return user;
         }
@@ -191,6 +193,26 @@ namespace HealthcareFamilyDAL
         {
             String query = "UPDATE TABLE FOLLOWER_INFORMATION";
             query += "SET IsPermitAccessInfo=1";
+            query += "WHERE Username=";
+            query += "'" + username + "'";
+            query += "AND";
+            query += "Follower_Username='" + follower + "'";
+
+            try
+            {
+                DataProvider.ExecuteNonQuery(query);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public bool UnAllowAccess(String username, String follower)
+        {
+            String query = "UPDATE TABLE FOLLOWER_INFORMATION";
+            query += "SET IsPermitAccessInfo=0";
             query += "WHERE Username=";
             query += "'" + username + "'";
             query += "AND";

@@ -19,6 +19,6 @@ namespace HealthcareFamilyDTO
 
         public List<FollowerDTO> Followers { get; set; }
 
-        public List<HealthcareInformationDTO> HeathInfo { get; set; }
+        public List<HealthcareDTO> HeathInfo { get; set; }
     }
 }

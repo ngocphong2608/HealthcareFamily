@@ -47,9 +47,12 @@ namespace HealthcareFamilyDAL
         {
             try
             {
+                _con.Open();
+
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = strQuery;
                 cmd.CommandType = CommandType.Text;
+                cmd.Connection = _con;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
