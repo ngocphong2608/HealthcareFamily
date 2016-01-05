@@ -176,6 +176,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AppConfig.txt" />
     <Content Include="HeathcareFamilyGUI\MetroFramework.Design.dll" />
     <Content Include="HeathcareFamilyGUI\MetroFramework.dll" />
     <Content Include="HeathcareFamilyGUI\MetroFramework.Fonts.dll" />

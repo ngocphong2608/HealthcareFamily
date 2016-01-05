@@ -1,0 +1,3 @@
+﻿<add name="HeathcareFamilyDB" connectionString="Data Source=(local)\;Initial Catalog=HEALTHCARE_FAMILY;Integrated Security=True;User ID=sa;Password=123456"/>
+
+<add name="HeathcareFamilyDB" connectionString="Data Source=(localdb)\ThanhPhong;Initial Catalog=HEALTHCARE_FAMILY;Integrated Security=True;"/>
