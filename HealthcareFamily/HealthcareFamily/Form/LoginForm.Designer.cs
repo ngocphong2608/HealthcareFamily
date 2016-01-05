@@ -61,7 +61,7 @@
             // 
             // 
             this.txtUserName.CustomButton.Image = null;
-            this.txtUserName.CustomButton.Location = new System.Drawing.Point(235, 1);
+            this.txtUserName.CustomButton.Location = new System.Drawing.Point(267, 1);
             this.txtUserName.CustomButton.Name = "";
             this.txtUserName.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtUserName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -90,7 +90,7 @@
             // 
             // 
             this.txtPassword.CustomButton.Image = null;
-            this.txtPassword.CustomButton.Location = new System.Drawing.Point(235, 1);
+            this.txtPassword.CustomButton.Location = new System.Drawing.Point(267, 1);
             this.txtPassword.CustomButton.Name = "";
             this.txtPassword.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -102,7 +102,7 @@
             this.txtPassword.Location = new System.Drawing.Point(160, 176);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PasswordChar = '●';
             this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
@@ -110,6 +110,7 @@
             this.txtPassword.Size = new System.Drawing.Size(289, 23);
             this.txtPassword.TabIndex = 11;
             this.txtPassword.UseSelectable = true;
+            this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -158,6 +159,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
+            this.Resizable = false;
             this.Text = "Heathcare Family";
             this.Click += new System.EventHandler(this.cmdSignUp_Click);
             this.ResumeLayout(false);
