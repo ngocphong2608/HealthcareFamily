@@ -6,10 +6,11 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace HealthcareFamilyGUI
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : MetroForm
     {
 
         private String usrTesting = "";

@@ -35,6 +35,15 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>E:\Repositories\WindowsFormsApplication4\WindowsFormsApplication4\metroframework-modern-ui\dll\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>E:\Repositories\WindowsFormsApplication4\WindowsFormsApplication4\metroframework-modern-ui\dll\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>E:\Repositories\WindowsFormsApplication4\WindowsFormsApplication4\metroframework-modern-ui\dll\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -180,6 +189,14 @@
       <Project>{73bf178e-c896-4108-ae13-70217ede52ef}</Project>
       <Name>HealthcareFamilyDTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1743243480_3604982a15_o.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HeathcareFamilyGUI\MetroFramework.Design.dll" />
+    <Content Include="HeathcareFamilyGUI\MetroFramework.dll" />
+    <Content Include="HeathcareFamilyGUI\MetroFramework.Fonts.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
