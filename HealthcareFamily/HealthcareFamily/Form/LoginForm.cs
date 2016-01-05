@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using MetroFramework;
 
 namespace HealthcareFamilyGUI
 {
@@ -19,6 +20,7 @@ namespace HealthcareFamilyGUI
         public LoginForm()
         {
             InitializeComponent();
+            
         }
 
         private void cmdSignIn_Click(object sender, EventArgs e)
@@ -56,17 +58,16 @@ namespace HealthcareFamilyGUI
             //}
 
             // doi tuong login
-            String userName = txtUserName.Text;
+            String username = txtUserName.Text;
             String password = txtPassword.Text;
             UserBUS userBUS = new UserBUS();
 
-            if (userBUS.SignIn(userName, password))
+            if (userBUS.SignIn(username, password))
             {
                 this.Hide();
 
                 var frm = new MainProgramForm();
                 frm.Closed += (s, args) => this.Close();
-
 
                 // set user name to title bar in main menu
 
@@ -77,11 +78,8 @@ namespace HealthcareFamilyGUI
             }
             else
             {
-                //this.Hide();
-
-                var frm = new LoginFailForm();
-                frm.ShowDialog();
-
+                MetroMessageBox.Show(this, "Wrong username or password :(", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }

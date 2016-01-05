@@ -5,10 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MetroFramework;
+using MetroFramework.Forms;
 
 namespace HealthcareFamilyGUI
 {
-    public partial class SignUpFirstStepForm : Form
+    public partial class SignUpFirstStepForm : MetroForm
     {
         public SignUpFirstStepForm()
         {
@@ -44,7 +46,9 @@ namespace HealthcareFamilyGUI
             }
             else 
             {
-                MessageBox.Show("error", "oop!!!", MessageBoxButtons.OK);
+                //MessageBox.Show("error", "oop!!!", MessageBoxButtons.OK);
+                MetroMessageBox.Show(this, "Password doesn't match, please type again :(", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

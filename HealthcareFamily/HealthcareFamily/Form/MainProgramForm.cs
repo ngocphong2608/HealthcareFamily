@@ -5,14 +5,24 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace HealthcareFamilyGUI
 {
-    public partial class MainProgramForm : Form
+    public partial class MainProgramForm : MetroForm
     {
         public MainProgramForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            foreach (var scrn in Screen.AllScreens)
+            {
+                if (scrn.Bounds.Contains(this.Location))
+                {
+                    this.Location = new Point(scrn.Bounds.Right - this.Width, scrn.Bounds.Top);
+                    return;
+                }
+            }
         }
 
         private void cmdAddUser_Click(object sender, EventArgs e)

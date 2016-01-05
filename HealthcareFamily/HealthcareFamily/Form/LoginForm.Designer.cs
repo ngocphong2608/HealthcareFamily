@@ -169,6 +169,8 @@
 
         #endregion
 
+        
+
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox txtUserName;
