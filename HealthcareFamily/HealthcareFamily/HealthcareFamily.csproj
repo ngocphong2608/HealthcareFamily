@@ -164,6 +164,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Open_Sans.ttf" />
+    <None Include="Resources\Open_Sans_Bold.ttf" />
+    <None Include="Resources\Open_Sans_Light.ttf" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HeathcareFamilyBUS\HealthcareFamilyBUS.csproj">
@@ -180,10 +183,9 @@
     <Content Include="HeathcareFamilyGUI\MetroFramework.Design.dll" />
     <Content Include="HeathcareFamilyGUI\MetroFramework.dll" />
     <Content Include="HeathcareFamilyGUI\MetroFramework.Fonts.dll" />
+    <Content Include="Resources\Open Sans License.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

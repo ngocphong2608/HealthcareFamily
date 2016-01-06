@@ -7,10 +7,11 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace HealthcareFamilyGUI
 {
-    public partial class FamilyInformationForm : Form
+    public partial class FamilyInformationForm : MetroForm
     {
         public FamilyInformationForm()
         {
