@@ -5,19 +5,22 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MetroFramework;
+using MetroFramework.Forms;
+
 
 namespace HealthcareFamilyGUI
 {
-    public partial class RelationshipSettingForm : Form
+    public partial class SearchingPeople : MetroForm
     {
-        public RelationshipSettingForm()
+        public SearchingPeople()
         {
             InitializeComponent();
         }
 
-        private void cmdOK_Click(object sender, EventArgs e)
+        private void cmdOk_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+
         }
     }
 }

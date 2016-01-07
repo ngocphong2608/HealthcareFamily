@@ -33,29 +33,29 @@
             this.txtMessage = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.txtCheckHeathCare = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.txtUsername = new MetroFramework.Controls.MetroLabel();
-            this.txtFullname = new MetroFramework.Controls.MetroLabel();
-            this.txtRelationship = new MetroFramework.Controls.MetroLabel();
             this.txtEmail = new MetroFramework.Controls.MetroLabel();
+            this.txtRelationship = new MetroFramework.Controls.MetroLabel();
+            this.txtFullname = new MetroFramework.Controls.MetroLabel();
+            this.txtUsername = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.Gruopbox4 = new System.Windows.Forms.GroupBox();
             this.txtEmotion = new MetroFramework.Controls.MetroLabel();
             this.txtHeartBeat = new MetroFramework.Controls.MetroLabel();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextButton1 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.cmdOk = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.groupBox3.SuspendLayout();
             this.Gruopbox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // lvwHeathcareInfo
             // 
-            this.lvwHeathcareInfo.Location = new System.Drawing.Point(23, 405);
+            this.lvwHeathcareInfo.Location = new System.Drawing.Point(23, 360);
             this.lvwHeathcareInfo.Name = "lvwHeathcareInfo";
-            this.lvwHeathcareInfo.Size = new System.Drawing.Size(326, 179);
+            this.lvwHeathcareInfo.Size = new System.Drawing.Size(326, 224);
             this.lvwHeathcareInfo.TabIndex = 10;
             this.lvwHeathcareInfo.UseCompatibleStateImageBehavior = false;
             // 
@@ -71,7 +71,7 @@
             // txtMessage
             // 
             this.txtMessage.Image = null;
-            this.txtMessage.Location = new System.Drawing.Point(23, 79);
+            this.txtMessage.Location = new System.Drawing.Point(23, 319);
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(160, 35);
             this.txtMessage.TabIndex = 12;
@@ -82,7 +82,7 @@
             // txtCheckHeathCare
             // 
             this.txtCheckHeathCare.Image = null;
-            this.txtCheckHeathCare.Location = new System.Drawing.Point(189, 79);
+            this.txtCheckHeathCare.Location = new System.Drawing.Point(189, 319);
             this.txtCheckHeathCare.Name = "txtCheckHeathCare";
             this.txtCheckHeathCare.Size = new System.Drawing.Size(160, 35);
             this.txtCheckHeathCare.TabIndex = 13;
@@ -103,75 +103,12 @@
             this.groupBox3.Controls.Add(this.metroLabel2);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox3.Location = new System.Drawing.Point(23, 142);
+            this.groupBox3.Location = new System.Drawing.Point(23, 79);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(326, 141);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Information";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(38, 28);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(68, 19);
-            this.metroLabel2.TabIndex = 15;
-            this.metroLabel2.Text = "Username";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(38, 55);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(62, 19);
-            this.metroLabel3.TabIndex = 16;
-            this.metroLabel3.Text = "Fullname";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(38, 84);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(79, 19);
-            this.metroLabel4.TabIndex = 17;
-            this.metroLabel4.Text = "Relationship";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(38, 111);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(41, 19);
-            this.metroLabel5.TabIndex = 18;
-            this.metroLabel5.Text = "Email";
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.AutoSize = true;
-            this.txtUsername.Location = new System.Drawing.Point(181, 28);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(83, 19);
-            this.txtUsername.TabIndex = 19;
-            this.txtUsername.Text = "metroLabel6";
-            // 
-            // txtFullname
-            // 
-            this.txtFullname.AutoSize = true;
-            this.txtFullname.Location = new System.Drawing.Point(181, 55);
-            this.txtFullname.Name = "txtFullname";
-            this.txtFullname.Size = new System.Drawing.Size(83, 19);
-            this.txtFullname.TabIndex = 20;
-            this.txtFullname.Text = "metroLabel7";
-            // 
-            // txtRelationship
-            // 
-            this.txtRelationship.AutoSize = true;
-            this.txtRelationship.Location = new System.Drawing.Point(181, 84);
-            this.txtRelationship.Name = "txtRelationship";
-            this.txtRelationship.Size = new System.Drawing.Size(83, 19);
-            this.txtRelationship.TabIndex = 21;
-            this.txtRelationship.Text = "metroLabel8";
             // 
             // txtEmail
             // 
@@ -182,6 +119,69 @@
             this.txtEmail.TabIndex = 22;
             this.txtEmail.Text = "metroLabel9";
             // 
+            // txtRelationship
+            // 
+            this.txtRelationship.AutoSize = true;
+            this.txtRelationship.Location = new System.Drawing.Point(181, 84);
+            this.txtRelationship.Name = "txtRelationship";
+            this.txtRelationship.Size = new System.Drawing.Size(83, 19);
+            this.txtRelationship.TabIndex = 21;
+            this.txtRelationship.Text = "metroLabel8";
+            // 
+            // txtFullname
+            // 
+            this.txtFullname.AutoSize = true;
+            this.txtFullname.Location = new System.Drawing.Point(181, 55);
+            this.txtFullname.Name = "txtFullname";
+            this.txtFullname.Size = new System.Drawing.Size(83, 19);
+            this.txtFullname.TabIndex = 20;
+            this.txtFullname.Text = "metroLabel7";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.AutoSize = true;
+            this.txtUsername.Location = new System.Drawing.Point(181, 28);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(83, 19);
+            this.txtUsername.TabIndex = 19;
+            this.txtUsername.Text = "metroLabel6";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(38, 111);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(41, 19);
+            this.metroLabel5.TabIndex = 18;
+            this.metroLabel5.Text = "Email";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(38, 84);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(79, 19);
+            this.metroLabel4.TabIndex = 17;
+            this.metroLabel4.Text = "Relationship";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(38, 55);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(62, 19);
+            this.metroLabel3.TabIndex = 16;
+            this.metroLabel3.Text = "Fullname";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(38, 28);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(68, 19);
+            this.metroLabel2.TabIndex = 15;
+            this.metroLabel2.Text = "Username";
+            // 
             // Gruopbox4
             // 
             this.Gruopbox4.Controls.Add(this.txtEmotion);
@@ -190,7 +190,7 @@
             this.Gruopbox4.Controls.Add(this.metroLabel12);
             this.Gruopbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.Gruopbox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Gruopbox4.Location = new System.Drawing.Point(23, 301);
+            this.Gruopbox4.Location = new System.Drawing.Point(23, 226);
             this.Gruopbox4.Name = "Gruopbox4";
             this.Gruopbox4.Size = new System.Drawing.Size(326, 87);
             this.Gruopbox4.TabIndex = 23;
@@ -233,23 +233,24 @@
             this.metroLabel12.TabIndex = 15;
             this.metroLabel12.Text = "Heart Beat";
             // 
-            // metroTextButton1
+            // cmdOk
             // 
-            this.metroTextButton1.Image = null;
-            this.metroTextButton1.Location = new System.Drawing.Point(105, 607);
-            this.metroTextButton1.Name = "metroTextButton1";
-            this.metroTextButton1.Size = new System.Drawing.Size(160, 35);
-            this.metroTextButton1.TabIndex = 24;
-            this.metroTextButton1.Text = "OK";
-            this.metroTextButton1.UseSelectable = true;
-            this.metroTextButton1.UseVisualStyleBackColor = true;
+            this.cmdOk.Image = null;
+            this.cmdOk.Location = new System.Drawing.Point(109, 595);
+            this.cmdOk.Name = "cmdOk";
+            this.cmdOk.Size = new System.Drawing.Size(160, 35);
+            this.cmdOk.TabIndex = 24;
+            this.cmdOk.Text = "OK";
+            this.cmdOk.UseSelectable = true;
+            this.cmdOk.UseVisualStyleBackColor = true;
+            this.cmdOk.Click += new System.EventHandler(this.metroTextButton1_Click);
             // 
             // FamilyInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 665);
-            this.Controls.Add(this.metroTextButton1);
+            this.ClientSize = new System.Drawing.Size(377, 653);
+            this.Controls.Add(this.cmdOk);
             this.Controls.Add(this.Gruopbox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.txtCheckHeathCare);
@@ -290,6 +291,6 @@
         private MetroFramework.Controls.MetroLabel txtHeartBeat;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroLabel metroLabel12;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton1;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdOk;
     }
 }

@@ -31,7 +31,7 @@ namespace HealthcareFamilyGUI
         private void txtCheckHeathCare_Click(object sender, EventArgs e)
         {
             var frm = new HealthcareCheckingForm();
-            frm.ShowDialog();
+            //frm.ShowDialog();
         }
 
         private void FamilyInformationForm_Load(object sender, EventArgs e)
@@ -100,6 +100,11 @@ namespace HealthcareFamilyGUI
                 item.SubItems.Add(row["Emotion"].ToString());
                 lvwHeathcareInfo.Items.Add(item); //Add this row to the ListView
             }
+        }
+
+        private void metroTextButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -5,10 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace HealthcareFamilyGUI
 {
-    public partial class HealthcareCheckingForm : Form
+    public partial class HealthcareCheckingForm : MetroForm
     {
         public HealthcareCheckingForm()
         {

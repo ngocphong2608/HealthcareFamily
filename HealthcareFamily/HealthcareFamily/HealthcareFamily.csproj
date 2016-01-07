@@ -70,12 +70,6 @@
     <Compile Include="Form\FamilyInformationForm.Designer.cs">
       <DependentUpon>FamilyInformationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\RelationshipSettingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\RelationshipSettingForm.Designer.cs">
-      <DependentUpon>RelationshipSettingForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,11 +82,11 @@
     <Compile Include="Form\HealthcareCheckingForm.Designer.cs">
       <DependentUpon>HealthcareCheckingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\MeetingForm.cs">
+    <Compile Include="Form\SearchingPeople.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\MeetingForm.Designer.cs">
-      <DependentUpon>MeetingForm.cs</DependentUpon>
+    <Compile Include="Form\SearchingPeople.Designer.cs">
+      <DependentUpon>SearchingPeople.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,18 +102,6 @@
     <Compile Include="Form\SignUpSecondStepForm.Designer.cs">
       <DependentUpon>SignUpSecondStepForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\UserFindingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\UserFindingForm.Designer.cs">
-      <DependentUpon>UserFindingForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\UserFindingResultForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\UserFindingResultForm.Designer.cs">
-      <DependentUpon>UserFindingResultForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form\DoctorInformationForm.resx">
       <DependentUpon>DoctorInformationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,12 +114,12 @@
     <EmbeddedResource Include="Form\FamilyInformationForm.resx">
       <DependentUpon>FamilyInformationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\SearchingPeople.resx">
+      <DependentUpon>SearchingPeople.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\RelationshipSettingForm.resx">
-      <DependentUpon>RelationshipSettingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -147,12 +129,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\SignUpSecondStepForm.resx">
       <DependentUpon>SignUpSecondStepForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\UserFindingForm.resx">
-      <DependentUpon>UserFindingForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\UserFindingResultForm.resx">
-      <DependentUpon>UserFindingResultForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
