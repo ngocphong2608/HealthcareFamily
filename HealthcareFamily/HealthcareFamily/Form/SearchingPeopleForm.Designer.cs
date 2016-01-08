@@ -129,12 +129,13 @@
             this.cmdCancel.Text = "Cancel";
             this.cmdCancel.UseSelectable = true;
             this.cmdCancel.UseVisualStyleBackColor = true;
+            this.cmdCancel.Click += new System.EventHandler(this.cmdCancel_Click);
             // 
             // SearchingPeopleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 415);
+            this.ClientSize = new System.Drawing.Size(375, 435);
             this.Controls.Add(this.cmdCancel);
             this.Controls.Add(this.cmdOK);
             this.Controls.Add(this.txtPeopleInfo);

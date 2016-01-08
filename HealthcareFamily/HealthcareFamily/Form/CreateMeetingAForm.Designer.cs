@@ -1,6 +1,6 @@
 ﻿namespace HealthcareFamilyGUI
 {
-    partial class HealthcareCheckingForm
+    partial class CreateMeetingAForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,87 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtHeartBeat = new System.Windows.Forms.TextBox();
-            this.txtEmotion = new System.Windows.Forms.TextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.cmdCancel = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.cmdOK = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.SuspendLayout();
             // 
-            // txtHeartBeat
-            // 
-            this.txtHeartBeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHeartBeat.Location = new System.Drawing.Point(111, 64);
-            this.txtHeartBeat.Name = "txtHeartBeat";
-            this.txtHeartBeat.Size = new System.Drawing.Size(241, 22);
-            this.txtHeartBeat.TabIndex = 2;
-            // 
-            // txtEmotion
-            // 
-            this.txtEmotion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmotion.Location = new System.Drawing.Point(111, 92);
-            this.txtEmotion.Name = "txtEmotion";
-            this.txtEmotion.Size = new System.Drawing.Size(241, 22);
-            this.txtEmotion.TabIndex = 3;
-            // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 67);
+            this.metroLabel1.Location = new System.Drawing.Point(23, 81);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(75, 19);
-            this.metroLabel1.TabIndex = 6;
-            this.metroLabel1.Text = "Heart Beat:";
+            this.metroLabel1.Size = new System.Drawing.Size(53, 19);
+            this.metroLabel1.TabIndex = 0;
+            this.metroLabel1.Text = "Doctor:";
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Location = new System.Drawing.Point(110, 71);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(242, 29);
+            this.metroComboBox1.TabIndex = 1;
+            this.metroComboBox1.UseSelectable = true;
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(23, 95);
+            this.metroLabel2.Location = new System.Drawing.Point(23, 116);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(61, 19);
-            this.metroLabel2.TabIndex = 7;
-            this.metroLabel2.Text = "Emotion:";
+            this.metroLabel2.Size = new System.Drawing.Size(39, 19);
+            this.metroLabel2.TabIndex = 2;
+            this.metroLabel2.Text = "Date:";
+            // 
+            // metroDateTime1
+            // 
+            this.metroDateTime1.Location = new System.Drawing.Point(110, 106);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime1.Name = "metroDateTime1";
+            this.metroDateTime1.Size = new System.Drawing.Size(242, 29);
+            this.metroDateTime1.TabIndex = 3;
             // 
             // cmdCancel
             // 
             this.cmdCancel.Image = null;
-            this.cmdCancel.Location = new System.Drawing.Point(25, 139);
+            this.cmdCancel.Location = new System.Drawing.Point(24, 161);
             this.cmdCancel.Name = "cmdCancel";
             this.cmdCancel.Size = new System.Drawing.Size(154, 35);
-            this.cmdCancel.TabIndex = 29;
+            this.cmdCancel.TabIndex = 31;
             this.cmdCancel.Text = "Cancel";
             this.cmdCancel.UseSelectable = true;
             this.cmdCancel.UseVisualStyleBackColor = true;
-            this.cmdCancel.Click += new System.EventHandler(this.cmdCancel_Click);
             // 
             // cmdOK
             // 
             this.cmdOK.Image = null;
-            this.cmdOK.Location = new System.Drawing.Point(185, 139);
+            this.cmdOK.Location = new System.Drawing.Point(184, 161);
             this.cmdOK.Name = "cmdOK";
             this.cmdOK.Size = new System.Drawing.Size(168, 35);
-            this.cmdOK.TabIndex = 28;
+            this.cmdOK.TabIndex = 30;
             this.cmdOK.Text = "OK";
             this.cmdOK.UseSelectable = true;
             this.cmdOK.UseVisualStyleBackColor = true;
-            this.cmdOK.Click += new System.EventHandler(this.cmdOK_Click);
             // 
-            // HealthcareCheckingForm
+            // CreateMeetingAForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 200);
+            this.ClientSize = new System.Drawing.Size(375, 224);
             this.Controls.Add(this.cmdCancel);
             this.Controls.Add(this.cmdOK);
+            this.Controls.Add(this.metroDateTime1);
             this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.txtEmotion);
-            this.Controls.Add(this.txtHeartBeat);
             this.MaximizeBox = false;
-            this.Name = "HealthcareCheckingForm";
+            this.Name = "CreateMeetingAForm";
             this.Resizable = false;
-            this.Text = "Heathcare Checking";
+            this.Text = "Create Meeting";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,10 +116,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtHeartBeat;
-        private System.Windows.Forms.TextBox txtEmotion;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroDateTime metroDateTime1;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdCancel;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdOK;
     }

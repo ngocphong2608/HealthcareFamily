@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\CreateMeetingAForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\CreateMeetingAForm.Designer.cs">
+      <DependentUpon>CreateMeetingAForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\DoctorInformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,24 @@
     <Compile Include="Form\HealthcareCheckingForm.Designer.cs">
       <DependentUpon>HealthcareCheckingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\MeetingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MeetingForm.Designer.cs">
+      <DependentUpon>MeetingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\NotificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\NotificationForm.Designer.cs">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\RequestUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\RequestUserForm.Designer.cs">
+      <DependentUpon>RequestUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\SearchingPeopleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +126,9 @@
     <Compile Include="Form\SignUpSecondStepForm.Designer.cs">
       <DependentUpon>SignUpSecondStepForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form\CreateMeetingAForm.resx">
+      <DependentUpon>CreateMeetingAForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\DoctorInformationForm.resx">
       <DependentUpon>DoctorInformationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +140,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FamilyInformationForm.resx">
       <DependentUpon>FamilyInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MeetingForm.resx">
+      <DependentUpon>MeetingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\RequestUserForm.resx">
+      <DependentUpon>RequestUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\SearchingPeopleForm.resx">
       <DependentUpon>SearchingPeopleForm.cs</DependentUpon>

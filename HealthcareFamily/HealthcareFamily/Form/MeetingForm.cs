@@ -3,31 +3,24 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 
 namespace HealthcareFamilyGUI
 {
-    public partial class DoctorInformationForm : MetroForm
+    public partial class MeetingForm : MetroForm
     {
-        public DoctorInformationForm()
+        public MeetingForm()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void cmdOK_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void DoctorInformationForm_Load(object sender, EventArgs e)
-        {
-
-            // load from database
-            txtName.Text = "doctor1";
-            txtGender.Text = "male";
-            txtEmail.Text = "abc@gmail.com";
+            this.Close();
         }
 
         private void cmdCreateMeeting_Click(object sender, EventArgs e)

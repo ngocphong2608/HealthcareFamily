@@ -76,6 +76,7 @@
             this.cmdCreateMeeting.Text = "Create Meeting";
             this.cmdCreateMeeting.UseSelectable = true;
             this.cmdCreateMeeting.UseVisualStyleBackColor = true;
+            this.cmdCreateMeeting.Click += new System.EventHandler(this.cmdCreateMeeting_Click);
             // 
             // cmdDeleteMeeting
             // 

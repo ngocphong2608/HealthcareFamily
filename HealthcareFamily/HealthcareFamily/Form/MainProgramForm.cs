@@ -172,5 +172,23 @@ namespace HealthcareFamilyGUI
                 this.Close();
             }
         }
+
+        private void cmdNotification_Click(object sender, EventArgs e)
+        {
+            Form frm = new NotificationForm();
+            frm.Show();
+        }
+
+        private void cmdEmergency_Click(object sender, EventArgs e)
+        {
+            MetroMessageBox.Show(this, "You are in danger, right? Would you like to notify all people in your list?", "Message", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        }
+
+        private void cmdMeeting_Click(object sender, EventArgs e)
+        {
+            Form frm = new MeetingForm();
+            frm.Show();
+        }
     }
 }

@@ -3,27 +3,22 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework;
 using MetroFramework.Forms;
-
 
 namespace HealthcareFamilyGUI
 {
-    public partial class SearchingPeopleForm : MetroForm
+    public partial class NotificationForm : MetroForm
     {
-        public SearchingPeopleForm()
+        public NotificationForm()
         {
             InitializeComponent();
         }
 
         private void cmdOk_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void cmdCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }

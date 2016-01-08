@@ -31,7 +31,7 @@ namespace HealthcareFamilyGUI
         private void txtCheckHeathCare_Click(object sender, EventArgs e)
         {
             var frm = new HealthcareCheckingForm();
-            //frm.ShowDialog();
+            frm.Show();
         }
 
         private void FamilyInformationForm_Load(object sender, EventArgs e)

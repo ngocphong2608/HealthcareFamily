@@ -18,7 +18,7 @@ namespace HealthcareFamilyGUI
 
         private void cmdCancel_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
         private void cmdOK_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace HealthcareFamilyGUI
             date = DateTime.Now.Date.ToString();
 
 
-            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }
