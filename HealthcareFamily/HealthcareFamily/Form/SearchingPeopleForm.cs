@@ -11,16 +11,16 @@ using MetroFramework.Forms;
 
 namespace HealthcareFamilyGUI
 {
-    public partial class SearchingPeople : MetroForm
+    public partial class SearchingPeopleForm : MetroForm
     {
-        public SearchingPeople()
+        public SearchingPeopleForm()
         {
             InitializeComponent();
         }
 
         private void cmdOk_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

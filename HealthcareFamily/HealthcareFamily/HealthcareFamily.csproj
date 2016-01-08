@@ -82,11 +82,11 @@
     <Compile Include="Form\HealthcareCheckingForm.Designer.cs">
       <DependentUpon>HealthcareCheckingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\SearchingPeople.cs">
+    <Compile Include="Form\SearchingPeopleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\SearchingPeople.Designer.cs">
-      <DependentUpon>SearchingPeople.cs</DependentUpon>
+    <Compile Include="Form\SearchingPeopleForm.Designer.cs">
+      <DependentUpon>SearchingPeopleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -114,8 +114,8 @@
     <EmbeddedResource Include="Form\FamilyInformationForm.resx">
       <DependentUpon>FamilyInformationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\SearchingPeople.resx">
-      <DependentUpon>SearchingPeople.cs</DependentUpon>
+    <EmbeddedResource Include="Form\SearchingPeopleForm.resx">
+      <DependentUpon>SearchingPeopleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using MetroFramework;
 
 namespace HealthcareFamilyGUI
 {
@@ -27,7 +28,8 @@ namespace HealthcareFamilyGUI
 
         private void cmdAddUser_Click(object sender, EventArgs e)
         {
-
+            Form frm = new SearchingPeopleForm();
+            frm.Show();
         }
 
         private void MainProgramForm_Load(object sender, EventArgs e)
@@ -143,6 +145,32 @@ namespace HealthcareFamilyGUI
         private void cmdRefesh_Click(object sender, EventArgs e)
         {
             // load data, again
+        }
+
+        bool flag = false; 
+
+        private void MainProgramForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!flag)
+            {
+                if (MetroMessageBox.Show(this, "Do you want to logout?", "Message",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    // Cancel the Closing event from closing the form.
+                    e.Cancel = true;
+                    // Call method to save file...
+                }
+            }
+        }
+
+        private void cmdLogout_Click(object sender, EventArgs e)
+        {
+            if (MetroMessageBox.Show(this, "Do you want to logout?", "Message",
+               MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                flag = true; 
+                this.Close();
+            }
         }
     }
 }

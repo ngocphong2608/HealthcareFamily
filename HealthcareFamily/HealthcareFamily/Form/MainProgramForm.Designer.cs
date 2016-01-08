@@ -30,7 +30,6 @@
         {
             this.pnlAvatar = new System.Windows.Forms.Panel();
             this.lvwUserList = new System.Windows.Forms.ListView();
-            this.cmdRefesh = new System.Windows.Forms.Button();
             this.cmdProfile = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.cmdMeeting = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.cmdEmergency = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
@@ -40,20 +39,21 @@
             this.txtName = new MetroFramework.Controls.MetroLabel();
             this.txtAge = new MetroFramework.Controls.MetroLabel();
             this.txtStatus = new MetroFramework.Controls.MetroLabel();
+            this.cmdLogout = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.SuspendLayout();
             // 
             // pnlAvatar
             // 
-            this.pnlAvatar.Location = new System.Drawing.Point(42, 76);
+            this.pnlAvatar.Location = new System.Drawing.Point(24, 63);
             this.pnlAvatar.Name = "pnlAvatar";
             this.pnlAvatar.Size = new System.Drawing.Size(85, 85);
             this.pnlAvatar.TabIndex = 0;
             // 
             // lvwUserList
             // 
-            this.lvwUserList.Location = new System.Drawing.Point(23, 274);
+            this.lvwUserList.Location = new System.Drawing.Point(23, 273);
             this.lvwUserList.Name = "lvwUserList";
-            this.lvwUserList.Size = new System.Drawing.Size(418, 381);
+            this.lvwUserList.Size = new System.Drawing.Size(418, 433);
             this.lvwUserList.TabIndex = 5;
             this.lvwUserList.UseCompatibleStateImageBehavior = false;
             this.lvwUserList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lvwUserList_ItemCheck);
@@ -61,20 +61,10 @@
             this.lvwUserList.DoubleClick += new System.EventHandler(this.lvwUserList_DoubleClick);
             this.lvwUserList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwUserList_MouseDoubleClick);
             // 
-            // cmdRefesh
-            // 
-            this.cmdRefesh.Location = new System.Drawing.Point(42, 185);
-            this.cmdRefesh.Name = "cmdRefesh";
-            this.cmdRefesh.Size = new System.Drawing.Size(25, 23);
-            this.cmdRefesh.TabIndex = 7;
-            this.cmdRefesh.Text = "Refesh";
-            this.cmdRefesh.UseVisualStyleBackColor = true;
-            this.cmdRefesh.Click += new System.EventHandler(this.cmdRefesh_Click);
-            // 
             // cmdProfile
             // 
             this.cmdProfile.Image = null;
-            this.cmdProfile.Location = new System.Drawing.Point(283, 63);
+            this.cmdProfile.Location = new System.Drawing.Point(283, 58);
             this.cmdProfile.Name = "cmdProfile";
             this.cmdProfile.Size = new System.Drawing.Size(158, 32);
             this.cmdProfile.TabIndex = 11;
@@ -86,7 +76,7 @@
             // cmdMeeting
             // 
             this.cmdMeeting.Image = null;
-            this.cmdMeeting.Location = new System.Drawing.Point(24, 232);
+            this.cmdMeeting.Location = new System.Drawing.Point(24, 197);
             this.cmdMeeting.Name = "cmdMeeting";
             this.cmdMeeting.Size = new System.Drawing.Size(195, 32);
             this.cmdMeeting.TabIndex = 12;
@@ -97,7 +87,7 @@
             // cmdEmergency
             // 
             this.cmdEmergency.Image = null;
-            this.cmdEmergency.Location = new System.Drawing.Point(225, 232);
+            this.cmdEmergency.Location = new System.Drawing.Point(225, 197);
             this.cmdEmergency.Name = "cmdEmergency";
             this.cmdEmergency.Size = new System.Drawing.Size(216, 32);
             this.cmdEmergency.TabIndex = 13;
@@ -108,9 +98,9 @@
             // cmdAddUser
             // 
             this.cmdAddUser.Image = null;
-            this.cmdAddUser.Location = new System.Drawing.Point(283, 176);
+            this.cmdAddUser.Location = new System.Drawing.Point(23, 235);
             this.cmdAddUser.Name = "cmdAddUser";
-            this.cmdAddUser.Size = new System.Drawing.Size(158, 32);
+            this.cmdAddUser.Size = new System.Drawing.Size(196, 32);
             this.cmdAddUser.TabIndex = 14;
             this.cmdAddUser.Text = "Add New User";
             this.cmdAddUser.UseSelectable = true;
@@ -120,7 +110,7 @@
             // cmdNotification
             // 
             this.cmdNotification.Image = null;
-            this.cmdNotification.Location = new System.Drawing.Point(283, 101);
+            this.cmdNotification.Location = new System.Drawing.Point(283, 96);
             this.cmdNotification.Name = "cmdNotification";
             this.cmdNotification.Size = new System.Drawing.Size(158, 32);
             this.cmdNotification.TabIndex = 15;
@@ -131,9 +121,9 @@
             // cmdRequestNewUser
             // 
             this.cmdRequestNewUser.Image = null;
-            this.cmdRequestNewUser.Location = new System.Drawing.Point(283, 139);
+            this.cmdRequestNewUser.Location = new System.Drawing.Point(225, 235);
             this.cmdRequestNewUser.Name = "cmdRequestNewUser";
-            this.cmdRequestNewUser.Size = new System.Drawing.Size(158, 32);
+            this.cmdRequestNewUser.Size = new System.Drawing.Size(216, 32);
             this.cmdRequestNewUser.TabIndex = 16;
             this.cmdRequestNewUser.Text = "Request New User";
             this.cmdRequestNewUser.UseSelectable = true;
@@ -142,7 +132,7 @@
             // txtName
             // 
             this.txtName.AutoSize = true;
-            this.txtName.Location = new System.Drawing.Point(141, 81);
+            this.txtName.Location = new System.Drawing.Point(123, 68);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(81, 19);
             this.txtName.TabIndex = 17;
@@ -151,7 +141,7 @@
             // txtAge
             // 
             this.txtAge.AutoSize = true;
-            this.txtAge.Location = new System.Drawing.Point(141, 109);
+            this.txtAge.Location = new System.Drawing.Point(123, 96);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(83, 19);
             this.txtAge.TabIndex = 18;
@@ -160,17 +150,30 @@
             // txtStatus
             // 
             this.txtStatus.AutoSize = true;
-            this.txtStatus.Location = new System.Drawing.Point(141, 137);
+            this.txtStatus.Location = new System.Drawing.Point(123, 124);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(83, 19);
             this.txtStatus.TabIndex = 19;
             this.txtStatus.Text = "metroLabel3";
+            // 
+            // cmdLogout
+            // 
+            this.cmdLogout.Image = null;
+            this.cmdLogout.Location = new System.Drawing.Point(283, 134);
+            this.cmdLogout.Name = "cmdLogout";
+            this.cmdLogout.Size = new System.Drawing.Size(158, 32);
+            this.cmdLogout.TabIndex = 21;
+            this.cmdLogout.Text = "Logout";
+            this.cmdLogout.UseSelectable = true;
+            this.cmdLogout.UseVisualStyleBackColor = true;
+            this.cmdLogout.Click += new System.EventHandler(this.cmdLogout_Click);
             // 
             // MainProgramForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 729);
+            this.Controls.Add(this.cmdLogout);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.txtName);
@@ -180,12 +183,12 @@
             this.Controls.Add(this.cmdEmergency);
             this.Controls.Add(this.cmdMeeting);
             this.Controls.Add(this.cmdProfile);
-            this.Controls.Add(this.cmdRefesh);
             this.Controls.Add(this.lvwUserList);
             this.Controls.Add(this.pnlAvatar);
             this.MaximizeBox = false;
             this.Name = "MainProgramForm";
             this.Text = "MainPage";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainProgramForm_FormClosing);
             this.Load += new System.EventHandler(this.MainProgramForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,7 +199,6 @@
 
         private System.Windows.Forms.Panel pnlAvatar;
         private System.Windows.Forms.ListView lvwUserList;
-        private System.Windows.Forms.Button cmdRefesh;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdProfile;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdMeeting;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdEmergency;
@@ -206,5 +208,6 @@
         private MetroFramework.Controls.MetroLabel txtName;
         private MetroFramework.Controls.MetroLabel txtAge;
         private MetroFramework.Controls.MetroLabel txtStatus;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdLogout;
     }
 }
