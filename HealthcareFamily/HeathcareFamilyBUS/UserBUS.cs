@@ -95,5 +95,11 @@ namespace HealthcareFamilyBUS
             }
             return false;
         }
+
+        public bool IsEmailExisted(String email)
+        {
+            UserDAL user = new UserDAL();
+            return user.IsEmailExisted(email);
+        }
     }
 }

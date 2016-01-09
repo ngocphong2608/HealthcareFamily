@@ -67,18 +67,6 @@
             // 
             // txtFullName
             // 
-            // 
-            // 
-            // 
-            this.txtFullName.CustomButton.Image = null;
-            this.txtFullName.CustomButton.Location = new System.Drawing.Point(208, 1);
-            this.txtFullName.CustomButton.Name = "";
-            this.txtFullName.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtFullName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtFullName.CustomButton.TabIndex = 1;
-            this.txtFullName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtFullName.CustomButton.UseSelectable = true;
-            this.txtFullName.CustomButton.Visible = false;
             this.txtFullName.Lines = new string[0];
             this.txtFullName.Location = new System.Drawing.Point(197, 105);
             this.txtFullName.MaxLength = 32767;
@@ -153,6 +141,7 @@
             this.MinimizeBox = false;
             this.Name = "SignUpSecondStepForm";
             this.Text = "Create New Account - Step 2";
+            this.Load += new System.EventHandler(this.SignUpSecondStepForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

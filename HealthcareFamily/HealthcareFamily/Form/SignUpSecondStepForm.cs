@@ -55,5 +55,10 @@ namespace HealthcareFamilyGUI
             //frm.Show();
             //frm.Focus();
         }
+
+        private void SignUpSecondStepForm_Load(object sender, EventArgs e)
+        {
+            cboGender.SelectedIndex = 0;
+        }
     }
 }
