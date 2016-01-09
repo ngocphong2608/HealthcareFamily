@@ -36,7 +36,7 @@ namespace HealthcareFamilyDAL
         }
         public void SetStatus(String username, bool IsOnline)
         {
-            String query = "UPDATE TABLE USER_INFORMATION ";
+            String query = "UPDATE USER_INFORMATION ";
             query += "SET IsOnline=" + Convert.ToString(0) + " ";
             query += "WHERE Username='" + username + "'";
 
@@ -57,7 +57,7 @@ namespace HealthcareFamilyDAL
             if (dt.Rows.Count == 0)
                 return false;
 
-            //SetStatus(username, true);
+            SetStatus(username, true);
             return true;
         }
         public void SignOut(String username)
@@ -86,26 +86,28 @@ namespace HealthcareFamilyDAL
         }
         public bool SignUp(String username, String password, String name, DateTime birthday, string gender, String email, String accountType)
         {
-            String query = "INSERT INTO USER_INFORMATION VALUES=(";
+            String query = "set dateformat dmy\n";
+            query += "INSERT INTO USER_INFORMATION VALUES(";
             query += "'" + username + "',";
             query += "'" + password + "',";
             query += "'" + name + "',";
-            query += "'" + birthday.ToString() + "',";
+            query += "'" + birthday.ToShortDateString() + "',";
             query += "'" + gender + "',";
             query += "'" + email + "',";
+            // avatar
+            query += "null,";
             query += "'" + accountType + "',";
             query += Convert.ToString(0) + ")";
 
             try
             {
                 DataProvider.ExecuteNonQuery(query);
+                return true;
             }
             catch (Exception)
             {
                 throw;
             }
-
-            return false;
         }
         public UserDTO GetUserImformationByEmail(String email)
         {
@@ -133,7 +135,7 @@ namespace HealthcareFamilyDAL
 
         public bool AddFollower(String username, String follower, String relationship)
         {
-            String query = "INSERT INTO FOLLOWER_INFORMATION VALUES=(";
+            String query = "INSERT INTO FOLLOWER_INFORMATION VALUES(";
             query += "'" + username + "',";
             query += "'" + follower + "',";
             query += Convert.ToString(0) + ",";
@@ -171,7 +173,7 @@ namespace HealthcareFamilyDAL
 
         public bool AcceptFollow(String username, String follower)
         {
-            String query = "UPDATE TABLE FOLLOWER_INFORMATION";
+            String query = "UPDATE FOLLOWER_INFORMATION";
             query += "SET IsUserAccepted=1";
             query += "WHERE Username=";
             query += "'" + username + "'";
@@ -191,7 +193,7 @@ namespace HealthcareFamilyDAL
 
         public bool AllowAccess(String username, String follower)
         {
-            String query = "UPDATE TABLE FOLLOWER_INFORMATION";
+            String query = "UPDATE FOLLOWER_INFORMATION";
             query += "SET IsPermitAccessInfo=1";
             query += "WHERE Username=";
             query += "'" + username + "'";
@@ -211,7 +213,7 @@ namespace HealthcareFamilyDAL
 
         public bool UnAllowAccess(String username, String follower)
         {
-            String query = "UPDATE TABLE FOLLOWER_INFORMATION";
+            String query = "UPDATE FOLLOWER_INFORMATION";
             query += "SET IsPermitAccessInfo=0";
             query += "WHERE Username=";
             query += "'" + username + "'";

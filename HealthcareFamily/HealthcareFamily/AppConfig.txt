@@ -1,3 +1,5 @@
 ﻿<add name="HeathcareFamilyDB" connectionString="Data Source=(local)\;Initial Catalog=HEALTHCARE_FAMILY;Integrated Security=True;User ID=sa;Password=123456"/>
 
 <add name="HeathcareFamilyDB" connectionString="Data Source=(localdb)\ThanhPhong;Initial Catalog=HEALTHCARE_FAMILY;Integrated Security=True;"/>
+
+INSERT INTO USER_INFORMATION VALUES=('asd','asd','asd','09/01/2016 10:07:16 CH','Male','asd','',0)

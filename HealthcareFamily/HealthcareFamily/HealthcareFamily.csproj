@@ -126,6 +126,7 @@
     <Compile Include="Form\SignUpSecondStepForm.Designer.cs">
       <DependentUpon>SignUpSecondStepForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserController.cs" />
     <EmbeddedResource Include="Form\CreateMeetingAForm.resx">
       <DependentUpon>CreateMeetingAForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -25,7 +25,7 @@ namespace HealthcareFamilyBUS
         {
             return userDAL.SignIn(username, password);
         }
-        public bool SignUp(String username, String password, String name, DateTime birthday, string gender, String email, String accountType)
+        public bool SignUp(String username, String password, String name, DateTime birthday, String gender, String email, String accountType)
         {
             if (!userDAL.IsUserExisted(username) && userDAL.IsEmailExisted(email))
                 return false;

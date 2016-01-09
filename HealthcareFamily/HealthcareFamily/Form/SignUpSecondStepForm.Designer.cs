@@ -157,5 +157,6 @@
         private MetroFramework.Controls.MetroDateTime dtpBirthday;
         private MetroFramework.Controls.MetroButton cmdBack;
         private MetroFramework.Controls.MetroButton cmdFinish;
+        public UserController userControler { get; set; }
     }
 }

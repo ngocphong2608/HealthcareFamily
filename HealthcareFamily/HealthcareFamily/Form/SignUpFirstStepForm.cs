@@ -18,11 +18,6 @@ namespace HealthcareFamilyGUI
             InitializeComponent();
         }
 
-        bool checkedOK()
-        {
-            return true; 
-        }
-
         private void cmdNext_Click(object sender, EventArgs e)
         {
             String userName;
@@ -32,7 +27,7 @@ namespace HealthcareFamilyGUI
             String email;
 
             UserBUS user = new UserBUS();
-            
+
             userName = txtUserName.Text;
             password = txtPassword.Text;
             passwordAgain = txtPasswordAgain.Text;
@@ -88,20 +83,16 @@ namespace HealthcareFamilyGUI
                 return;
             }
 
-            if (checkedOK() && password.Equals(passwordAgain))
-            {
-                this.Hide();    
+            UserController userControl = new UserController();
+            userControl.Username = userName;
+            userControl.Password = password;
+            userControl.Email = email;
+            userControl.AccountType = accountType;
 
-                var frm = new SignUpSecondStepForm();
-                frm.ShowDialog();
+            this.Hide();
 
-            }
-            else 
-            {
-                //MessageBox.Show("error", "oop!!!", MessageBoxButtons.OK);
-                MetroMessageBox.Show(this, "Password doesn't match, please type again :(", "Error", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            var frm = new SignUpSecondStepForm(userControl);
+            frm.ShowDialog();
         }
 
         private void SignUpFirstStepForm_Load(object sender, EventArgs e)
