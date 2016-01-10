@@ -93,6 +93,8 @@ namespace HealthcareFamilyGUI
 
             var frm = new SignUpSecondStepForm(userControl);
             frm.ShowDialog();
+
+            this.Show();
         }
 
         private void SignUpFirstStepForm_Load(object sender, EventArgs e)

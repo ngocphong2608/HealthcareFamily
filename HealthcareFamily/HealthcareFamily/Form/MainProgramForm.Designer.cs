@@ -59,7 +59,7 @@
             this.lvwUserList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lvwUserList_ItemCheck);
             this.lvwUserList.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvwUserList_ItemChecked);
             this.lvwUserList.DoubleClick += new System.EventHandler(this.lvwUserList_DoubleClick);
-            this.lvwUserList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwUserList_MouseDoubleClick);
+            this.lvwUserList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvwUserList_MouseClick);
             // 
             // cmdProfile
             // 

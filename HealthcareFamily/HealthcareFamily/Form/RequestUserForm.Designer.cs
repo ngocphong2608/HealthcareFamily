@@ -67,6 +67,7 @@
             this.cmdAcceptUser.Text = "Accept User";
             this.cmdAcceptUser.UseSelectable = true;
             this.cmdAcceptUser.UseVisualStyleBackColor = true;
+            this.cmdAcceptUser.Click += new System.EventHandler(this.cmdAcceptUser_Click);
             // 
             // listRequestUser
             // 

@@ -22,5 +22,10 @@ namespace HealthcareFamilyGUI
         {
             this.Close();
         }
+
+        private void cmdAcceptUser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -153,7 +153,7 @@ namespace HealthcareFamilyGUI
         {
             if (!flag)
             {
-                if (MetroMessageBox.Show(this, "Do you want to logout?", "Message",
+                if (MetroMessageBox.Show(this, "Do you want to logout and exit?", "Message",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
                     // Cancel the Closing event from closing the form.
@@ -165,11 +165,15 @@ namespace HealthcareFamilyGUI
 
         private void cmdLogout_Click(object sender, EventArgs e)
         {
-            if (MetroMessageBox.Show(this, "Do you want to logout?", "Message",
+            if (MetroMessageBox.Show(this, "Do you want to logout and exit?", "Message",
                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                flag = true; 
+                flag = true;
+
+                // update database 
+
                 this.Close();
+ 
             }
         }
 
@@ -189,6 +193,30 @@ namespace HealthcareFamilyGUI
         {
             Form frm = new MeetingForm();
             frm.Show();
+        }
+
+        private void lvwUserList_MouseClick(object sender, MouseEventArgs e)
+        {
+            var senderList = (ListView)sender;
+
+            var clickedItem = senderList.HitTest(e.Location).Item;
+            if (clickedItem != null)
+            {
+                String Relationship = clickedItem.SubItems[1].Text;
+
+                if (Relationship.Equals("doctor"))
+                {
+                    // need bring data to next form
+                    var frm = new DoctorInformationForm();
+                    frm.Show();
+                }
+                else
+                {
+                    // need bring data to next form
+                    var frm = new FamilyInformationForm();
+                    frm.Show();
+                }
+            }
         }
     }
 }
