@@ -1,4 +1,5 @@
-﻿namespace HealthcareFamilyGUI
+﻿using HealthcareFamilyGUI.FormArguments;
+namespace HealthcareFamilyGUI
 {
     partial class PersonalDoctorInformationForm
     {
@@ -225,5 +226,6 @@
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdDeleteMeeting;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdCreateMeeting;
         private MetroFramework.Controls.MetroLabel txtCurrentName;
+        private UserInformationFormArguments Arguments;
     }
 }

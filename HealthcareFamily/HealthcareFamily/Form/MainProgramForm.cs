@@ -161,10 +161,26 @@ namespace HealthcareFamilyGUI
 
         private void cmdProfile_Click(object sender, EventArgs e)
         {
-            PersonalFamilyInformationFormArguments arg = new PersonalFamilyInformationFormArguments();
+            UserInformationFormArguments arg = new UserInformationFormArguments();
             arg.Username = Arguments.Username;
-            var frm = new PersonalFamilyInformationForm(arg);
-            frm.Show();
+
+            UserBUS userBUS = new UserBUS();
+            UserDTO userDTO = userBUS.GetUserInformation(Arguments.Username);
+
+            if (userDTO.AccountType.CompareTo("Family") == 0)
+            {
+                var frm = new PersonalFamilyInformationForm(arg);
+                frm.Show();
+            } else if (userDTO.AccountType.CompareTo("Doctor") == 0)
+            {
+                var frm = new PersonalDoctorInformationForm(arg);
+                frm.Show();
+            }
+            else
+            {
+                // account doest exist
+                MetroMessageBox.Show(this, "Account type doesn't exist!", "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void cmdRefesh_Click(object sender, EventArgs e)

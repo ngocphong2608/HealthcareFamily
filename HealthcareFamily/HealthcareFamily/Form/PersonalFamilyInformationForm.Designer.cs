@@ -60,6 +60,7 @@ namespace HealthcareFamilyGUI
             this.cmdOk.Text = "OK";
             this.cmdOk.UseSelectable = true;
             this.cmdOk.UseVisualStyleBackColor = true;
+            this.cmdOk.Click += new System.EventHandler(this.cmdOk_Click);
             // 
             // Gruopbox4
             // 
@@ -253,6 +254,6 @@ namespace HealthcareFamilyGUI
         private MetroFramework.Controls.MetroTextBox.MetroTextButton txtCheckHeathCare;
         private MetroFramework.Controls.MetroLabel txtCurrentName;
         private System.Windows.Forms.ListView lvwHeathcareInfo;
-        private PersonalFamilyInformationFormArguments Arguments;
+        private UserInformationFormArguments Arguments;
     }
 }

@@ -20,6 +20,8 @@ namespace HealthcareFamilyDAL
                 return null;
 
             DataRow dr = dt.Rows[0];
+
+            AccountTypeDAL acc = new AccountTypeDAL();
             UserDTO user = new UserDTO();
 
             user.Username = dr["Username"].ToString();
@@ -29,7 +31,8 @@ namespace HealthcareFamilyDAL
             user.Gender = dr["Gender"].ToString();
             user.Email = dr["Email"].ToString();
             //user.mAvatar = null;
-            user.AccountType = dr["AccountType"].ToString();
+            user.AccountType = acc.GetAccountTypeName(dr["AccountType"].ToString());
+            user.AccountType = user.AccountType.Replace(' ', '\0');
             user.IsOnline = Boolean.Parse(dr["IsOnline"].ToString());
 
             return user;

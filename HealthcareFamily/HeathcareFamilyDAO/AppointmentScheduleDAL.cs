@@ -26,7 +26,7 @@ namespace HealthcareFamilyDAL
                 AppointmentScheduleDTO app = new AppointmentScheduleDTO();
                 app.Detail = dr["Detail"].ToString();
                 app.Username = dr["Username"].ToString();
-                app.PartnerUsername = dr["PartnerUsername"].ToString();
+                app.PartnerUsername = dr["Partner_Username"].ToString();
                 app.Time = DateTime.Parse(dr["Time"].ToString());
                 ListAppointment.Add(app);
             }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HealthcareFamilyGUI.FormArguments
 {
-    public class PersonalFamilyInformationFormArguments
+    public class UserInformationFormArguments
     {
         public String Username { get; set; }
     }

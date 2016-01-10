@@ -22,7 +22,7 @@ namespace HealthcareFamilyGUI
             InitializeComponent();
         }
 
-        public PersonalFamilyInformationForm(PersonalFamilyInformationFormArguments arg)
+        public PersonalFamilyInformationForm(UserInformationFormArguments arg)
         {
             InitializeComponent();
             Arguments = arg;
@@ -110,6 +110,11 @@ namespace HealthcareFamilyGUI
             healthcare.Time = frm.Date;
             healthCareBUS.InsertHealthCareInformation(Arguments.Username, healthcare);
             FormReload();
+        }
+
+        private void cmdOk_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
