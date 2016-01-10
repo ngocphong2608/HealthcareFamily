@@ -10,15 +10,19 @@ namespace HeathcareFamilyBUS
 {
     public class AppointmentScheduleBUS
     {
-        AppointmentScheduleDAL app;
+        AppointmentScheduleDAL appDAL;
         public AppointmentScheduleBUS()
         {
-            app = new AppointmentScheduleDAL();
+            appDAL = new AppointmentScheduleDAL();
         }
         // return: list appointment where username = username or username = partner
-        public List<AppointmentScheduleDTO> GetListAppointmentSchedule(string username)
+        public List<AppointmentScheduleDTO> GetListAppointmentSchedule(String username)
         {
-            return app.GetListAppointmentSchedule(username);
+            return appDAL.GetListAppointmentSchedule(username);
+        }
+        public void InsertAppoitmentShedule(AppointmentScheduleDTO app)
+        {
+            appDAL.InsertAppoitmentShedule(app);
         }
     }
 }

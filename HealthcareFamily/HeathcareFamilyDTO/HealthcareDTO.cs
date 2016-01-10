@@ -6,7 +6,7 @@ namespace HealthcareFamilyDTO
 {
     public class HealthcareDTO
     {
-        // Username ?
+        public string Username { get; set; }
         public string HeartBeat { get; set; }
         public string Emotion { get; set; }
         public DateTime Time { get; set; }

@@ -8,7 +8,7 @@ namespace HeathcareFamilyDTO
 {
     public class NotificationDTO
     {
-        // username ?
+        public string Username { get; set; }
         public DateTime Time { get; set; }
         public string FollowerUsername { get; set; }
         public string Detail { get; set; }

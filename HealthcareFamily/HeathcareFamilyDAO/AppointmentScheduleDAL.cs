@@ -33,5 +33,14 @@ namespace HealthcareFamilyDAL
 
             return ListAppointment;
         }
+        public void InsertAppoitmentShedule(AppointmentScheduleDTO app)
+        {
+            String query = "INSERT INTO APPOINTMENT_SCHEDULE VALUES(";
+            query += "'" + app.Username + "', ";
+            query += "'" + app.Time.ToShortDateString() + "', ";
+            query += "'" + app.PartnerUsername + "', ";
+            query += "'" + app.Detail + "')";
+            DataProvider.ExecuteNonQuery(query);
+        }
     }
 }

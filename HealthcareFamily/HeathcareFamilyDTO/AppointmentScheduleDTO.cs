@@ -12,5 +12,7 @@ namespace HeathcareFamilyDTO
         public string PartnerUsername { get; set; }
         public string Detail { get; set; }
         public DateTime Time { get; set; }
+
+        
     }
 }
