@@ -8,15 +8,12 @@ using System.Text;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using MetroFramework;
+using HealthcareFamilyGUI.FormArguments;
 
 namespace HealthcareFamilyGUI
 {
     public partial class LoginForm : MetroForm
     {
-
-        private String usrTesting = "";
-        private String passTesting = "";
-
         public LoginForm()
         {
             InitializeComponent();
@@ -34,16 +31,14 @@ namespace HealthcareFamilyGUI
             {
                 this.Hide();
 
-                var frm = new MainProgramForm();
+                // main form arguments
+                MainProgramFormArguments arg = new MainProgramFormArguments();
+                arg.Username = username;
+
+                var frm = new MainProgramForm(arg);
                 frm.Closed += (s, args) => this.Close();
 
-                // set user name to title bar in main menu
-
-                frm.Text = "admin - username:admin";
-
-
                 frm.Show();
-
             }
             else
             {

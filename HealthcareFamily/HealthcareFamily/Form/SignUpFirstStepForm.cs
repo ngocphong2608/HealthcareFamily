@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
 using HealthcareFamilyBUS;
+using HealthcareFamilyGUI.FormArguments;
 
 namespace HealthcareFamilyGUI
 {
@@ -83,15 +84,15 @@ namespace HealthcareFamilyGUI
                 return;
             }
 
-            UserController userControl = new UserController();
-            userControl.Username = userName;
-            userControl.Password = password;
-            userControl.Email = email;
-            userControl.AccountType = accountType;
+            SignUpSecondStepFromArguments arg = new SignUpSecondStepFromArguments();
+            arg.Username = userName;
+            arg.Password = password;
+            arg.Email = email;
+            arg.AccountType = accountType;
 
             this.Hide();
 
-            var frm = new SignUpSecondStepForm(userControl);
+            var frm = new SignUpSecondStepForm(arg);
             frm.ShowDialog();
 
             this.Show();

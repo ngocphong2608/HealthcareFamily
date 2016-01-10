@@ -7,6 +7,10 @@ using System.Text;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using MetroFramework;
+using HealthcareFamilyBUS;
+using HealthcareFamilyDTO;
+using HealthcareFamilyGUI.FormArguments;
+using HeathcareFamilyBUS;
 
 namespace HealthcareFamilyGUI
 {
@@ -14,6 +18,21 @@ namespace HealthcareFamilyGUI
     {
         public MainProgramForm()
         {
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            foreach (var scrn in Screen.AllScreens)
+            {
+                if (scrn.Bounds.Contains(this.Location))
+                {
+                    this.Location = new Point(scrn.Bounds.Right - this.Width, scrn.Bounds.Top);
+                    return;
+                }
+            }
+        }
+
+        public MainProgramForm(MainProgramFormArguments arg)
+        {
+            Arguments = arg;
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
             foreach (var scrn in Screen.AllScreens)
@@ -35,14 +54,22 @@ namespace HealthcareFamilyGUI
         private void MainProgramForm_Load(object sender, EventArgs e)
         {
             /// load from database 
-            
+            UserBUS userBUS = new UserBUS();
+            FollowerBUS followerBUS = new FollowerBUS();
+
+            UserDTO userDTO = userBUS.GetUserInformation(Arguments.Username);
+            List<FollowerDTO> followerList = followerBUS.GetListFollower(Arguments.Username);
             //
 
-            
+            this.Text = "Home";            
 
-            txtName.Text = "admin";
-            txtAge.Text = "20";
+            // user name
+            txtName.Text = userDTO.Name;
 
+            // user age
+            txtAge.Text = Convert.ToString(DateTime.Now.Year - userDTO.Birthday.Year);
+
+            // friends list
             lvwUserList.View = View.Details;
 
             lvwUserList.Columns.Add("Name", 100, HorizontalAlignment.Left);
@@ -63,25 +90,21 @@ namespace HealthcareFamilyGUI
                 "Status", Type.GetType("System.String"));
             table.Columns.Add(nameColumn);
 
-            // add 1 family
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < followerList.Count; i++)
             {
                 DataRow r = table.NewRow();
-                r["Name"] = "admin1";
-                r["Relationship"] = "family";
-                r["Status"] = "online";
+                // get follower information
+                UserDTO follower = userBUS.GetUserInformation(followerList[i].FollowerUsername);
+
+                r["Name"] = follower.Name;
+                r["Relationship"] = followerList[i].Relationship;
+                if (follower.IsOnline)
+                    r["Status"] = "Online";
+                else
+                    r["Status"] = "Offline";
                 table.Rows.Add(r);
             }
             
-            // add 1 doctor
-            for (int i = 0; i < 1; i++)
-            {
-                DataRow r = table.NewRow();
-                r["Name"] = "doctor1";
-                r["Relationship"] = "doctor";
-                r["Status"] = "online";
-                table.Rows.Add(r);
-            }
 
             lvwUserList.Items.Clear();
 
@@ -158,6 +181,11 @@ namespace HealthcareFamilyGUI
                 {
                     // Cancel the Closing event from closing the form.
                     e.Cancel = true;
+
+                    // sign out
+                    UserBUS user = new UserBUS();
+                    user.SignOut(Arguments.Username);
+
                     // Call method to save file...
                 }
             }

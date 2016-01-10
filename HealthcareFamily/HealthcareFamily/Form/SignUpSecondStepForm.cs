@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
 using HealthcareFamilyBUS;
+using HealthcareFamilyGUI.FormArguments;
 
 namespace HealthcareFamilyGUI
 {
@@ -18,7 +19,7 @@ namespace HealthcareFamilyGUI
             InitializeComponent();
         }
 
-        public SignUpSecondStepForm(UserController user)
+        public SignUpSecondStepForm(SignUpSecondStepFromArguments user)
         {
             InitializeComponent();
             userControler = user;

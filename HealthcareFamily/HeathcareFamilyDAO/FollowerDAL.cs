@@ -24,7 +24,7 @@ namespace HealthcareFamilyDAL
             foreach (DataRow dr in dt.Rows)
             {
                 FollowerDTO follower = new FollowerDTO();
-                follower.FollowerUsername = dr["FollowerUsername"].ToString();
+                follower.FollowerUsername = dr["Follower_Username"].ToString();
                 follower.IsPermitAccessInfo = Boolean.Parse(dr["IsPermitAccessInfo"].ToString());
                 follower.IsUserAccepted = Boolean.Parse(dr["IsUserAccepted"].ToString());
                 follower.Relationship = dr["Relationship"].ToString();

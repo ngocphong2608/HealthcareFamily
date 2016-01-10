@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormArguments\MainProgramFormArguments.cs" />
     <Compile Include="Form\CreateMeetingAForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,7 +133,7 @@
     <Compile Include="Form\SignUpSecondStepForm.Designer.cs">
       <DependentUpon>SignUpSecondStepForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserController.cs" />
+    <Compile Include="FormArguments\SignUpSecondStepFromArguments.cs" />
     <EmbeddedResource Include="Form\CreateMeetingAForm.resx">
       <DependentUpon>CreateMeetingAForm.cs</DependentUpon>
     </EmbeddedResource>

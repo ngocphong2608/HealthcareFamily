@@ -1,4 +1,5 @@
-﻿namespace HealthcareFamilyGUI
+﻿using HealthcareFamilyGUI.FormArguments;
+namespace HealthcareFamilyGUI
 {
     partial class MainProgramForm
     {
@@ -134,7 +135,6 @@
             // 
             // txtName
             // 
-            this.txtName.AutoSize = true;
             this.txtName.Location = new System.Drawing.Point(105, 65);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(81, 19);
@@ -155,9 +155,9 @@
             this.txtStatus.AutoSize = true;
             this.txtStatus.Location = new System.Drawing.Point(105, 121);
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(83, 19);
+            this.txtStatus.Size = new System.Drawing.Size(47, 19);
             this.txtStatus.TabIndex = 19;
-            this.txtStatus.Text = "metroLabel3";
+            this.txtStatus.Text = "Online";
             // 
             // cmdLogout
             // 
@@ -213,5 +213,6 @@
         private MetroFramework.Controls.MetroLabel txtAge;
         private MetroFramework.Controls.MetroLabel txtStatus;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdLogout;
+        private MainProgramFormArguments Arguments;
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HealthcareFamilyGUI
+namespace HealthcareFamilyGUI.FormArguments
 {
-    public class UserController
+    public class SignUpSecondStepFromArguments
     {
         public String Username { get; set; }
         public String Password { get; set; }
