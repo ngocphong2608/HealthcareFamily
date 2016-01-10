@@ -32,5 +32,15 @@ namespace HealthcareFamilyDAL
 
             return ListHealth;
         }
+
+        public void InsertHealthCareInformation(String username, HealthcareDTO healthcare)
+        {
+            String query = "INSERT INTO HEALTHCARE_INFORMATION VALUES(";
+            query += "'" + username + "', ";
+            query += "'" + healthcare.Time.ToShortDateString() + "', ";
+            query += healthcare.HeartBeat + ", ";
+            query += "'" + healthcare.Emotion + "')";
+            DataProvider.ExecuteNonQuery(query);
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using MetroFramework;
 
 namespace HealthcareFamilyGUI
 {
@@ -23,17 +24,25 @@ namespace HealthcareFamilyGUI
 
         private void cmdOK_Click(object sender, EventArgs e)
         {
+            HeartBeat = txtHeartBeat.Text;
+            Emotion = txtEmotion.Text;
 
-            String heartBeat;
-            String emotion;
-            String date;
+            if (HeartBeat == "")
+            {
+                MetroMessageBox.Show(this, "Have you input your heart beat yet?", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
-            heartBeat = txtHeartBeat.Text;
-            emotion = txtEmotion.Text;
+            if (Emotion == "")
+            {
+                MetroMessageBox.Show(this, "Have you input your emotion yet?", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             // get current time 
-            date = DateTime.Now.Date.ToString();
-
+            Date = DateTime.Now.Date;
 
             this.Close();
         }

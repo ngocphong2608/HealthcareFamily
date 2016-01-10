@@ -1,4 +1,5 @@
-﻿namespace HealthcareFamilyGUI
+﻿using System;
+namespace HealthcareFamilyGUI
 {
     partial class HealthcareCheckingForm
     {
@@ -122,5 +123,8 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdCancel;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdOK;
+        public String HeartBeat;
+        public String Emotion;
+        public DateTime Date;
     }
 }

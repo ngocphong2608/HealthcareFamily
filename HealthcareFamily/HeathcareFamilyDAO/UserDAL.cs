@@ -60,10 +60,6 @@ namespace HealthcareFamilyDAL
             SetStatus(username, true);
             return true;
         }
-        public void SignOut(String username)
-        {
-            SetStatus(username, false);
-        }
         public bool IsUserExisted(string username)
         {
             String query = "SELECT * FROM USER_INFORMATION WHERE Username='" + username + "'";

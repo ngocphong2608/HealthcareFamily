@@ -27,10 +27,8 @@ namespace HealthcareFamilyGUI
             InitializeComponent();
             Arguments = arg;
         }
-
-        private void PersonalFamilyInformationForm_Load(object sender, EventArgs e)
+        public void FormReload()
         {
-
             // capture object from parent form
             //
             UserBUS userBUS = new UserBUS();
@@ -38,6 +36,7 @@ namespace HealthcareFamilyGUI
 
             UserDTO user = userBUS.GetUserInformation(Arguments.Username);
             List<HealthcareDTO> healthcareList = healthcareBUS.GetListHealthcareInformation(Arguments.Username);
+            healthcareList.Sort((x, y) => y.Time.CompareTo(x.Time));
 
             txtUsername.Text = user.Username;
             txtCurrentName.Text = user.Name;
@@ -93,10 +92,24 @@ namespace HealthcareFamilyGUI
             }
         }
 
+        private void PersonalFamilyInformationForm_Load(object sender, EventArgs e)
+        {
+            FormReload();
+        }
+
         private void txtCheckHeathCare_Click(object sender, EventArgs e)
         {
             var frm = new HealthcareCheckingForm();
-            frm.Show();
+            frm.ShowDialog();
+
+            // insert database
+            HealthcareBUS healthCareBUS = new HealthcareBUS();
+            HealthcareDTO healthcare = new HealthcareDTO();
+            healthcare.Emotion = frm.Emotion;
+            healthcare.HeartBeat = frm.HeartBeat;
+            healthcare.Time = frm.Date;
+            healthCareBUS.InsertHealthCareInformation(Arguments.Username, healthcare);
+            FormReload();
         }
     }
 }

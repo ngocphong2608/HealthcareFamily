@@ -19,5 +19,9 @@ namespace HeathcareFamilyBUS
         {
             return health.GetListHealthcareInformation(username);
         }
+        public void InsertHealthCareInformation(String username, HealthcareDTO healthcare)
+        {
+            health.InsertHealthCareInformation(username, healthcare);
+        }
     }
 }
