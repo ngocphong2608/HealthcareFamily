@@ -17,7 +17,9 @@ namespace HeathcareFamilyBUS
         }
         public List<HealthcareDTO> GetListHealthcareInformation(String username)
         {
-            return health.GetListHealthcareInformation(username);
+            List<HealthcareDTO>  healthcareList = health.GetListHealthcareInformation(username);
+            healthcareList.Sort((x, y) => y.Time.CompareTo(x.Time));
+            return healthcareList;
         }
         public void InsertHealthCareInformation(String username, HealthcareDTO healthcare)
         {

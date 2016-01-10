@@ -36,7 +36,6 @@ namespace HealthcareFamilyGUI
 
             UserDTO user = userBUS.GetUserInformation(Arguments.Username);
             List<HealthcareDTO> healthcareList = healthcareBUS.GetListHealthcareInformation(Arguments.Username);
-            healthcareList.Sort((x, y) => y.Time.CompareTo(x.Time));
 
             txtUsername.Text = user.Username;
             txtCurrentName.Text = user.Name;

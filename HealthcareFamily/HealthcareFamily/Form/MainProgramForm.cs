@@ -225,7 +225,10 @@ namespace HealthcareFamilyGUI
 
         private void cmdNotification_Click(object sender, EventArgs e)
         {
-            Form frm = new NotificationForm();
+            NotificationFormArguments arg = new NotificationFormArguments();
+            arg.Username = Arguments.Username;
+
+            Form frm = new NotificationForm(arg);
             frm.Show();
         }
 

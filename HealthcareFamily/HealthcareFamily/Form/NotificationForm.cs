@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using HeathcareFamilyBUS;
+using HeathcareFamilyDTO;
+using HealthcareFamilyGUI.FormArguments;
 
 namespace HealthcareFamilyGUI
 {
@@ -16,6 +19,12 @@ namespace HealthcareFamilyGUI
         public NotificationForm()
         {
             InitializeComponent();
+        }
+
+        public NotificationForm(NotificationFormArguments arg)
+        {
+            InitializeComponent();
+            Arguments = arg;
         }
 
         private void cmdOk_Click(object sender, EventArgs e)
@@ -45,21 +54,15 @@ namespace HealthcareFamilyGUI
                 "Description", Type.GetType("System.String"));
             table.Columns.Add(nameColumn);
 
-            for (int i = 0; i < 1; i++)
-            {
-                DataRow r = table.NewRow();
-                r["Date"] = "2/3/2015";
-                r["People"] = "admin1";
-                r["Description"] = "update new status";
-                table.Rows.Add(r);
-            }
+            NotificationBUS noti = new NotificationBUS();
+            List<NotificationDTO> notiList = noti.GetListNotification(Arguments.Username);
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < notiList.Count; i++)
             {
                 DataRow r = table.NewRow();
-                r["Date"] = "21/3/2015";
-                r["People"] = "doctor2";
-                r["Description"] = "create meeting with you";
+                r["Date"] = notiList[i].Time.ToShortDateString();
+                r["People"] = notiList[i].FollowerUsername;
+                r["Description"] = notiList[i].Detail;
                 table.Rows.Add(r);
             }
 

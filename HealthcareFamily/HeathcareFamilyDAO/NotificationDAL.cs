@@ -24,7 +24,7 @@ namespace HealthcareFamilyDAL
             foreach (DataRow dr in dt.Rows)
             {
                 NotificationDTO noti = new NotificationDTO();
-                noti.FollowerUsername = dr["FollowerInformation"].ToString();
+                noti.FollowerUsername = dr["Follower_Username"].ToString();
                 noti.Detail = dr["Detail"].ToString();
                 noti.Time = DateTime.Parse(dr["Time"].ToString());
                 ListNoti.Add(noti);

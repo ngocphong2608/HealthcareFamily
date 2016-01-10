@@ -1,4 +1,5 @@
-﻿namespace HealthcareFamilyGUI
+﻿using HealthcareFamilyGUI.FormArguments;
+namespace HealthcareFamilyGUI
 {
     partial class NotificationForm
     {
@@ -72,6 +73,6 @@
 
         private System.Windows.Forms.ListView lvwNotification;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdOk;
-
+        private NotificationFormArguments Arguments;
     }
 }
