@@ -102,6 +102,12 @@
     <Compile Include="Form\NotificationForm.Designer.cs">
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\PersonalDoctorInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\PersonalDoctorInformationForm.Designer.cs">
+      <DependentUpon>PersonalDoctorInformationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\PersonalFamilyInformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     </Compile>
     <Compile Include="Form\SearchingPeopleForm.Designer.cs">
       <DependentUpon>SearchingPeopleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SearchingRelationshipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SearchingRelationshipForm.Designer.cs">
+      <DependentUpon>SearchingRelationshipForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,6 +168,9 @@
     <EmbeddedResource Include="Form\NotificationForm.resx">
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\PersonalDoctorInformationForm.resx">
+      <DependentUpon>PersonalDoctorInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\PersonalFamilyInformationForm.resx">
       <DependentUpon>PersonalFamilyInformationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\SearchingPeopleForm.resx">
       <DependentUpon>SearchingPeopleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\SearchingRelationshipForm.resx">
+      <DependentUpon>SearchingRelationshipForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

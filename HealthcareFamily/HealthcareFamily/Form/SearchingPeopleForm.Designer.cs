@@ -30,8 +30,6 @@
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.cmdSearch = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.cboRelationship = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.lvwPeopleList = new System.Windows.Forms.ListView();
             this.txtPeopleInfo = new System.Windows.Forms.TextBox();
@@ -60,32 +58,10 @@
             this.cmdSearch.UseSelectable = true;
             this.cmdSearch.UseVisualStyleBackColor = true;
             // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(23, 113);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(82, 19);
-            this.metroLabel2.TabIndex = 3;
-            this.metroLabel2.Text = "Relationship:";
-            // 
-            // cboRelationship
-            // 
-            this.cboRelationship.FormattingEnabled = true;
-            this.cboRelationship.ItemHeight = 23;
-            this.cboRelationship.Items.AddRange(new object[] {
-            "family",
-            "doctor"});
-            this.cboRelationship.Location = new System.Drawing.Point(24, 136);
-            this.cboRelationship.Name = "cboRelationship";
-            this.cboRelationship.Size = new System.Drawing.Size(328, 29);
-            this.cboRelationship.TabIndex = 4;
-            this.cboRelationship.UseSelectable = true;
-            // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(24, 172);
+            this.metroLabel3.Location = new System.Drawing.Point(24, 108);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(75, 19);
             this.metroLabel3.TabIndex = 5;
@@ -93,7 +69,7 @@
             // 
             // lvwPeopleList
             // 
-            this.lvwPeopleList.Location = new System.Drawing.Point(24, 195);
+            this.lvwPeopleList.Location = new System.Drawing.Point(24, 131);
             this.lvwPeopleList.Name = "lvwPeopleList";
             this.lvwPeopleList.Size = new System.Drawing.Size(328, 166);
             this.lvwPeopleList.TabIndex = 6;
@@ -110,11 +86,11 @@
             // cmdOK
             // 
             this.cmdOK.Image = null;
-            this.cmdOK.Location = new System.Drawing.Point(184, 367);
+            this.cmdOK.Location = new System.Drawing.Point(184, 314);
             this.cmdOK.Name = "cmdOK";
             this.cmdOK.Size = new System.Drawing.Size(168, 35);
             this.cmdOK.TabIndex = 26;
-            this.cmdOK.Text = "OK";
+            this.cmdOK.Text = "Next";
             this.cmdOK.UseSelectable = true;
             this.cmdOK.UseVisualStyleBackColor = true;
             this.cmdOK.Click += new System.EventHandler(this.cmdOk_Click);
@@ -122,7 +98,7 @@
             // cmdCancel
             // 
             this.cmdCancel.Image = null;
-            this.cmdCancel.Location = new System.Drawing.Point(24, 367);
+            this.cmdCancel.Location = new System.Drawing.Point(24, 314);
             this.cmdCancel.Name = "cmdCancel";
             this.cmdCancel.Size = new System.Drawing.Size(154, 35);
             this.cmdCancel.TabIndex = 27;
@@ -135,19 +111,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 435);
+            this.ClientSize = new System.Drawing.Size(375, 365);
             this.Controls.Add(this.cmdCancel);
             this.Controls.Add(this.cmdOK);
             this.Controls.Add(this.txtPeopleInfo);
             this.Controls.Add(this.lvwPeopleList);
             this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.cboRelationship);
-            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.cmdSearch);
             this.Controls.Add(this.metroLabel1);
             this.Name = "SearchingPeopleForm";
             this.Resizable = false;
             this.Text = "Searching People";
+            this.Load += new System.EventHandler(this.SearchingPeopleForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,8 +132,6 @@
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdSearch;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroComboBox cboRelationship;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.ListView lvwPeopleList;
         private System.Windows.Forms.TextBox txtPeopleInfo;
