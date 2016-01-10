@@ -1,4 +1,6 @@
-﻿namespace HealthcareFamilyGUI
+﻿using HealthcareFamilyGUI.FormArguments;
+using System;
+namespace HealthcareFamilyGUI
 {
     partial class PersonalFamilyInformationForm
     {
@@ -251,5 +253,6 @@
         private MetroFramework.Controls.MetroTextBox.MetroTextButton txtCheckHeathCare;
         private MetroFramework.Controls.MetroLabel txtCurrentName;
         private System.Windows.Forms.ListView lvwHeathcareInfo;
+        private PersonalFamilyInformationFormArguments Arguments;
     }
 }

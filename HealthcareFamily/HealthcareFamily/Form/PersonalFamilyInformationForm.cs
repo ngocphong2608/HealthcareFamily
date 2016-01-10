@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using HealthcareFamilyGUI.FormArguments;
+using HeathcareFamilyBUS;
 
 namespace HealthcareFamilyGUI
 {
@@ -20,14 +22,22 @@ namespace HealthcareFamilyGUI
             InitializeComponent();
         }
 
+        public PersonalFamilyInformationForm(PersonalFamilyInformationFormArguments arg)
+        {
+            InitializeComponent();
+            Arguments = arg;
+        }
+
         private void PersonalFamilyInformationForm_Load(object sender, EventArgs e)
         {
 
             // capture object from parent form
             //
-            UserBUS bus = new UserBUS();
+            UserBUS userBUS = new UserBUS();
+            HealthcareBUS healthcareBUS = new HealthcareBUS();
 
-            UserDTO user = bus.GetUserInformation("admin");
+            UserDTO user = userBUS.GetUserInformation(Arguments.Username);
+            List<HealthcareDTO> healthcareList = healthcareBUS.GetListHealthcareInformation(Arguments.Username);
 
             txtUsername.Text = user.Username;
             txtCurrentName.Text = user.Name;
@@ -35,8 +45,11 @@ namespace HealthcareFamilyGUI
             //txtRelationship.Text = user.AccountType;
             txtEmail.Text = user.Email;
 
-            txtHeartBeat.Text = "100";
-            txtEmotion.Text = "fun";
+            if (healthcareList.Count > 0)
+            {
+                txtHeartBeat.Text = healthcareList[0].HeartBeat;
+                txtEmotion.Text = healthcareList[0].Emotion;
+            }
 
             lvwHeathcareInfo.View = View.Details;
 
@@ -58,21 +71,12 @@ namespace HealthcareFamilyGUI
                 "Emotion", Type.GetType("System.String"));
             table.Columns.Add(nameColumn);
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < healthcareList.Count; i++)
             {
                 DataRow r = table.NewRow();
-                r["Date"] = "2/3/2015";
-                r["Heartbeat"] = "101";
-                r["Emotion"] = "crazzy";
-                table.Rows.Add(r);
-            }
-
-            for (int i = 0; i < 1; i++)
-            {
-                DataRow r = table.NewRow();
-                r["Date"] = "21/3/2015";
-                r["Heartbeat"] = "120";
-                r["Emotion"] = "fun";
+                r["Date"] = healthcareList[i].Time.ToShortDateString();
+                r["Heartbeat"] = healthcareList[i].HeartBeat;
+                r["Emotion"] = healthcareList[i].Emotion;
                 table.Rows.Add(r);
             }
 

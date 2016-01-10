@@ -161,7 +161,9 @@ namespace HealthcareFamilyGUI
 
         private void cmdProfile_Click(object sender, EventArgs e)
         {
-            var frm = new PersonalFamilyInformationForm();
+            PersonalFamilyInformationFormArguments arg = new PersonalFamilyInformationFormArguments();
+            arg.Username = Arguments.Username;
+            var frm = new PersonalFamilyInformationForm(arg);
             frm.Show();
         }
 

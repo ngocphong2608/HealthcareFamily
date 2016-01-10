@@ -13,7 +13,7 @@ namespace HealthcareFamilyDAL
     {
         public List<HealthcareDTO> GetListHealthcareInformation(string username)
         {
-            String query = "SELECT * FROM HEATHCARE_FORMATION WHERE USERNAME='" + username + "'";
+            String query = "SELECT * FROM HEALTHCARE_INFORMATION WHERE USERNAME='" + username + "'";
             DataTable dt = DataProvider.ExecuteQuery(query);
 
             if (dt.Rows.Count == 0)
@@ -25,7 +25,7 @@ namespace HealthcareFamilyDAL
             {
                 HealthcareDTO health = new HealthcareDTO();
                 health.Emotion = dr["Emotion"].ToString();
-                health.HeartBeat = dr["HearthBeat"].ToString();
+                health.HeartBeat = dr["HeartBeat"].ToString();
                 health.Time = DateTime.Parse(dr["Time"].ToString());
                 ListHealth.Add(health);
             }

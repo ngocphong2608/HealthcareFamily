@@ -15,7 +15,7 @@ namespace HeathcareFamilyBUS
         {
             health = new HealthcareDAL();
         }
-        public List<HealthcareDTO> GetListHealthcareInformation(string username)
+        public List<HealthcareDTO> GetListHealthcareInformation(String username)
         {
             return health.GetListHealthcareInformation(username);
         }

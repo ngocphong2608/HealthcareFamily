@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FormArguments\MainProgramFormArguments.cs" />
+    <Compile Include="FormArguments\PersonalFamilyInformationFormArguments.cs" />
     <Compile Include="Form\CreateMeetingAForm.cs">
       <SubType>Form</SubType>
     </Compile>
