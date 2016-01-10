@@ -31,7 +31,6 @@
             this.lvwHeathcareInfo = new System.Windows.Forms.ListView();
             this.txtCurrentName = new MetroFramework.Controls.MetroLabel();
             this.txtMessage = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.txtCheckHeathCare = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtEmail = new MetroFramework.Controls.MetroLabel();
             this.txtRelationship = new MetroFramework.Controls.MetroLabel();
@@ -73,23 +72,11 @@
             this.txtMessage.Image = null;
             this.txtMessage.Location = new System.Drawing.Point(23, 319);
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(160, 35);
+            this.txtMessage.Size = new System.Drawing.Size(326, 35);
             this.txtMessage.TabIndex = 12;
             this.txtMessage.Text = "Message";
             this.txtMessage.UseSelectable = true;
             this.txtMessage.UseVisualStyleBackColor = true;
-            // 
-            // txtCheckHeathCare
-            // 
-            this.txtCheckHeathCare.Image = null;
-            this.txtCheckHeathCare.Location = new System.Drawing.Point(189, 319);
-            this.txtCheckHeathCare.Name = "txtCheckHeathCare";
-            this.txtCheckHeathCare.Size = new System.Drawing.Size(160, 35);
-            this.txtCheckHeathCare.TabIndex = 13;
-            this.txtCheckHeathCare.Text = "Check Healthcare";
-            this.txtCheckHeathCare.UseSelectable = true;
-            this.txtCheckHeathCare.UseVisualStyleBackColor = true;
-            this.txtCheckHeathCare.Click += new System.EventHandler(this.txtCheckHeathCare_Click);
             // 
             // groupBox3
             // 
@@ -253,7 +240,6 @@
             this.Controls.Add(this.cmdOk);
             this.Controls.Add(this.Gruopbox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.txtCheckHeathCare);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.txtCurrentName);
             this.Controls.Add(this.lvwHeathcareInfo);
@@ -276,7 +262,6 @@
         private System.Windows.Forms.ListView lvwHeathcareInfo;
         private MetroFramework.Controls.MetroLabel txtCurrentName;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton txtMessage;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton txtCheckHeathCare;
         private System.Windows.Forms.GroupBox groupBox3;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel4;

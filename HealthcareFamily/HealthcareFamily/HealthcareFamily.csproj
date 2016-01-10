@@ -100,6 +100,12 @@
     <Compile Include="Form\NotificationForm.Designer.cs">
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\PersonalFamilyInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\PersonalFamilyInformationForm.Designer.cs">
+      <DependentUpon>PersonalFamilyInformationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\RequestUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\NotificationForm.resx">
       <DependentUpon>NotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\PersonalFamilyInformationForm.resx">
+      <DependentUpon>PersonalFamilyInformationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\RequestUserForm.resx">
       <DependentUpon>RequestUserForm.cs</DependentUpon>

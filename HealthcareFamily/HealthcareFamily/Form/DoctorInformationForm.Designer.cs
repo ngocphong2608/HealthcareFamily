@@ -211,7 +211,9 @@
             this.Controls.Add(this.cmdCreateMeeting);
             this.Controls.Add(this.cmdMessage);
             this.Controls.Add(this.txtCurrentName);
+            this.MaximizeBox = false;
             this.Name = "DoctorInformationForm";
+            this.Resizable = false;
             this.Text = "Doctor Information";
             this.Load += new System.EventHandler(this.DoctorInformationForm_Load);
             this.groupBox3.ResumeLayout(false);

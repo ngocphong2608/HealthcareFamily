@@ -138,7 +138,7 @@ namespace HealthcareFamilyGUI
 
         private void cmdProfile_Click(object sender, EventArgs e)
         {
-            var frm = new FamilyInformationForm();
+            var frm = new PersonalFamilyInformationForm();
             frm.Show();
         }
 
