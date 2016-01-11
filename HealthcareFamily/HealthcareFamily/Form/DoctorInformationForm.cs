@@ -25,10 +25,11 @@ namespace HealthcareFamilyGUI
         {
 
             // load from database
-            txtName.Text = "doctor1";
+            txtName.Text = "Mr.doctor1";
             txtGender.Text = "male";
             txtEmail.Text = "abc@gmail.com";
             txtCurrentName.Text = "doctor1";
+            txtUsername.Text = "doctor1";
             // list view
             lvwMeeting.View = View.Details;
 

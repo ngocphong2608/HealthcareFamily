@@ -85,5 +85,16 @@ namespace HealthcareFamilyGUI
                 lvwMeeting.Items.Add(item); //Add this row to the ListView
             }
         }
+
+        private void cmdOk_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cmdCreateMeeting_Click(object sender, EventArgs e)
+        {
+            Form frm = new CreateMeetingAForm();
+            frm.ShowDialog();
+        }
     }
 }

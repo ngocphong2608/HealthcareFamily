@@ -146,6 +146,7 @@ namespace HealthcareFamilyGUI
             if (clickedItem != null)
             {
                 String Relationship = clickedItem.SubItems[1].Text;
+                
 
                 if (Relationship.Equals("doctor"))
                 {
@@ -255,17 +256,20 @@ namespace HealthcareFamilyGUI
             if (clickedItem != null)
             {
                 String Relationship = clickedItem.SubItems[1].Text;
+                Relationship = Relationship.Substring(0, Relationship.IndexOf(' '));
+                UserInformationFormArguments arg = new UserInformationFormArguments();
+                arg.Username = Arguments.Username;
 
-                if (Relationship.Equals("doctor"))
+                if (Relationship.Equals("Doctor"))
                 {
                     // need bring data to next form
                     var frm = new DoctorInformationForm();
                     frm.Show();
                 }
-                else
+                else if (Relationship.Equals("Family"))
                 {
                     // need bring data to next form
-                    var frm = new FamilyInformationForm();
+                    var frm = new FamilyInformationForm(arg);
                     frm.Show();
                 }
             }

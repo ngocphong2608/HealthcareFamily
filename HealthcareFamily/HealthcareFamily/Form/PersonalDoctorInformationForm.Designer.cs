@@ -64,6 +64,7 @@ namespace HealthcareFamilyGUI
             this.cmdOk.Text = "OK";
             this.cmdOk.UseSelectable = true;
             this.cmdOk.UseVisualStyleBackColor = true;
+            this.cmdOk.Click += new System.EventHandler(this.cmdOk_Click);
             // 
             // groupBox3
             // 
@@ -177,6 +178,7 @@ namespace HealthcareFamilyGUI
             this.cmdCreateMeeting.Text = "Create Meeting";
             this.cmdCreateMeeting.UseSelectable = true;
             this.cmdCreateMeeting.UseVisualStyleBackColor = true;
+            this.cmdCreateMeeting.Click += new System.EventHandler(this.cmdCreateMeeting_Click);
             // 
             // txtCurrentName
             // 

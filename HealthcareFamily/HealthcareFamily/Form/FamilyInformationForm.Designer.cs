@@ -1,4 +1,5 @@
-﻿namespace HealthcareFamilyGUI
+﻿using HealthcareFamilyGUI.FormArguments;
+namespace HealthcareFamilyGUI
 {
     partial class FamilyInformationForm
     {
@@ -277,5 +278,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdOk;
+        private UserInformationFormArguments Arguments;
     }
 }
