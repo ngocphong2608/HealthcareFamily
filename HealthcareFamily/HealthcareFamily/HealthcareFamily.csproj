@@ -226,6 +226,7 @@
     <Content Include="HeathcareFamilyGUI\MetroFramework.Design.dll" />
     <Content Include="HeathcareFamilyGUI\MetroFramework.dll" />
     <Content Include="HeathcareFamilyGUI\MetroFramework.Fonts.dll" />
+    <None Include="Resources\mystery_man.png" />
     <Content Include="Resources\Open Sans License.txt" />
   </ItemGroup>
   <ItemGroup />

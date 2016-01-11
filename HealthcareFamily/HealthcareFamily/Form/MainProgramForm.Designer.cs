@@ -29,7 +29,7 @@ namespace HealthcareFamilyGUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlAvatar = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainProgramForm));
             this.lvwUserList = new System.Windows.Forms.ListView();
             this.cmdProfile = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.cmdMeeting = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
@@ -41,14 +41,9 @@ namespace HealthcareFamilyGUI
             this.txtAge = new MetroFramework.Controls.MetroLabel();
             this.txtStatus = new MetroFramework.Controls.MetroLabel();
             this.cmdLogout = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pnlAvatar
-            // 
-            this.pnlAvatar.Location = new System.Drawing.Point(24, 65);
-            this.pnlAvatar.Name = "pnlAvatar";
-            this.pnlAvatar.Size = new System.Drawing.Size(74, 71);
-            this.pnlAvatar.TabIndex = 0;
             // 
             // lvwUserList
             // 
@@ -171,11 +166,22 @@ namespace HealthcareFamilyGUI
             this.cmdLogout.UseVisualStyleBackColor = true;
             this.cmdLogout.Click += new System.EventHandler(this.cmdLogout_Click);
             // 
+            // pictureBox
+            // 
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(23, 63);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(81, 80);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 22;
+            this.pictureBox.TabStop = false;
+            // 
             // MainProgramForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 729);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.cmdLogout);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.txtAge);
@@ -187,13 +193,13 @@ namespace HealthcareFamilyGUI
             this.Controls.Add(this.cmdMeeting);
             this.Controls.Add(this.cmdProfile);
             this.Controls.Add(this.lvwUserList);
-            this.Controls.Add(this.pnlAvatar);
             this.MaximizeBox = false;
             this.Name = "MainProgramForm";
             this.Resizable = false;
             this.Text = "MainPage";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainProgramForm_FormClosing);
             this.Load += new System.EventHandler(this.MainProgramForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,7 +207,6 @@ namespace HealthcareFamilyGUI
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlAvatar;
         private System.Windows.Forms.ListView lvwUserList;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdProfile;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdMeeting;
@@ -214,5 +219,6 @@ namespace HealthcareFamilyGUI
         private MetroFramework.Controls.MetroLabel txtStatus;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdLogout;
         private MainProgramFormArguments Arguments;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }

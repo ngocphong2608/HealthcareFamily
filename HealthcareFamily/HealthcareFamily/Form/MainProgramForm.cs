@@ -11,6 +11,8 @@ using HealthcareFamilyBUS;
 using HealthcareFamilyDTO;
 using HealthcareFamilyGUI.FormArguments;
 using HeathcareFamilyBUS;
+using System.IO;
+using System.Reflection;
 
 namespace HealthcareFamilyGUI
 {
@@ -53,6 +55,7 @@ namespace HealthcareFamilyGUI
 
         private void MainProgramForm_Load(object sender, EventArgs e)
         {
+            
             /// load from database 
             UserBUS userBUS = new UserBUS();
             FollowerBUS followerBUS = new FollowerBUS();
