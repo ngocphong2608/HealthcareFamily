@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FormArguments\MainProgramFormArguments.cs" />
+    <Compile Include="FormArguments\MeetingFormArguments.cs" />
     <Compile Include="FormArguments\NotificationFormArguments.cs" />
     <Compile Include="FormArguments\UserInformationFormArguments.cs" />
     <Compile Include="Form\CreateMeetingAForm.cs">

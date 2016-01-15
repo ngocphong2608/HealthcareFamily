@@ -1,4 +1,5 @@
-﻿namespace HealthcareFamilyGUI
+﻿using HealthcareFamilyGUI.FormArguments;
+namespace HealthcareFamilyGUI
 {
     partial class MeetingForm
     {
@@ -90,6 +91,7 @@
             this.Name = "MeetingForm";
             this.Resizable = false;
             this.Text = "Meeting";
+            this.Load += new System.EventHandler(this.MeetingForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -100,6 +102,7 @@
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdDeleteMeeting;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdCreateMeeting;
         private System.Windows.Forms.ListView lvwMeeting;
+        MeetingFormArguments Arguments;
 
 
     }
