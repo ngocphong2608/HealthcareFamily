@@ -244,7 +244,9 @@ namespace HealthcareFamilyGUI
 
         private void cmdMeeting_Click(object sender, EventArgs e)
         {
-            Form frm = new MeetingForm();
+            MeetingFormArguments arg = new MeetingFormArguments();
+            arg.Username = Arguments.Username;
+            Form frm = new MeetingForm(arg);
             frm.Show();
         }
 
