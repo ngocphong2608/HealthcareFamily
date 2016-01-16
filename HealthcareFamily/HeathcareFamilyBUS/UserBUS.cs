@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HeathcareFamilyBUS;
 
 namespace HealthcareFamilyBUS
 {
@@ -20,6 +21,10 @@ namespace HealthcareFamilyBUS
         public UserDTO GetUserInformation(String username)
         { 
             return userDAL.GetUserInformation(username);
+        }
+        public UserDTO GetUserInformationByEmail(String email)
+        {
+            return userDAL.GetUserInformationByEmail(email);
         }
         public bool SignIn(String username, String password)
         {
@@ -38,18 +43,6 @@ namespace HealthcareFamilyBUS
             // xu li ngoai le account type khong ton tai
 
             return userDAL.SignUp(username, password, name, birthday, gender, email, AccountTypeCode);
-        }
-
-        // username: username add follower
-        // email: follower email
-        public bool AddFollowerByEmail(String username, String email, String relationship)
-        {
-            UserDTO userDTO = userDAL.GetUserImformationByEmail(email);
-            if (userDTO != null)
-            {
-                return userDAL.AddFollower(username, userDTO.Username, relationship);
-            }
-            return false;
         }
 
         // username: username add follower
@@ -104,6 +97,35 @@ namespace HealthcareFamilyBUS
         {
             UserDAL user = new UserDAL();
             return user.IsEmailExisted(email);
+        }
+
+        public List<UserDTO> GetListUserNotFriend(string username, string info)
+        {
+            List<UserDTO> list = userDAL.GetListUser(info);
+
+            FollowerBUS followerBUS = new FollowerBUS();
+            List<FollowerDTO> followerList = followerBUS.GetListFollower(username);
+
+            //foreach (UserDTO user in list)
+            //{
+            //    if (user.Username == username)
+            //    {
+            //        list.Remove(user);
+            //        continue;
+            //    }
+
+            //    for (int i = 0; i < followerList.Count; i++)
+            //    {
+            //        if (user.Username == followerList[i].FollowerUsername)
+            //        {
+            //            list.Remove(user);
+            //        }
+            //    }
+            //}
+
+            if (list == null)
+                return new List<UserDTO>();
+            return list;
         }
     }
 }

@@ -49,7 +49,10 @@ namespace HealthcareFamilyGUI
 
         private void cmdAddUser_Click(object sender, EventArgs e)
         {
-            Form frm = new SearchingPeopleForm();
+            SearchingPeopleFormArguments arg = new SearchingPeopleFormArguments();
+            arg.Username = Arguments.Username;
+
+            Form frm = new SearchingPeopleForm(arg);
             frm.Show();
         }
 
@@ -76,7 +79,8 @@ namespace HealthcareFamilyGUI
             lvwUserList.View = View.Details;
 
             lvwUserList.Columns.Add("Name", 100, HorizontalAlignment.Left);
-            lvwUserList.Columns.Add("Relationship", 100, HorizontalAlignment.Left);
+            lvwUserList.Columns.Add("Relationship", 50, HorizontalAlignment.Left);
+            lvwUserList.Columns.Add("Email", 100, HorizontalAlignment.Left);
             lvwUserList.Columns.Add("Status", 100, HorizontalAlignment.Left);
 
             DataTable table = new DataTable();
@@ -88,6 +92,10 @@ namespace HealthcareFamilyGUI
             DataColumn idColumn = new DataColumn(
                 "Relationship", Type.GetType("System.String"));
             table.Columns.Add(idColumn);
+
+            DataColumn emailColumn = new DataColumn(
+                "Email", Type.GetType("System.String"));
+            table.Columns.Add(emailColumn);
 
             DataColumn nameColumn = new DataColumn(
                 "Status", Type.GetType("System.String"));
@@ -101,6 +109,7 @@ namespace HealthcareFamilyGUI
 
                 r["Name"] = follower.Name;
                 r["Relationship"] = followerList[i].Relationship;
+                r["Email"] = userBUS.GetUserInformation(followerList[i].FollowerUsername).Email;
                 if (follower.IsOnline)
                     r["Status"] = "Online";
                 else
@@ -117,6 +126,7 @@ namespace HealthcareFamilyGUI
             {
                 ListViewItem item = new ListViewItem(row["Name"].ToString());
                 item.SubItems.Add(row["Relationship"].ToString());
+                item.SubItems.Add(row["Email"].ToString());
                 item.SubItems.Add(row["Status"].ToString());
                 lvwUserList.Items.Add(item); //Add this row to the ListView
             }
@@ -258,14 +268,15 @@ namespace HealthcareFamilyGUI
             if (clickedItem != null)
             {
                 String Relationship = clickedItem.SubItems[1].Text;
-                Relationship = Relationship.Substring(0, Relationship.IndexOf(' '));
+
+                UserBUS userBUS = new UserBUS();
                 UserInformationFormArguments arg = new UserInformationFormArguments();
-                arg.Username = Arguments.Username;
+                arg.Username = userBUS.GetUserInformationByEmail(clickedItem.SubItems[2].Text).Username;
 
                 if (Relationship.Equals("Doctor"))
                 {
                     // need bring data to next form
-                    var frm = new DoctorInformationForm();
+                    var frm = new DoctorInformationForm(arg);
                     frm.Show();
                 }
                 else if (Relationship.Equals("Family"))

@@ -17,7 +17,10 @@ namespace HeathcareFamilyBUS
         }
         public List<AccountTypeDTO> GetListAccountType()
         {
-            return acc.GetListAccountType();
+            List<AccountTypeDTO> accList =  acc.GetListAccountType();
+            if (accList == null)
+                return new List<AccountTypeDTO>();
+            return accList;
         }
     }
 }

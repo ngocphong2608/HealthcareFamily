@@ -7,6 +7,10 @@ using System.Text;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
+using HealthcareFamilyDTO;
+using HealthcareFamilyBUS;
+using HealthcareFamilyGUI.FormArguments;
+using HeathcareFamilyBUS;
 
 
 namespace HealthcareFamilyGUI
@@ -17,16 +21,38 @@ namespace HealthcareFamilyGUI
         {
             InitializeComponent();
         }
+        public SearchingPeopleForm(SearchingPeopleFormArguments arg)
+        {
+            InitializeComponent();
+            Arguments = arg;
+        }
 
         private void cmdOk_Click(object sender, EventArgs e)
         {
-           
-            this.Hide();
+            if (lvwPeopleList.SelectedItems.Count > 0)
+            {
+                this.Hide();
 
-            var frm = new SearchingRelationshipForm();
-            frm.ShowDialog();
+                string email = lvwPeopleList.SelectedItems[0].SubItems[1].Text;
 
-            this.Show();
+                var frm = new SearchingRelationshipForm();
+                frm.ShowDialog();
+
+                string Relationship = frm.Relationship;
+
+                // database
+                FollowerBUS followerBUS = new FollowerBUS();
+                
+                // kiem tra da them follower chua
+
+                // add follower
+                followerBUS.AddFollowerByEmail(Arguments.Username, email, Relationship);
+
+                MetroMessageBox.Show(this, "Add people success!", "Message",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+            }
         }
 
         private void cmdCancel_Click(object sender, EventArgs e)
@@ -36,14 +62,20 @@ namespace HealthcareFamilyGUI
 
         private void SearchingPeopleForm_Load(object sender, EventArgs e)
         {
-
-            // cai cho nay khi nao ong search xong thi no moi hien ra danh sach ket qua
-            // tui chi lam demo cho no hien ra thoi 
             lvwPeopleList.View = View.Details;
 
             lvwPeopleList.Columns.Add("Name", 100, HorizontalAlignment.Left);
             lvwPeopleList.Columns.Add("Email", 100, HorizontalAlignment.Left);
+        }
 
+        private void cmdSearch_Click(object sender, EventArgs e)
+        {
+            string info = txtPeopleInfo.Text;
+
+            UserBUS userBUS = new UserBUS();
+            List<UserDTO> list = userBUS.GetListUserNotFriend(Arguments.Username, info);
+
+            // list view
             DataTable table = new DataTable();
 
             DataColumn countColumn = new DataColumn(
@@ -54,19 +86,11 @@ namespace HealthcareFamilyGUI
                 "Email", Type.GetType("System.String"));
             table.Columns.Add(nameColumn);
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < list.Count; i++)
             {
                 DataRow r = table.NewRow();
-                r["Name"] = "admin1";
-                r["Email"] = "abc@gmail.com";
-                table.Rows.Add(r);
-            }
-
-            for (int i = 0; i < 1; i++)
-            {
-                DataRow r = table.NewRow();
-                r["Name"] = "admin2";
-                r["Email"] = "bcd@gmail.com";
+                r["Name"] = list[i].Name;
+                r["Email"] = list[i].Email;
                 table.Rows.Add(r);
             }
 
@@ -81,5 +105,7 @@ namespace HealthcareFamilyGUI
                 lvwPeopleList.Items.Add(item); //Add this row to the ListView
             }
         }
+
+        public SearchingPeopleFormArguments Arguments { get; set; }
     }
 }

@@ -18,6 +18,9 @@ namespace HeathcareFamilyBUS
         public List<HealthcareDTO> GetListHealthcareInformation(String username)
         {
             List<HealthcareDTO>  healthcareList = health.GetListHealthcareInformation(username);
+            if (healthcareList == null)
+                return new List<HealthcareDTO>();
+
             healthcareList.Sort((x, y) => y.Time.CompareTo(x.Time));
             return healthcareList;
         }

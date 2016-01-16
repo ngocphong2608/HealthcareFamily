@@ -14,6 +14,7 @@ namespace HealthcareFamilyGUI
 {
     public partial class SearchingRelationshipForm : MetroForm
     {
+        public string Relationship { get; set; }
         public SearchingRelationshipForm()
         {
             InitializeComponent();
@@ -26,14 +27,18 @@ namespace HealthcareFamilyGUI
 
         private void cmdFinish_Click(object sender, EventArgs e)
         {
-            MetroMessageBox.Show(this, "Add people success!", "Message", 
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Relationship = cbRelationship.SelectedItem.ToString();
 
             // luc form quay ve can phai xoa het noi dung trong cai list di
             this.Close();
 
             //this.Hide();
             //this.Close();
+        }
+
+        private void SearchingRelationshipForm_Load(object sender, EventArgs e)
+        {
+            cbRelationship.SelectedIndex = 0;
         }
     }
 }

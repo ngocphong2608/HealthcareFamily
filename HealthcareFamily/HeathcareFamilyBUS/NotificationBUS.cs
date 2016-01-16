@@ -20,6 +20,10 @@ namespace HeathcareFamilyBUS
         public List<NotificationDTO> GetListNotification(String username)
         {
             List<NotificationDTO> notiList = noti.GetListNotification(username);
+
+            if (notiList == null)
+                return new List<NotificationDTO>();
+
             notiList.Sort((x, y) => y.Time.CompareTo(x.Time));
             return notiList;
         }

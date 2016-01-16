@@ -132,26 +132,6 @@ namespace HealthcareFamilyDAL
             return user;
         }
 
-        public bool AddFollower(String username, String follower, String relationship)
-        {
-            String query = "INSERT INTO FOLLOWER_INFORMATION VALUES(";
-            query += "'" + username + "',";
-            query += "'" + follower + "',";
-            query += Convert.ToString(0) + ",";
-            query += "'" + relationship + "',";
-            query += Convert.ToString(0) + ")";
-
-            try
-            {
-                DataProvider.ExecuteNonQuery(query);
-                return true;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
         public bool DeleteFollower(String username, String follower)
         {
             String query = "DELETE FROM FOLLOWER_INFORMATION WHERE Username=";
@@ -228,6 +208,66 @@ namespace HealthcareFamilyDAL
             {
                 throw;
             }
+        }
+
+        public UserDTO GetUserInformationByEmail(string email)
+        {
+            String query = "SELECT * FROM USER_INFORMATION WHERE Email='" + email + "'";
+            DataTable dt = DataProvider.ExecuteQuery(query);
+
+            if (dt.Rows.Count == 0)
+                return null;
+
+            DataRow dr = dt.Rows[0];
+
+            AccountTypeDAL acc = new AccountTypeDAL();
+            UserDTO user = new UserDTO();
+
+            user.Username = dr["Username"].ToString();
+            user.Password = dr["Password"].ToString();
+            user.Name = dr["Name"].ToString();
+            user.Birthday = DateTime.Parse(dr["Birthday"].ToString());
+            user.Gender = dr["Gender"].ToString();
+            user.Email = dr["Email"].ToString();
+            //user.mAvatar = null;
+            user.AccountType = acc.GetAccountTypeName(dr["AccountType"].ToString());
+            user.AccountType = user.AccountType.Replace(' ', '\0');
+            user.IsOnline = Boolean.Parse(dr["IsOnline"].ToString());
+
+            return user;
+        }
+
+        public List<UserDTO> GetListUser(string info)
+        {
+            String query = "SELECT * FROM USER_INFORMATION WHERE Username='" + info + "' ";
+            query += "OR Name LIKE '%" + info + "%' ";
+            query += "OR Email = '" + info + "' ";
+            DataTable dt = DataProvider.ExecuteQuery(query);
+
+            if (dt.Rows.Count == 0)
+                return null;
+
+            AccountTypeDAL acc = new AccountTypeDAL();
+            List<UserDTO> list = new List<UserDTO>();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                UserDTO user = new UserDTO();
+                user.Username = dr["Username"].ToString();
+                user.Password = dr["Password"].ToString();
+                user.Name = dr["Name"].ToString();
+                user.Birthday = DateTime.Parse(dr["Birthday"].ToString());
+                user.Gender = dr["Gender"].ToString();
+                user.Email = dr["Email"].ToString();
+                //user.mAvatar = null;
+                user.AccountType = acc.GetAccountTypeName(dr["AccountType"].ToString());
+                user.AccountType = user.AccountType.Replace(' ', '\0');
+                user.IsOnline = Boolean.Parse(dr["IsOnline"].ToString());
+
+                list.Add(user);
+            }
+
+            return list;
         }
     }
 }

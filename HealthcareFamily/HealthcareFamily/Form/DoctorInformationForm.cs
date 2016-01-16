@@ -6,6 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using HealthcareFamilyGUI.FormArguments;
+using HealthcareFamilyDTO;
+using HealthcareFamilyBUS;
+using HeathcareFamilyBUS;
+using HeathcareFamilyDTO;
 
 namespace HealthcareFamilyGUI
 {
@@ -15,7 +20,12 @@ namespace HealthcareFamilyGUI
         {
             InitializeComponent();
         }
-
+        public DoctorInformationForm(UserInformationFormArguments arg)
+        {
+            InitializeComponent();
+            Arguments = arg;
+            
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -23,20 +33,34 @@ namespace HealthcareFamilyGUI
 
         private void DoctorInformationForm_Load(object sender, EventArgs e)
         {
+            // load database
 
-            // load from database
-            txtName.Text = "Mr.doctor1";
-            txtGender.Text = "male";
-            txtEmail.Text = "abc@gmail.com";
-            txtCurrentName.Text = "doctor1";
-            txtUsername.Text = "doctor1";
+            UserBUS userBUS = new UserBUS();
+            UserDTO userDTO = userBUS.GetUserInformation(Arguments.Username);
+
+            AppointmentScheduleBUS app = new AppointmentScheduleBUS();
+            List<AppointmentScheduleDTO> appList = app.GetListAppointmentSchedule(Arguments.Username);
+
+            //
+
+            txtName.Text = userDTO.Name;
+            txtGender.Text = userDTO.Gender;
+            txtEmail.Text = userDTO.Email;
+            txtCurrentName.Text = userDTO.Name;
+            txtUsername.Text = userDTO.Username;
+
             // list view
             lvwMeeting.View = View.Details;
 
+            lvwMeeting.Columns.Add("Partner", 100, HorizontalAlignment.Left);
             lvwMeeting.Columns.Add("Date", 100, HorizontalAlignment.Left);
             lvwMeeting.Columns.Add("Description", 100, HorizontalAlignment.Left);
 
             DataTable table = new DataTable();
+
+            DataColumn partnerColumn = new DataColumn(
+                "Partner", Type.GetType("System.String"));
+            table.Columns.Add(partnerColumn);
 
             DataColumn countColumn = new DataColumn(
                 "Date", Type.GetType("System.String"));
@@ -46,19 +70,12 @@ namespace HealthcareFamilyGUI
                 "Description", Type.GetType("System.String"));
             table.Columns.Add(nameColumn);
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < appList.Count; i++)
             {
                 DataRow r = table.NewRow();
-                r["Date"] = "2/3/2015";
-                r["Description"] = "meet for health 1";
-                table.Rows.Add(r);
-            }
-
-            for (int i = 0; i < 1; i++)
-            {
-                DataRow r = table.NewRow();
-                r["Date"] = "21/3/2015";
-                r["Description"] = "meet for health 2";
+                r["Partner"] = appList[i].PartnerUsername;
+                r["Date"] = appList[i].Time.ToShortDateString();
+                r["Description"] = appList[i].Detail;
                 table.Rows.Add(r);
             }
 
@@ -68,7 +85,8 @@ namespace HealthcareFamilyGUI
 
             foreach (DataRow row in table.Rows)
             {
-                ListViewItem item = new ListViewItem(row["Date"].ToString());
+                ListViewItem item = new ListViewItem(row["Partner"].ToString());
+                item.SubItems.Add(row["Date"].ToString());
                 item.SubItems.Add(row["Description"].ToString());
                 lvwMeeting.Items.Add(item); //Add this row to the ListView
             }
@@ -78,6 +96,11 @@ namespace HealthcareFamilyGUI
         {
             Form frm = new CreateMeetingAForm();
             frm.Show();
+        }
+
+        private void cmdOk_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

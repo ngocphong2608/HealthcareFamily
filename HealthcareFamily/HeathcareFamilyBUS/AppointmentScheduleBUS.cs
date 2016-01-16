@@ -18,7 +18,10 @@ namespace HeathcareFamilyBUS
         // return: list appointment where username = username or username = partner
         public List<AppointmentScheduleDTO> GetListAppointmentSchedule(String username)
         {
-            return appDAL.GetListAppointmentSchedule(username);
+            List<AppointmentScheduleDTO> appList = appDAL.GetListAppointmentSchedule(username);
+            if (appList != null)
+                return appList;
+            return new List<AppointmentScheduleDTO>();
         }
         public void InsertAppoitmentShedule(AppointmentScheduleDTO app)
         {

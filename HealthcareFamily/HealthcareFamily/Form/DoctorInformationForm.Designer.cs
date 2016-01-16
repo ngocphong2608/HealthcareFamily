@@ -1,4 +1,5 @@
-﻿namespace HealthcareFamilyGUI
+﻿using HealthcareFamilyGUI.FormArguments;
+namespace HealthcareFamilyGUI
 {
     partial class DoctorInformationForm
     {
@@ -190,6 +191,7 @@
             this.cmdOk.Text = "OK";
             this.cmdOk.UseSelectable = true;
             this.cmdOk.UseVisualStyleBackColor = true;
+            this.cmdOk.Click += new System.EventHandler(this.cmdOk_Click);
             // 
             // lvwMeeting
             // 
@@ -240,5 +242,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdOk;
         private System.Windows.Forms.ListView lvwMeeting;
+        private UserInformationFormArguments Arguments;
     }
 }

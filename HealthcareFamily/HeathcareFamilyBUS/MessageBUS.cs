@@ -19,7 +19,10 @@ namespace HeathcareFamilyBUS
         // return: list message where username = receiver or username = sender
         public List<MessageDTO> GetListMessage(String username, String follower)
         {
-            return mess.GetListMessage(username, follower);
+            List<MessageDTO> list = mess.GetListMessage(username, follower);
+            if (list == null)
+                return new List<MessageDTO>();
+            return list;
         }
     }
 }

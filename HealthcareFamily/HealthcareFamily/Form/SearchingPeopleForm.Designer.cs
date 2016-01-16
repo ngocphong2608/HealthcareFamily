@@ -57,6 +57,7 @@
             this.cmdSearch.Text = "Search";
             this.cmdSearch.UseSelectable = true;
             this.cmdSearch.UseVisualStyleBackColor = true;
+            this.cmdSearch.Click += new System.EventHandler(this.cmdSearch_Click);
             // 
             // metroLabel3
             // 

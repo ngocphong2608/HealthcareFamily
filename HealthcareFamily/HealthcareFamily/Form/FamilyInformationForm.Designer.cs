@@ -190,18 +190,18 @@ namespace HealthcareFamilyGUI
             this.txtEmotion.AutoSize = true;
             this.txtEmotion.Location = new System.Drawing.Point(181, 55);
             this.txtEmotion.Name = "txtEmotion";
-            this.txtEmotion.Size = new System.Drawing.Size(83, 19);
+            this.txtEmotion.Size = new System.Drawing.Size(40, 19);
             this.txtEmotion.TabIndex = 20;
-            this.txtEmotion.Text = "metroLabel7";
+            this.txtEmotion.Text = "blank";
             // 
             // txtHeartBeat
             // 
             this.txtHeartBeat.AutoSize = true;
             this.txtHeartBeat.Location = new System.Drawing.Point(181, 28);
             this.txtHeartBeat.Name = "txtHeartBeat";
-            this.txtHeartBeat.Size = new System.Drawing.Size(83, 19);
+            this.txtHeartBeat.Size = new System.Drawing.Size(40, 19);
             this.txtHeartBeat.TabIndex = 19;
-            this.txtHeartBeat.Text = "metroLabel6";
+            this.txtHeartBeat.Text = "blank";
             // 
             // metroLabel11
             // 

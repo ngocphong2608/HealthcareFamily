@@ -17,7 +17,24 @@ namespace HeathcareFamilyBUS
         }
         public List<FollowerDTO> GetListFollower(string username)
         {
-            return follower.GetListFollower(username);
+            List<FollowerDTO> list = follower.GetListFollower(username);
+            if (list == null)
+                return new List<FollowerDTO>();
+            return list;
+        }
+
+        // username: username add follower
+        // email: follower email
+        public bool AddFollowerByEmail(String username, String email, String relationship)
+        {
+            UserDAL userDAL = new UserDAL();
+            UserDTO userDTO = userDAL.GetUserImformationByEmail(email);
+
+            if (userDTO != null)
+            {
+                return follower.AddFollower(username, userDTO.Username, relationship);
+            }
+            return false;
         }
     }
 }

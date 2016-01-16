@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.cbRelationship = new MetroFramework.Controls.MetroComboBox();
             this.cmdBack = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.cmdFinish = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.SuspendLayout();
@@ -43,18 +43,18 @@
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Choose Relationship";
             // 
-            // metroComboBox1
+            // cbRelationship
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Items.AddRange(new object[] {
-            "family",
-            "doctor"});
-            this.metroComboBox1.Location = new System.Drawing.Point(24, 83);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(328, 29);
-            this.metroComboBox1.TabIndex = 1;
-            this.metroComboBox1.UseSelectable = true;
+            this.cbRelationship.FormattingEnabled = true;
+            this.cbRelationship.ItemHeight = 23;
+            this.cbRelationship.Items.AddRange(new object[] {
+            "Family",
+            "Doctor"});
+            this.cbRelationship.Location = new System.Drawing.Point(24, 83);
+            this.cbRelationship.Name = "cbRelationship";
+            this.cbRelationship.Size = new System.Drawing.Size(328, 29);
+            this.cbRelationship.TabIndex = 1;
+            this.cbRelationship.UseSelectable = true;
             // 
             // cmdBack
             // 
@@ -87,12 +87,13 @@
             this.ClientSize = new System.Drawing.Size(375, 180);
             this.Controls.Add(this.cmdBack);
             this.Controls.Add(this.cmdFinish);
-            this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.cbRelationship);
             this.Controls.Add(this.metroLabel1);
             this.MaximizeBox = false;
             this.Movable = false;
             this.Name = "SearchingRelationshipForm";
             this.Text = "Choose Relationship";
+            this.Load += new System.EventHandler(this.SearchingRelationshipForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,7 +102,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroComboBox cbRelationship;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdBack;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdFinish;
     }
