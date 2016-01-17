@@ -50,14 +50,22 @@ namespace HealthcareFamilyGUI
             UserBUS userBUS = new UserBUS();
             HealthcareBUS healthcareBUS = new HealthcareBUS();
 
-            UserDTO user = userBUS.GetUserInformation(Arguments.Username);
-            List<HealthcareDTO> healthcareList = healthcareBUS.GetListHealthcareInformation(Arguments.Username);
+            UserDTO user = userBUS.GetUserInformation(Arguments.FollowerUsername);
 
             txtUsername.Text = user.Username;
             txtCurrentName.Text = user.Name;
             txtFullname.Text = user.Name;
             txtRelationship.Text = user.AccountType;
             txtEmail.Text = user.Email;
+
+            // check if user share information
+            FollowerBUS followerBUS = new FollowerBUS();
+            FollowerDTO followerDTO = followerBUS.GetFollowerInformation(Arguments.Username, Arguments.FollowerUsername);
+
+            if (followerDTO != null && followerDTO.IsPermitAccessInfo == false)
+                return;
+
+            List<HealthcareDTO> healthcareList = healthcareBUS.GetListHealthcareInformation(Arguments.Username);
 
             if (healthcareList.Count > 0)
             {

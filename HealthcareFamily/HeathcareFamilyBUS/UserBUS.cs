@@ -19,7 +19,7 @@ namespace HealthcareFamilyBUS
             accoutTypeDAL = new AccountTypeDAL();
         }
         public UserDTO GetUserInformation(String username)
-        { 
+        {
             return userDAL.GetUserInformation(username);
         }
         public UserDTO GetUserInformationByEmail(String email)
@@ -103,28 +103,36 @@ namespace HealthcareFamilyBUS
         {
             List<UserDTO> list = userDAL.GetListUser(info);
 
+            if (list == null)
+                return new List<UserDTO>();
+
             FollowerBUS followerBUS = new FollowerBUS();
             List<FollowerDTO> followerList = followerBUS.GetListFollower(username);
 
-            //foreach (UserDTO user in list)
-            //{
-            //    if (user.Username == username)
-            //    {
-            //        list.Remove(user);
-            //        continue;
-            //    }
+            List<UserDTO> remove = new List<UserDTO>();
 
-            //    for (int i = 0; i < followerList.Count; i++)
-            //    {
-            //        if (user.Username == followerList[i].FollowerUsername)
-            //        {
-            //            list.Remove(user);
-            //        }
-            //    }
-            //}
+            foreach (UserDTO user in list)
+            {
+                if (user.Username == username)
+                {
+                    remove.Add(user);
+                    continue;
+                }
 
-            if (list == null)
-                return new List<UserDTO>();
+                for (int i = 0; i < followerList.Count; i++)
+                {
+                    if (user.Username == followerList[i].FollowerUsername)
+                    {
+                        remove.Add(user);
+                    }
+                }
+            }
+
+            for (int i = 0; i < remove.Count; i++)
+            {
+                list.Remove(remove[i]);
+            }
+
             return list;
         }
     }

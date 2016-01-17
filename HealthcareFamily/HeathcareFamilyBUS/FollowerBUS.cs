@@ -10,17 +10,23 @@ namespace HeathcareFamilyBUS
 {
     public class FollowerBUS
     {
-        FollowerDAL follower;
+        FollowerDAL followerDAL;
         public FollowerBUS()
         {
-            follower = new FollowerDAL();
+            followerDAL = new FollowerDAL();
         }
         public List<FollowerDTO> GetListFollower(string username)
         {
-            List<FollowerDTO> list = follower.GetListFollower(username);
+            List<FollowerDTO> list = followerDAL.GetListFollower(username);
             if (list == null)
                 return new List<FollowerDTO>();
             return list;
+        }
+        public FollowerDTO GetFollowerInformation(string username, string follower)
+        {
+            FollowerDTO followerDTO = followerDAL.GeFollowerInformation(username, follower);
+
+            return followerDTO;
         }
 
         // username: username add follower
@@ -32,9 +38,10 @@ namespace HeathcareFamilyBUS
 
             if (userDTO != null)
             {
-                return follower.AddFollower(username, userDTO.Username, relationship);
+                return followerDAL.AddFollower(username, userDTO.Username, relationship);
             }
             return false;
         }
+
     }
 }

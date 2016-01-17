@@ -9,5 +9,6 @@ namespace HealthcareFamilyGUI.FormArguments
     public class UserInformationFormArguments
     {
         public String Username { get; set; }
+        public String FollowerUsername { get; set; }
     }
 }

@@ -49,12 +49,6 @@ namespace HealthcareFamilyGUI
                 txtEmotion.Text = healthcareList[0].Emotion;
             }
 
-            lvwHeathcareInfo.View = View.Details;
-
-            lvwHeathcareInfo.Columns.Add("Date", 100, HorizontalAlignment.Left);
-            lvwHeathcareInfo.Columns.Add("Heartbeat", 100, HorizontalAlignment.Left);
-            lvwHeathcareInfo.Columns.Add("Emotion", 100, HorizontalAlignment.Left);
-
             DataTable table = new DataTable();
 
             DataColumn countColumn = new DataColumn(
@@ -93,6 +87,12 @@ namespace HealthcareFamilyGUI
 
         private void PersonalFamilyInformationForm_Load(object sender, EventArgs e)
         {
+            lvwHeathcareInfo.View = View.Details;
+
+            lvwHeathcareInfo.Columns.Add("Date", 100, HorizontalAlignment.Left);
+            lvwHeathcareInfo.Columns.Add("Heartbeat", 100, HorizontalAlignment.Left);
+            lvwHeathcareInfo.Columns.Add("Emotion", 100, HorizontalAlignment.Left);
+
             FormReload();
         }
 

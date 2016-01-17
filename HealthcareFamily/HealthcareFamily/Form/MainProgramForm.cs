@@ -271,7 +271,8 @@ namespace HealthcareFamilyGUI
 
                 UserBUS userBUS = new UserBUS();
                 UserInformationFormArguments arg = new UserInformationFormArguments();
-                arg.Username = userBUS.GetUserInformationByEmail(clickedItem.SubItems[2].Text).Username;
+                arg.FollowerUsername = userBUS.GetUserInformationByEmail(clickedItem.SubItems[2].Text).Username;
+                arg.Username = Arguments.Username;
 
                 if (Relationship.Equals("Doctor"))
                 {

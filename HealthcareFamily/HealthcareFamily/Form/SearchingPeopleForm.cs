@@ -52,6 +52,10 @@ namespace HealthcareFamilyGUI
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Close();
+            } else
+            {
+                MetroMessageBox.Show(this, "Please select a people!", "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

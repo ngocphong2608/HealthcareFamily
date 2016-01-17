@@ -35,7 +35,8 @@ namespace HealthcareFamilyDAL
 
         public void InsertHealthCareInformation(String username, HealthcareDTO healthcare)
         {
-            String query = "INSERT INTO HEALTHCARE_INFORMATION VALUES(";
+            String query = "set dateformat dmy\n";
+            query += "INSERT INTO HEALTHCARE_INFORMATION VALUES(";
             query += "'" + username + "', ";
             query += "'" + healthcare.Time.ToShortDateString() + "', ";
             query += healthcare.HeartBeat + ", ";

@@ -36,10 +36,10 @@ namespace HealthcareFamilyGUI
             // load database
 
             UserBUS userBUS = new UserBUS();
-            UserDTO userDTO = userBUS.GetUserInformation(Arguments.Username);
+            UserDTO userDTO = userBUS.GetUserInformation(Arguments.FollowerUsername);
 
             AppointmentScheduleBUS app = new AppointmentScheduleBUS();
-            List<AppointmentScheduleDTO> appList = app.GetListAppointmentSchedule(Arguments.Username);
+            List<AppointmentScheduleDTO> appList = app.GetListAppointmentSchedule(Arguments.Username, Arguments.FollowerUsername);
 
             //
 

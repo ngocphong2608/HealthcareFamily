@@ -27,5 +27,13 @@ namespace HeathcareFamilyBUS
         {
             appDAL.InsertAppoitmentShedule(app);
         }
+
+        public List<AppointmentScheduleDTO> GetListAppointmentSchedule(string username, string follower)
+        {
+            List<AppointmentScheduleDTO> appList = appDAL.GetListAppointmentSchedule(username, follower);
+            if (appList != null)
+                return appList;
+            return new List<AppointmentScheduleDTO>();
+        }
     }
 }

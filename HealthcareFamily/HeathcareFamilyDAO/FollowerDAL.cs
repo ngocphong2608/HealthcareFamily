@@ -53,5 +53,27 @@ namespace HealthcareFamilyDAL
 
             return ListFollower;
         }
+
+        public FollowerDTO GeFollowerInformation(string username, string follower)
+        {
+            String query = "SELECT * FROM FOLLOWER_INFORMATION WHERE USERNAME='" + username + "' ";
+            query += "AND Follower_Username='" + follower + "'";
+
+            DataTable dt = DataProvider.ExecuteQuery(query);
+
+            if (dt.Rows.Count == 0)
+                return null;
+
+            DataRow dr = dt.Rows[0];
+
+            FollowerDTO followerDTO = new FollowerDTO();
+            followerDTO.FollowerUsername = dr["Follower_Username"].ToString();
+            followerDTO.IsPermitAccessInfo = Boolean.Parse(dr["IsPermitAccessInfo"].ToString());
+            followerDTO.IsUserAccepted = Boolean.Parse(dr["IsUserAccepted"].ToString());
+            followerDTO.Relationship = dr["Relationship"].ToString();
+            followerDTO.Username = dr["Username"].ToString();
+
+            return followerDTO;
+        }
     }
 }
