@@ -27,17 +27,18 @@ namespace HealthcareFamilyDAL
                 app.Detail = dr["Detail"].ToString();
                 app.Username = dr["Username"].ToString();
                 app.PartnerUsername = dr["Partner_Username"].ToString();
-                app.Time = DateTime.Parse(dr["Time"].ToString());
+                app.Time = dr["Time"].ToString();
                 ListAppointment.Add(app);
             }
 
             return ListAppointment;
         }
-        public void InsertAppoitmentShedule(AppointmentScheduleDTO app)
+        public void CreateAppointmentSchedule(AppointmentScheduleDTO app)
         {
-            String query = "INSERT INTO APPOINTMENT_SCHEDULE VALUES(";
+            String query = "SET DATEFORMAT DMY\n";
+            query += "INSERT INTO APPOINTMENT_SCHEDULE VALUES(";
             query += "'" + app.Username + "', ";
-            query += "'" + app.Time.ToShortDateString() + "', ";
+            query += "'" + app.Time + "', ";
             query += "'" + app.PartnerUsername + "', ";
             query += "'" + app.Detail + "')";
             DataProvider.ExecuteNonQuery(query);
@@ -60,7 +61,7 @@ namespace HealthcareFamilyDAL
                 app.Detail = dr["Detail"].ToString();
                 app.Username = dr["Username"].ToString();
                 app.PartnerUsername = dr["Partner_Username"].ToString();
-                app.Time = DateTime.Parse(dr["Time"].ToString());
+                app.Time = dr["Time"].ToString();
                 ListAppointment.Add(app);
             }
 

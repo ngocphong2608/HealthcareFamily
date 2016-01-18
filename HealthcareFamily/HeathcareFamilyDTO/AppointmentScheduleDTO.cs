@@ -11,8 +11,6 @@ namespace HeathcareFamilyDTO
         public string Username { get; set; }
         public string PartnerUsername { get; set; }
         public string Detail { get; set; }
-        public DateTime Time { get; set; }
-
-        
+        public string Time { get; set; }
     }
 }

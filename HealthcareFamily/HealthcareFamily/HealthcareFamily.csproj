@@ -52,16 +52,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormArguments\CreateMeetingFormArguments.cs" />
     <Compile Include="FormArguments\MainProgramFormArguments.cs" />
     <Compile Include="FormArguments\MeetingFormArguments.cs" />
     <Compile Include="FormArguments\NotificationFormArguments.cs" />
     <Compile Include="FormArguments\SearchingPeopleFormArguments.cs" />
     <Compile Include="FormArguments\UserInformationFormArguments.cs" />
-    <Compile Include="Form\CreateMeetingAForm.cs">
+    <Compile Include="Form\CreateMeetingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\CreateMeetingAForm.Designer.cs">
-      <DependentUpon>CreateMeetingAForm.cs</DependentUpon>
+    <Compile Include="Form\CreateMeetingForm.Designer.cs">
+      <DependentUpon>CreateMeetingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\DoctorInformationForm.cs">
       <SubType>Form</SubType>
@@ -150,8 +151,8 @@
       <DependentUpon>SignUpSecondStepForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FormArguments\SignUpSecondStepFromArguments.cs" />
-    <EmbeddedResource Include="Form\CreateMeetingAForm.resx">
-      <DependentUpon>CreateMeetingAForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form\CreateMeetingForm.resx">
+      <DependentUpon>CreateMeetingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\DoctorInformationForm.resx">
       <DependentUpon>DoctorInformationForm.cs</DependentUpon>

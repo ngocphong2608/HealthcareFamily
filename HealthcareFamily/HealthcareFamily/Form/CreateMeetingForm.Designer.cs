@@ -1,6 +1,7 @@
-﻿namespace HealthcareFamilyGUI
+﻿using HealthcareFamilyGUI.FormArguments;
+namespace HealthcareFamilyGUI
 {
-    partial class CreateMeetingAForm
+    partial class CreateMeetingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +30,15 @@
         private void InitializeComponent()
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.cbDoctor = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
+            this.dtTime = new MetroFramework.Controls.MetroDateTime();
             this.cmdCancel = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.cmdOK = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.txtHour = new System.Windows.Forms.TextBox();
-            this.txtMinute = new System.Windows.Forms.TextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.cbHour = new MetroFramework.Controls.MetroComboBox();
+            this.cbMinute = new MetroFramework.Controls.MetroComboBox();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -49,15 +50,15 @@
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Doctor:";
             // 
-            // metroComboBox1
+            // cbDoctor
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(110, 71);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(242, 29);
-            this.metroComboBox1.TabIndex = 1;
-            this.metroComboBox1.UseSelectable = true;
+            this.cbDoctor.FormattingEnabled = true;
+            this.cbDoctor.ItemHeight = 23;
+            this.cbDoctor.Location = new System.Drawing.Point(110, 71);
+            this.cbDoctor.Name = "cbDoctor";
+            this.cbDoctor.Size = new System.Drawing.Size(242, 29);
+            this.cbDoctor.TabIndex = 1;
+            this.cbDoctor.UseSelectable = true;
             // 
             // metroLabel2
             // 
@@ -68,18 +69,18 @@
             this.metroLabel2.TabIndex = 2;
             this.metroLabel2.Text = "Date:";
             // 
-            // metroDateTime1
+            // dtTime
             // 
-            this.metroDateTime1.Location = new System.Drawing.Point(110, 106);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(242, 29);
-            this.metroDateTime1.TabIndex = 3;
+            this.dtTime.Location = new System.Drawing.Point(110, 106);
+            this.dtTime.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtTime.Name = "dtTime";
+            this.dtTime.Size = new System.Drawing.Size(242, 29);
+            this.dtTime.TabIndex = 3;
             // 
             // cmdCancel
             // 
             this.cmdCancel.Image = null;
-            this.cmdCancel.Location = new System.Drawing.Point(24, 188);
+            this.cmdCancel.Location = new System.Drawing.Point(24, 184);
             this.cmdCancel.Name = "cmdCancel";
             this.cmdCancel.Size = new System.Drawing.Size(154, 35);
             this.cmdCancel.TabIndex = 31;
@@ -91,7 +92,7 @@
             // cmdOK
             // 
             this.cmdOK.Image = null;
-            this.cmdOK.Location = new System.Drawing.Point(184, 188);
+            this.cmdOK.Location = new System.Drawing.Point(184, 184);
             this.cmdOK.Name = "cmdOK";
             this.cmdOK.Size = new System.Drawing.Size(168, 35);
             this.cmdOK.TabIndex = 30;
@@ -103,56 +104,148 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(104, 149);
+            this.metroLabel3.Location = new System.Drawing.Point(104, 145);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(42, 19);
             this.metroLabel3.TabIndex = 32;
             this.metroLabel3.Text = "Hour:";
             // 
-            // txtHour
-            // 
-            this.txtHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHour.Location = new System.Drawing.Point(152, 141);
-            this.txtHour.Name = "txtHour";
-            this.txtHour.Size = new System.Drawing.Size(68, 27);
-            this.txtHour.TabIndex = 33;
-            // 
-            // txtMinute
-            // 
-            this.txtMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinute.Location = new System.Drawing.Point(284, 141);
-            this.txtMinute.Name = "txtMinute";
-            this.txtMinute.Size = new System.Drawing.Size(68, 27);
-            this.txtMinute.TabIndex = 35;
-            // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(226, 149);
+            this.metroLabel4.Location = new System.Drawing.Point(226, 145);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(52, 19);
             this.metroLabel4.TabIndex = 34;
             this.metroLabel4.Text = "Minute:";
             // 
-            // CreateMeetingAForm
+            // cbHour
+            // 
+            this.cbHour.FormattingEnabled = true;
+            this.cbHour.ItemHeight = 23;
+            this.cbHour.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"});
+            this.cbHour.Location = new System.Drawing.Point(152, 142);
+            this.cbHour.Name = "cbHour";
+            this.cbHour.Size = new System.Drawing.Size(63, 29);
+            this.cbHour.TabIndex = 36;
+            this.cbHour.UseSelectable = true;
+            // 
+            // cbMinute
+            // 
+            this.cbMinute.FormattingEnabled = true;
+            this.cbMinute.ItemHeight = 23;
+            this.cbMinute.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59"});
+            this.cbMinute.Location = new System.Drawing.Point(288, 142);
+            this.cbMinute.Name = "cbMinute";
+            this.cbMinute.Size = new System.Drawing.Size(63, 29);
+            this.cbMinute.TabIndex = 37;
+            this.cbMinute.UseSelectable = true;
+            // 
+            // CreateMeetingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 247);
-            this.Controls.Add(this.txtMinute);
+            this.ClientSize = new System.Drawing.Size(375, 232);
+            this.Controls.Add(this.cbMinute);
+            this.Controls.Add(this.cbHour);
             this.Controls.Add(this.metroLabel4);
-            this.Controls.Add(this.txtHour);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.cmdCancel);
             this.Controls.Add(this.cmdOK);
-            this.Controls.Add(this.metroDateTime1);
+            this.Controls.Add(this.dtTime);
             this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.cbDoctor);
             this.Controls.Add(this.metroLabel1);
             this.MaximizeBox = false;
-            this.Name = "CreateMeetingAForm";
+            this.Name = "CreateMeetingForm";
             this.Resizable = false;
             this.Text = "Create Meeting";
+            this.Load += new System.EventHandler(this.CreateMeetingAForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,14 +254,15 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroComboBox cbDoctor;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
+        private MetroFramework.Controls.MetroDateTime dtTime;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdCancel;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdOK;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private System.Windows.Forms.TextBox txtHour;
-        private System.Windows.Forms.TextBox txtMinute;
         private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroComboBox cbHour;
+        private MetroFramework.Controls.MetroComboBox cbMinute;
+        private CreateMeetingFormArguments Arguments;
     }
 }

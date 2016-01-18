@@ -74,7 +74,7 @@ namespace HealthcareFamilyGUI
             {
                 DataRow r = table.NewRow();
                 r["Partner"] = appList[i].PartnerUsername;
-                r["Date"] = appList[i].Time.ToShortDateString();
+                r["Date"] = appList[i].Time;
                 r["Description"] = appList[i].Detail;
                 table.Rows.Add(r);
             }
@@ -94,7 +94,7 @@ namespace HealthcareFamilyGUI
 
         private void cmdCreateMeeting_Click(object sender, EventArgs e)
         {
-            Form frm = new CreateMeetingAForm();
+            Form frm = new CreateMeetingForm();
             frm.Show();
         }
 

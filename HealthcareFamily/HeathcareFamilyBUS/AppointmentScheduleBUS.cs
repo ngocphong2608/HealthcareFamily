@@ -1,4 +1,6 @@
-﻿using HealthcareFamilyDAL;
+﻿using HealthcareFamilyBUS;
+using HealthcareFamilyDAL;
+using HealthcareFamilyDTO;
 using HeathcareFamilyDTO;
 using System;
 using System.Collections.Generic;
@@ -23,10 +25,6 @@ namespace HeathcareFamilyBUS
                 return appList;
             return new List<AppointmentScheduleDTO>();
         }
-        public void InsertAppoitmentShedule(AppointmentScheduleDTO app)
-        {
-            appDAL.InsertAppoitmentShedule(app);
-        }
 
         public List<AppointmentScheduleDTO> GetListAppointmentSchedule(string username, string follower)
         {
@@ -34,6 +32,20 @@ namespace HeathcareFamilyBUS
             if (appList != null)
                 return appList;
             return new List<AppointmentScheduleDTO>();
+        }
+        public void CreateAppointmentSchedule(string username, string doctorEmail, string time, string detail)
+        {
+            UserBUS userBUS = new UserBUS();
+            UserDTO doctor = userBUS.GetUserInformationByEmail(doctorEmail);
+
+            AppointmentScheduleDAL appDAL = new AppointmentScheduleDAL();
+            AppointmentScheduleDTO app = new AppointmentScheduleDTO();
+            app.Username = username;
+            app.PartnerUsername = doctor.Username;
+            app.Time = time;
+            app.Detail = detail;
+
+            appDAL.CreateAppointmentSchedule(app);
         }
     }
 }

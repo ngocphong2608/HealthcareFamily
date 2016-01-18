@@ -36,11 +36,18 @@ namespace HealthcareFamilyGUI
 
         private void cmdCreateMeeting_Click(object sender, EventArgs e)
         {
-            Form frm = new CreateMeetingAForm();
-            frm.Show();
-        }
+            CreateMeetingFormArguments arg = new CreateMeetingFormArguments();
+            arg.Username = Arguments.Username;
+            
+            Form frm = new CreateMeetingForm(arg);
 
-        private void MeetingForm_Load(object sender, EventArgs e)
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                // refresh listview
+                MeetingForm_ReLoad();
+            }
+        }
+        private void MeetingForm_ReLoad()
         {
             // load from database
             UserBUS userBUS = new UserBUS();
@@ -48,13 +55,6 @@ namespace HealthcareFamilyGUI
 
             AppointmentScheduleBUS app = new AppointmentScheduleBUS();
             List<AppointmentScheduleDTO> appList = app.GetListAppointmentSchedule(Arguments.Username);
-
-            // list view
-            lvwMeeting.View = View.Details;
-
-            lvwMeeting.Columns.Add("Partner", 100, HorizontalAlignment.Left);
-            lvwMeeting.Columns.Add("Date", 100, HorizontalAlignment.Left);
-            lvwMeeting.Columns.Add("Description", 100, HorizontalAlignment.Left);
 
             DataTable table = new DataTable();
 
@@ -74,7 +74,7 @@ namespace HealthcareFamilyGUI
             {
                 DataRow r = table.NewRow();
                 r["Partner"] = appList[i].PartnerUsername;
-                r["Date"] = appList[i].Time.ToShortDateString();
+                r["Date"] = appList[i].Time;
                 r["Description"] = appList[i].Detail;
                 table.Rows.Add(r);
             }
@@ -90,6 +90,18 @@ namespace HealthcareFamilyGUI
                 item.SubItems.Add(row["Description"].ToString());
                 lvwMeeting.Items.Add(item); //Add this row to the ListView
             }
+        }
+
+        private void MeetingForm_Load(object sender, EventArgs e)
+        {
+            // list view
+            lvwMeeting.View = View.Details;
+
+            lvwMeeting.Columns.Add("Partner", 100, HorizontalAlignment.Left);
+            lvwMeeting.Columns.Add("Date", 100, HorizontalAlignment.Left);
+            lvwMeeting.Columns.Add("Description", 100, HorizontalAlignment.Left);
+
+            MeetingForm_ReLoad();
         }
     }
 }
