@@ -22,7 +22,7 @@ namespace HealthcareFamilyGUI
 
         private void cmdBack_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.Ignore;
         }
 
         private void cmdFinish_Click(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace HealthcareFamilyGUI
 
             // luc form quay ve can phai xoa het noi dung trong cai list di
             this.Close();
-
+            this.DialogResult = DialogResult.OK;
             //this.Hide();
             //this.Close();
         }

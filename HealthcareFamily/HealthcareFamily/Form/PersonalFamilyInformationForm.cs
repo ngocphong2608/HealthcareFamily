@@ -99,16 +99,17 @@ namespace HealthcareFamilyGUI
         private void txtCheckHeathCare_Click(object sender, EventArgs e)
         {
             var frm = new HealthcareCheckingForm();
-            frm.ShowDialog();
-
-            // insert database
-            HealthcareBUS healthCareBUS = new HealthcareBUS();
-            HealthcareDTO healthcare = new HealthcareDTO();
-            healthcare.Emotion = frm.Emotion;
-            healthcare.HeartBeat = frm.HeartBeat;
-            healthcare.Time = frm.Date;
-            healthCareBUS.InsertHealthCareInformation(Arguments.Username, healthcare);
-            FormReload();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                // insert database
+                HealthcareBUS healthCareBUS = new HealthcareBUS();
+                HealthcareDTO healthcare = new HealthcareDTO();
+                healthcare.Emotion = frm.Emotion;
+                healthcare.HeartBeat = frm.HeartBeat;
+                healthcare.Time = frm.Date;
+                healthCareBUS.InsertHealthCareInformation(Arguments.Username, healthcare);
+                FormReload();
+            }
         }
 
         private void cmdOk_Click(object sender, EventArgs e)

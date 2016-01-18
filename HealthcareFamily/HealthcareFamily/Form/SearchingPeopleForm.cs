@@ -36,22 +36,28 @@ namespace HealthcareFamilyGUI
                 string email = lvwPeopleList.SelectedItems[0].SubItems[1].Text;
 
                 var frm = new SearchingRelationshipForm();
-                frm.ShowDialog();
 
-                string Relationship = frm.Relationship;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
 
-                // database
-                FollowerBUS followerBUS = new FollowerBUS();
-                
-                // kiem tra da them follower chua
+                    string Relationship = frm.Relationship;
 
-                // add follower
-                followerBUS.AddFollowerByEmail(Arguments.Username, email, Relationship);
+                    // database
+                    FollowerBUS followerBUS = new FollowerBUS();
 
-                MetroMessageBox.Show(this, "Add people success!", "Message",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // kiem tra da them follower chua
 
-                this.Close();
+                    // add follower
+                    followerBUS.AddFollowerByEmail(Arguments.Username, email, Relationship);
+
+                    MetroMessageBox.Show(this, "Add people success!", "Message",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
+                } else if (frm.DialogResult == DialogResult.Cancel || frm.DialogResult == DialogResult.Ignore)
+                {
+                    this.Show();
+                }
             } else
             {
                 MetroMessageBox.Show(this, "Please select a people!", "Error",

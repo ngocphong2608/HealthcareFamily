@@ -48,6 +48,7 @@
     <Compile Include="MessageDAL.cs" />
     <Compile Include="NotificationDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharingInfoDAL.cs" />
     <Compile Include="UserDAL.cs" />
   </ItemGroup>
   <ItemGroup>

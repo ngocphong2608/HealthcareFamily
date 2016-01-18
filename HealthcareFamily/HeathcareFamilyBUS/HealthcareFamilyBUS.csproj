@@ -46,6 +46,7 @@
     <Compile Include="MessageBUS.cs" />
     <Compile Include="NotificationBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharingInfoBUS.cs" />
     <Compile Include="UserBUS.cs" />
   </ItemGroup>
   <ItemGroup>

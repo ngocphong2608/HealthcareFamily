@@ -54,7 +54,7 @@ namespace HealthcareFamilyDAL
             return ListFollower;
         }
 
-        public FollowerDTO GeFollowerInformation(string username, string follower)
+        public FollowerDTO GetFollowerInformation(string username, string follower)
         {
             String query = "SELECT * FROM FOLLOWER_INFORMATION WHERE USERNAME='" + username + "' ";
             query += "AND Follower_Username='" + follower + "'";

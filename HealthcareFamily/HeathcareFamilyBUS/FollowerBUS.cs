@@ -24,7 +24,7 @@ namespace HeathcareFamilyBUS
         }
         public FollowerDTO GetFollowerInformation(string username, string follower)
         {
-            FollowerDTO followerDTO = followerDAL.GeFollowerInformation(username, follower);
+            FollowerDTO followerDTO = followerDAL.GetFollowerInformation(username, follower);
 
             return followerDTO;
         }
