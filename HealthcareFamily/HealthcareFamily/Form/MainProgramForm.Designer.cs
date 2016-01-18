@@ -127,6 +127,7 @@ namespace HealthcareFamilyGUI
             this.cmdRequestNewUser.Text = "Request New User";
             this.cmdRequestNewUser.UseSelectable = true;
             this.cmdRequestNewUser.UseVisualStyleBackColor = true;
+            this.cmdRequestNewUser.Click += new System.EventHandler(this.cmdRequestNewUser_Click);
             // 
             // txtName
             // 

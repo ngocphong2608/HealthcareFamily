@@ -288,5 +288,11 @@ namespace HealthcareFamilyGUI
                 }
             }
         }
+
+        private void cmdRequestNewUser_Click(object sender, EventArgs e)
+        {
+            Form frm = new RequestUserForm();
+            frm.Show();
+        }
     }
 }

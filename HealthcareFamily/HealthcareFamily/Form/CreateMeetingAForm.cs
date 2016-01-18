@@ -17,5 +17,15 @@ namespace HealthcareFamilyGUI
         {
             InitializeComponent();
         }
+
+        private void cmdOK_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cmdCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
