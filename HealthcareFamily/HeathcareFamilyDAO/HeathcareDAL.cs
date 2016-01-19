@@ -38,7 +38,7 @@ namespace HealthcareFamilyDAL
             String query = "set dateformat dmy\n";
             query += "INSERT INTO HEALTHCARE_INFORMATION VALUES(";
             query += "'" + username + "', ";
-            query += "'" + healthcare.Time.ToShortDateString() + "', ";
+            query += "'" + healthcare.Time.ToShortDateString() + " " + healthcare.Time.Hour + ":" + healthcare.Time.Minute + ":" + healthcare.Time.Second + "', ";
             query += healthcare.HeartBeat + ", ";
             query += "'" + healthcare.Emotion + "')";
             DataProvider.ExecuteNonQuery(query);

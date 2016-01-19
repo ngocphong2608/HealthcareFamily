@@ -40,7 +40,7 @@ namespace HealthcareFamilyDAL
         public void SetStatus(String username, bool IsOnline)
         {
             String query = "UPDATE USER_INFORMATION ";
-            query += "SET IsOnline=" + Convert.ToString(0) + " ";
+            query += "SET IsOnline='" + Convert.ToString(IsOnline) + "' ";
             query += "WHERE Username='" + username + "'";
 
             try

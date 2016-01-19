@@ -56,7 +56,7 @@ namespace HealthcareFamilyGUI
             ///
             UserBUS userBUS = new UserBUS();
 
-            bool success = userBUS.SignUp(userControler.Username, userControler.Password, fullname, birthday, gender, userControler.Email, userControler.AccountType);
+            bool success = userBUS.SignUp(userControler.Username.ToLower(), userControler.Password, fullname, birthday, gender, userControler.Email, userControler.AccountType);
             ////
 
             if (success)

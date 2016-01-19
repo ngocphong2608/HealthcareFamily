@@ -66,7 +66,7 @@ namespace HealthcareFamilyGUI
             for (int i = 0; i < healthcareList.Count; i++)
             {
                 DataRow r = table.NewRow();
-                r["Date"] = healthcareList[i].Time.ToShortDateString();
+                r["Date"] = healthcareList[i].Time.ToString();
                 r["Heartbeat"] = healthcareList[i].HeartBeat;
                 r["Emotion"] = healthcareList[i].Emotion;
                 table.Rows.Add(r);

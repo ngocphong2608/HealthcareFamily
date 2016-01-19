@@ -25,7 +25,7 @@ namespace HealthcareFamilyGUI
         private void cmdOK_Click(object sender, EventArgs e)
         {
             HeartBeat = txtHeartBeat.Text;
-            Emotion = txtEmotion.Text;
+            Emotion = cbEmotion.SelectedItem.ToString();
 
             if (HeartBeat == "")
             {
@@ -42,9 +42,16 @@ namespace HealthcareFamilyGUI
             }
 
             // get current time 
-            Date = DateTime.Now.Date;
+            Date = DateTime.Now;
+
+            this.DialogResult = DialogResult.OK;
 
             this.Close();
+        }
+
+        private void HealthcareCheckingForm_Load(object sender, EventArgs e)
+        {
+            cbEmotion.SelectedIndex = 0;
         }
     }
 }

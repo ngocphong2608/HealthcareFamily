@@ -21,9 +21,11 @@ namespace HeathcareFamilyBUS
         public List<AppointmentScheduleDTO> GetListAppointmentSchedule(String username)
         {
             List<AppointmentScheduleDTO> appList = appDAL.GetListAppointmentSchedule(username);
-            if (appList != null)
-                return appList;
-            return new List<AppointmentScheduleDTO>();
+            if (appList == null)
+                return new List<AppointmentScheduleDTO>();
+
+            appList.Sort((x, y) => y.Time.CompareTo(x.Time));
+            return appList;
         }
 
         public List<AppointmentScheduleDTO> GetListAppointmentSchedule(string username, string follower)

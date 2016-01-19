@@ -78,8 +78,8 @@ namespace HealthcareFamilyGUI
         {
             lvwPeopleList.View = View.Details;
 
-            lvwPeopleList.Columns.Add("Name", 100, HorizontalAlignment.Left);
-            lvwPeopleList.Columns.Add("Email", 100, HorizontalAlignment.Left);
+            lvwPeopleList.Columns.Add("Name", 150, HorizontalAlignment.Left);
+            lvwPeopleList.Columns.Add("Email", 200, HorizontalAlignment.Left);
         }
 
         private void cmdSearch_Click(object sender, EventArgs e)

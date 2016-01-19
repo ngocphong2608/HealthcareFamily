@@ -27,5 +27,10 @@ namespace HeathcareFamilyBUS
             notiList.Sort((x, y) => y.Time.CompareTo(x.Time));
             return notiList;
         }
+        public void SetNotification(string username, string follower, DateTime dt, string detail)
+        {
+            string time = dt.ToShortDateString() + " " + dt.Hour + ":" + dt.Minute + ":" + dt.Second;
+            noti.SetNotification(follower, username, time, detail);
+        }
     }
 }

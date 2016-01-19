@@ -150,27 +150,7 @@ namespace HealthcareFamilyGUI
 
         private void lvwUserList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            var senderList = (ListView)sender;
-        
-            var clickedItem = senderList.HitTest(e.Location).Item;
-            if (clickedItem != null)
-            {
-                String Relationship = clickedItem.SubItems[1].Text;
-                
-
-                if (Relationship.Equals("doctor"))
-                {
-                    // need bring data to next form
-                    var frm = new DoctorInformationForm();
-                    frm.Show();
-                }
-                else
-                {
-                    // need bring data to next form
-                    var frm = new FamilyInformationForm();
-                    frm.Show();
-                }
-            }
+            
         }
 
         private void cmdProfile_Click(object sender, EventArgs e)
@@ -248,8 +228,24 @@ namespace HealthcareFamilyGUI
 
         private void cmdEmergency_Click(object sender, EventArgs e)
         {
-            MetroMessageBox.Show(this, "You are in danger, right? Would you like to notify all people in your list?", "Message", 
+            var result = MetroMessageBox.Show(this, "You are in danger, right? Would you like to notify all people in your list?", "Message", 
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                // load friend list
+                FollowerBUS followerBUS = new FollowerBUS();
+                NotificationBUS notiBUS = new NotificationBUS();
+                List<FollowerDTO> followerList = followerBUS.GetAllFollower(Arguments.Username);
+
+                // send notifycation to each friend
+                DateTime Time = DateTime.Now;
+                foreach(FollowerDTO follower in followerList)
+                {
+                    // set notification
+                    notiBUS.SetNotification(Arguments.Username, follower.FollowerUsername, Time, "Your friend are in danger!!!");
+                }
+            }
         }
 
         private void cmdMeeting_Click(object sender, EventArgs e)
@@ -271,16 +267,18 @@ namespace HealthcareFamilyGUI
 
                 UserBUS userBUS = new UserBUS();
                 UserInformationFormArguments arg = new UserInformationFormArguments();
-                arg.FollowerUsername = userBUS.GetUserInformationByEmail(clickedItem.SubItems[2].Text).Username;
+
+                UserDTO follower = userBUS.GetUserInformationByEmail(clickedItem.SubItems[2].Text);
+                arg.FollowerUsername = follower.Username;
                 arg.Username = Arguments.Username;
 
-                if (Relationship.Equals("Doctor"))
+                if (follower.AccountType.Equals("Doctor"))
                 {
                     // need bring data to next form
                     var frm = new DoctorInformationForm(arg);
                     frm.Show();
                 }
-                else if (Relationship.Equals("Family"))
+                else if (follower.AccountType.Equals("Family"))
                 {
                     // need bring data to next form
                     var frm = new FamilyInformationForm(arg);

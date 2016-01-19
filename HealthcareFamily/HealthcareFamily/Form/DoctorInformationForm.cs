@@ -31,7 +31,7 @@ namespace HealthcareFamilyGUI
 
         }
 
-        private void DoctorInformationForm_Load(object sender, EventArgs e)
+        private void DoctorInformationForm_ReLoad()
         {
             // load database
 
@@ -48,13 +48,6 @@ namespace HealthcareFamilyGUI
             txtEmail.Text = userDTO.Email;
             txtCurrentName.Text = userDTO.Name;
             txtUsername.Text = userDTO.Username;
-
-            // list view
-            lvwMeeting.View = View.Details;
-
-            lvwMeeting.Columns.Add("Partner", 100, HorizontalAlignment.Left);
-            lvwMeeting.Columns.Add("Date", 100, HorizontalAlignment.Left);
-            lvwMeeting.Columns.Add("Description", 100, HorizontalAlignment.Left);
 
             DataTable table = new DataTable();
 
@@ -92,10 +85,31 @@ namespace HealthcareFamilyGUI
             }
         }
 
+        private void DoctorInformationForm_Load(object sender, EventArgs e)
+        {
+            
+
+            // list view
+            lvwMeeting.View = View.Details;
+
+            lvwMeeting.Columns.Add("Partner", 100, HorizontalAlignment.Left);
+            lvwMeeting.Columns.Add("Date", 100, HorizontalAlignment.Left);
+            lvwMeeting.Columns.Add("Description", 100, HorizontalAlignment.Left);
+
+            DoctorInformationForm_ReLoad();
+        }
+
         private void cmdCreateMeeting_Click(object sender, EventArgs e)
         {
-            Form frm = new CreateMeetingForm();
-            frm.Show();
+            CreateMeetingFormArguments arg = new CreateMeetingFormArguments();
+
+            arg.Username = Arguments.Username;
+            arg.DoctorUsername = Arguments.FollowerUsername;
+
+            Form frm = new CreateMeetingForm(arg);
+            frm.ShowDialog();
+
+            DoctorInformationForm_ReLoad();
         }
 
         private void cmdOk_Click(object sender, EventArgs e)

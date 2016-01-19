@@ -30,11 +30,11 @@ namespace HealthcareFamilyGUI
         private void InitializeComponent()
         {
             this.txtHeartBeat = new System.Windows.Forms.TextBox();
-            this.txtEmotion = new System.Windows.Forms.TextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.cmdCancel = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.cmdOK = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.cbEmotion = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtHeartBeat
@@ -44,14 +44,6 @@ namespace HealthcareFamilyGUI
             this.txtHeartBeat.Name = "txtHeartBeat";
             this.txtHeartBeat.Size = new System.Drawing.Size(241, 22);
             this.txtHeartBeat.TabIndex = 2;
-            // 
-            // txtEmotion
-            // 
-            this.txtEmotion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmotion.Location = new System.Drawing.Point(111, 92);
-            this.txtEmotion.Name = "txtEmotion";
-            this.txtEmotion.Size = new System.Drawing.Size(241, 22);
-            this.txtEmotion.TabIndex = 3;
             // 
             // metroLabel1
             // 
@@ -95,21 +87,38 @@ namespace HealthcareFamilyGUI
             this.cmdOK.UseVisualStyleBackColor = true;
             this.cmdOK.Click += new System.EventHandler(this.cmdOK_Click);
             // 
+            // cbEmotion
+            // 
+            this.cbEmotion.FormattingEnabled = true;
+            this.cbEmotion.Items.AddRange(new object[] {
+            "Anger",
+            "Contempt",
+            "Disgust",
+            "Fear",
+            "Joy",
+            "Sadness",
+            "Surprise"});
+            this.cbEmotion.Location = new System.Drawing.Point(111, 95);
+            this.cbEmotion.Name = "cbEmotion";
+            this.cbEmotion.Size = new System.Drawing.Size(241, 21);
+            this.cbEmotion.TabIndex = 30;
+            // 
             // HealthcareCheckingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 200);
+            this.Controls.Add(this.cbEmotion);
             this.Controls.Add(this.cmdCancel);
             this.Controls.Add(this.cmdOK);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.txtEmotion);
             this.Controls.Add(this.txtHeartBeat);
             this.MaximizeBox = false;
             this.Name = "HealthcareCheckingForm";
             this.Resizable = false;
             this.Text = "Heathcare Checking";
+            this.Load += new System.EventHandler(this.HealthcareCheckingForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,7 +127,6 @@ namespace HealthcareFamilyGUI
         #endregion
 
         private System.Windows.Forms.TextBox txtHeartBeat;
-        private System.Windows.Forms.TextBox txtEmotion;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdCancel;
@@ -126,5 +134,6 @@ namespace HealthcareFamilyGUI
         public String HeartBeat;
         public String Emotion;
         public DateTime Date;
+        private System.Windows.Forms.ComboBox cbEmotion;
     }
 }

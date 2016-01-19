@@ -32,5 +32,17 @@ namespace HealthcareFamilyDAL
 
             return ListNoti;
         }
+
+        public void SetNotification(string username, string follower, string time, string detail)
+        {
+            string query = "SET DATEFORMAT DMY ";
+            query += "INSERT INTO NOTIFICATION VALUES(";
+            query += "'" + username + "', ";
+            query += "'" + follower + "', ";
+            query += "'" + time + "', ";
+            query += "'" + detail + "')";
+
+            DataProvider.ExecuteNonQuery(query);
+        }
     }
 }

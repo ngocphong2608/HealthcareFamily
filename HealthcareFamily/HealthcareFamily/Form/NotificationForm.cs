@@ -60,7 +60,7 @@ namespace HealthcareFamilyGUI
             for (int i = 0; i < notiList.Count; i++)
             {
                 DataRow r = table.NewRow();
-                r["Date"] = notiList[i].Time.ToShortDateString();
+                r["Date"] = notiList[i].Time.ToString();
                 r["People"] = notiList[i].FollowerUsername;
                 r["Description"] = notiList[i].Detail;
                 table.Rows.Add(r);

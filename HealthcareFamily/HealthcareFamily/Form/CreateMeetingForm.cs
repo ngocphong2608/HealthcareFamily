@@ -59,7 +59,7 @@ namespace HealthcareFamilyGUI
             if (Arguments.DoctorUsername == null)
             {
                 FollowerBUS followerBUS = new FollowerBUS();
-                List<FollowerDTO> listFollower = followerBUS.GetListFollower(Arguments.Username);
+                List<FollowerDTO> listFollower = followerBUS.GetAllFollower(Arguments.Username);
 
                 foreach (FollowerDTO follower in listFollower)
                 {
