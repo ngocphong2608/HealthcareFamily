@@ -39,6 +39,8 @@ namespace HealthcareFamilyGUI
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.cbHour = new MetroFramework.Controls.MetroComboBox();
             this.cbMinute = new MetroFramework.Controls.MetroComboBox();
+            this.txtDetail = new System.Windows.Forms.TextBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -80,7 +82,7 @@ namespace HealthcareFamilyGUI
             // cmdCancel
             // 
             this.cmdCancel.Image = null;
-            this.cmdCancel.Location = new System.Drawing.Point(24, 184);
+            this.cmdCancel.Location = new System.Drawing.Point(24, 312);
             this.cmdCancel.Name = "cmdCancel";
             this.cmdCancel.Size = new System.Drawing.Size(154, 35);
             this.cmdCancel.TabIndex = 31;
@@ -92,7 +94,7 @@ namespace HealthcareFamilyGUI
             // cmdOK
             // 
             this.cmdOK.Image = null;
-            this.cmdOK.Location = new System.Drawing.Point(184, 184);
+            this.cmdOK.Location = new System.Drawing.Point(184, 312);
             this.cmdOK.Name = "cmdOK";
             this.cmdOK.Size = new System.Drawing.Size(168, 35);
             this.cmdOK.TabIndex = 30;
@@ -226,11 +228,31 @@ namespace HealthcareFamilyGUI
             this.cbMinute.TabIndex = 37;
             this.cbMinute.UseSelectable = true;
             // 
+            // txtDetail
+            // 
+            this.txtDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetail.Location = new System.Drawing.Point(110, 182);
+            this.txtDetail.Multiline = true;
+            this.txtDetail.Name = "txtDetail";
+            this.txtDetail.Size = new System.Drawing.Size(242, 114);
+            this.txtDetail.TabIndex = 38;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(23, 182);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(45, 19);
+            this.metroLabel5.TabIndex = 39;
+            this.metroLabel5.Text = "Detail:";
+            // 
             // CreateMeetingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 232);
+            this.ClientSize = new System.Drawing.Size(375, 360);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.txtDetail);
             this.Controls.Add(this.cbMinute);
             this.Controls.Add(this.cbHour);
             this.Controls.Add(this.metroLabel4);
@@ -264,5 +286,7 @@ namespace HealthcareFamilyGUI
         private MetroFramework.Controls.MetroComboBox cbHour;
         private MetroFramework.Controls.MetroComboBox cbMinute;
         private CreateMeetingFormArguments Arguments;
+        private System.Windows.Forms.TextBox txtDetail;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
     }
 }

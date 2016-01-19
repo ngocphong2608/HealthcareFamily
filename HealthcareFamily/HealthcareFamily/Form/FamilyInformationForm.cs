@@ -119,5 +119,13 @@ namespace HealthcareFamilyGUI
         {
             this.Close();
         }
+
+        private void metroTextButton1_Click_1(object sender, EventArgs e)
+        {
+            if (cmdPrivacy.Text == "Privacy - Enabled")
+                cmdPrivacy.Text = "Privacy - Disabled";
+            else
+                cmdPrivacy.Text = "Privacy - Enabled";
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace HealthcareFamilyGUI
         {
             this.lvwHeathcareInfo = new System.Windows.Forms.ListView();
             this.txtCurrentName = new MetroFramework.Controls.MetroLabel();
-            this.txtMessage = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.cmdMessage = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtEmail = new MetroFramework.Controls.MetroLabel();
             this.txtRelationship = new MetroFramework.Controls.MetroLabel();
@@ -47,6 +47,7 @@ namespace HealthcareFamilyGUI
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.cmdOk = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.cmdPrivacy = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.groupBox3.SuspendLayout();
             this.Gruopbox4.SuspendLayout();
             this.SuspendLayout();
@@ -68,16 +69,16 @@ namespace HealthcareFamilyGUI
             this.txtCurrentName.TabIndex = 11;
             this.txtCurrentName.Text = "metroLabel1";
             // 
-            // txtMessage
+            // cmdMessage
             // 
-            this.txtMessage.Image = null;
-            this.txtMessage.Location = new System.Drawing.Point(23, 319);
-            this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(326, 35);
-            this.txtMessage.TabIndex = 12;
-            this.txtMessage.Text = "Message";
-            this.txtMessage.UseSelectable = true;
-            this.txtMessage.UseVisualStyleBackColor = true;
+            this.cmdMessage.Image = null;
+            this.cmdMessage.Location = new System.Drawing.Point(23, 319);
+            this.cmdMessage.Name = "cmdMessage";
+            this.cmdMessage.Size = new System.Drawing.Size(188, 35);
+            this.cmdMessage.TabIndex = 12;
+            this.cmdMessage.Text = "Message";
+            this.cmdMessage.UseSelectable = true;
+            this.cmdMessage.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -233,15 +234,28 @@ namespace HealthcareFamilyGUI
             this.cmdOk.UseVisualStyleBackColor = true;
             this.cmdOk.Click += new System.EventHandler(this.metroTextButton1_Click);
             // 
+            // cmdPrivacy
+            // 
+            this.cmdPrivacy.Image = null;
+            this.cmdPrivacy.Location = new System.Drawing.Point(217, 319);
+            this.cmdPrivacy.Name = "cmdPrivacy";
+            this.cmdPrivacy.Size = new System.Drawing.Size(132, 35);
+            this.cmdPrivacy.TabIndex = 25;
+            this.cmdPrivacy.Text = "Privacy - Enabled";
+            this.cmdPrivacy.UseSelectable = true;
+            this.cmdPrivacy.UseVisualStyleBackColor = true;
+            this.cmdPrivacy.Click += new System.EventHandler(this.metroTextButton1_Click_1);
+            // 
             // FamilyInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 653);
+            this.Controls.Add(this.cmdPrivacy);
             this.Controls.Add(this.cmdOk);
             this.Controls.Add(this.Gruopbox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.txtMessage);
+            this.Controls.Add(this.cmdMessage);
             this.Controls.Add(this.txtCurrentName);
             this.Controls.Add(this.lvwHeathcareInfo);
             this.MaximizeBox = false;
@@ -262,7 +276,7 @@ namespace HealthcareFamilyGUI
 
         private System.Windows.Forms.ListView lvwHeathcareInfo;
         private MetroFramework.Controls.MetroLabel txtCurrentName;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton txtMessage;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdMessage;
         private System.Windows.Forms.GroupBox groupBox3;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel4;
@@ -279,5 +293,6 @@ namespace HealthcareFamilyGUI
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdOk;
         private UserInformationFormArguments Arguments;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdPrivacy;
     }
 }
