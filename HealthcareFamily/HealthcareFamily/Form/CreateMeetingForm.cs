@@ -37,7 +37,7 @@ namespace HealthcareFamilyGUI
             string time = date.ToShortDateString() + " " + hour + ":" + minute + ":0";
 
             AppointmentScheduleBUS appBUS = new AppointmentScheduleBUS();
-            appBUS.CreateAppointmentSchedule(Arguments.Username, email, time, "Blala");
+            appBUS.CreateAppointmentSchedule(Arguments.Username, email, time, txtDetail.Text);
 
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
 

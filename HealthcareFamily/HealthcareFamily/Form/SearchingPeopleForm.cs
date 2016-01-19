@@ -44,11 +44,15 @@ namespace HealthcareFamilyGUI
 
                     // database
                     FollowerBUS followerBUS = new FollowerBUS();
+                    SharingInfoBUS sharingBUS = new SharingInfoBUS();
 
                     // kiem tra da them follower chua
 
                     // add follower
                     followerBUS.AddFollowerByEmail(Arguments.Username, email, Relationship);
+
+                    // add sharing info
+                    sharingBUS.SetSharingInfoByEmail(Arguments.Username, email, false);
 
                     MetroMessageBox.Show(this, "Add people success!", "Message",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

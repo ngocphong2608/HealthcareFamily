@@ -1,4 +1,6 @@
-﻿using HealthcareFamilyDAL;
+﻿using HealthcareFamilyBUS;
+using HealthcareFamilyDAL;
+using HealthcareFamilyDTO;
 using HeathcareFamilyDTO;
 using System;
 using System.Collections.Generic;
@@ -19,9 +21,22 @@ namespace HeathcareFamilyBUS
         {
             return sharingDAL.GetSharingInfo(username, follower);
         }
+        public void UpdateSharingInfo(String username, String follower, bool share)
+        {
+            sharingDAL.UpdateSharingInfo(username, follower, share);
+        }
         public void SetSharingInfo(String username, String follower, bool share)
         {
             sharingDAL.SetSharingInfo(username, follower, share);
+        }
+
+        public void SetSharingInfoByEmail(string username, string email, bool share)
+        {
+            UserBUS userBUS = new UserBUS();
+            UserDTO follower = userBUS.GetUserInformationByEmail(email);
+
+            sharingDAL.SetSharingInfo(username, follower.Username, share);
+            sharingDAL.SetSharingInfo(follower.Username, username, share);
         }
     }
 }

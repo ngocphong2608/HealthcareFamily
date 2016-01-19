@@ -64,7 +64,7 @@ namespace HealthcareFamilyGUI
             FollowerBUS followerBUS = new FollowerBUS();
 
             UserDTO userDTO = userBUS.GetUserInformation(Arguments.Username);
-            List<FollowerDTO> followerList = followerBUS.GetListFollower(Arguments.Username);
+            List<FollowerDTO> followerList = followerBUS.GetAllFollower(Arguments.Username);
             //
 
             this.Text = "Home";            
@@ -291,7 +291,11 @@ namespace HealthcareFamilyGUI
 
         private void cmdRequestNewUser_Click(object sender, EventArgs e)
         {
-            Form frm = new RequestUserForm();
+            UserInformationFormArguments arg = new UserInformationFormArguments();
+            arg.Username = Arguments.Username;
+
+            Form frm = new RequestUserForm(arg);
+
             frm.Show();
         }
     }

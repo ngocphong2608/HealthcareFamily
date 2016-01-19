@@ -150,25 +150,6 @@ namespace HealthcareFamilyDAL
             }
         }
 
-        public bool AcceptFollow(String username, String follower)
-        {
-            String query = "UPDATE FOLLOWER_INFORMATION";
-            query += "SET IsUserAccepted=1";
-            query += "WHERE Username=";
-            query += "'" + username + "'";
-            query += "AND";
-            query += "Follower_Username='" + follower + "'";
-
-            try
-            {
-                DataProvider.ExecuteNonQuery(query);
-                return true;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
 
         public bool AllowAccess(String username, String follower)
         {

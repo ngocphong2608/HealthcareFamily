@@ -9,7 +9,7 @@ namespace HealthcareFamilyDTO
         public string Username { get; set; }
         public string FollowerUsername { get; set; }
         public string Relationship { get; set; }
-        public Boolean IsPermitAccessInfo { get; set; }
+        //public Boolean IsPermitAccessInfo { get; set; }
         public Boolean IsUserAccepted { get; set; }
     }
 }

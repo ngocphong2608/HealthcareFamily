@@ -59,18 +59,6 @@ namespace HealthcareFamilyBUS
 
         // username: username add follower
         // email: follower email
-        public bool AcceptFollowByEmail(String username, String email)
-        {
-            UserDTO userDTO = userDAL.GetUserImformationByEmail(email);
-            if (userDTO != null)
-            {
-                return userDAL.AcceptFollow(username, userDTO.Username);
-            }
-            return false;
-        }
-
-        // username: username add follower
-        // email: follower email
         public bool AllowAccessInfoByEmail(String username, String email)
         {
             UserDTO userDTO = userDAL.GetUserImformationByEmail(email);

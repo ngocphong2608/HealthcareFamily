@@ -1,4 +1,5 @@
-﻿namespace HealthcareFamilyGUI
+﻿using HealthcareFamilyGUI.FormArguments;
+namespace HealthcareFamilyGUI
 {
     partial class RequestUserForm
     {
@@ -31,7 +32,7 @@
             this.cmdOK = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.cmdDeleteUser = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.cmdAcceptUser = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.listRequestUser = new System.Windows.Forms.ListView();
+            this.lvwRequestUser = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // cmdOK
@@ -69,13 +70,13 @@
             this.cmdAcceptUser.UseVisualStyleBackColor = true;
             this.cmdAcceptUser.Click += new System.EventHandler(this.cmdAcceptUser_Click);
             // 
-            // listRequestUser
+            // lvwRequestUser
             // 
-            this.listRequestUser.Location = new System.Drawing.Point(25, 116);
-            this.listRequestUser.Name = "listRequestUser";
-            this.listRequestUser.Size = new System.Drawing.Size(325, 281);
-            this.listRequestUser.TabIndex = 27;
-            this.listRequestUser.UseCompatibleStateImageBehavior = false;
+            this.lvwRequestUser.Location = new System.Drawing.Point(25, 116);
+            this.lvwRequestUser.Name = "lvwRequestUser";
+            this.lvwRequestUser.Size = new System.Drawing.Size(325, 281);
+            this.lvwRequestUser.TabIndex = 27;
+            this.lvwRequestUser.UseCompatibleStateImageBehavior = false;
             // 
             // RequestUserForm
             // 
@@ -85,11 +86,12 @@
             this.Controls.Add(this.cmdOK);
             this.Controls.Add(this.cmdDeleteUser);
             this.Controls.Add(this.cmdAcceptUser);
-            this.Controls.Add(this.listRequestUser);
+            this.Controls.Add(this.lvwRequestUser);
             this.MaximizeBox = false;
             this.Name = "RequestUserForm";
             this.Resizable = false;
             this.Text = "Request New User";
+            this.Load += new System.EventHandler(this.RequestUserForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -99,6 +101,7 @@
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdOK;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdDeleteUser;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdAcceptUser;
-        private System.Windows.Forms.ListView listRequestUser;
+        private System.Windows.Forms.ListView lvwRequestUser;
+        private UserInformationFormArguments Arguments;
     }
 }

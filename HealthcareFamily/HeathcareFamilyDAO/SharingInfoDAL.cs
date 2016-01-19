@@ -14,12 +14,28 @@ namespace HealthcareFamilyDAL
         {
 
         }
+        public void UpdateSharingInfo(String username, String follower, bool share)
+        {
+            String query = "UPDATE SHARING_INFORMATION ";
+            query += "SET IsPermitAccessInfo='" + Convert.ToString(share) + "' ";
+            query += "WHERE Username='" + username + "' ";
+            query += "AND FollowerUsername='" + follower + "'";
+
+            try
+            {
+                DataProvider.ExecuteNonQuery(query);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public void SetSharingInfo(String username, String follower, bool share)
         {
             String query = "INSERT INTO SHARING_INFORMATION VALUES(";
-            query += "'" + username + "',";
-            query += "'" + follower + "',";
-            query += Convert.ToString(share) + ")";
+            query += "'" + username + "', ";
+            query += "'" + follower + "', ";
+            query += "'" + Convert.ToString(share) + "')";
 
             try
             {
@@ -33,7 +49,7 @@ namespace HealthcareFamilyDAL
         public SharingInfoDTO GetSharingInfo(String username, String follower)
         {
             String query = "SELECT * FROM SHARING_INFORMATION WHERE USERNAME='" + username + "' ";
-            query += "AND Follower_Username='" + follower + "'";
+            query += "AND FollowerUsername='" + follower + "'";
 
             DataTable dt = DataProvider.ExecuteQuery(query);
 
@@ -43,7 +59,7 @@ namespace HealthcareFamilyDAL
             DataRow dr = dt.Rows[0];
 
             SharingInfoDTO sharingDTO = new SharingInfoDTO();
-            sharingDTO.FollowerUsername = dr["Follower_Username"].ToString();
+            sharingDTO.FollowerUsername = dr["FollowerUsername"].ToString();
             sharingDTO.IsPermitAccessInfo = Boolean.Parse(dr["IsPermitAccessInfo"].ToString());
             sharingDTO.Username = dr["Username"].ToString();
 

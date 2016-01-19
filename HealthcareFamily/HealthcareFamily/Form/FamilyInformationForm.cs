@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using MetroFramework.Forms;
 using HealthcareFamilyGUI.FormArguments;
 using HeathcareFamilyBUS;
+using HeathcareFamilyDTO;
+using HealthcareFamilyGUI;
 
 namespace HealthcareFamilyGUI
 {
@@ -59,13 +61,13 @@ namespace HealthcareFamilyGUI
             txtEmail.Text = user.Email;
 
             // check if user share information
-            FollowerBUS followerBUS = new FollowerBUS();
-            FollowerDTO followerDTO = followerBUS.GetFollowerInformation(Arguments.Username, Arguments.FollowerUsername);
+            SharingInfoBUS sharingBUS = new SharingInfoBUS();
+            SharingInfoDTO sharingDTO = sharingBUS.GetSharingInfo(Arguments.FollowerUsername, Arguments.Username);
 
-            if (followerDTO != null && followerDTO.IsPermitAccessInfo == false)
+            if (sharingDTO != null && sharingDTO.IsPermitAccessInfo == false)
                 return;
 
-            List<HealthcareDTO> healthcareList = healthcareBUS.GetListHealthcareInformation(Arguments.Username);
+            List<HealthcareDTO> healthcareList = healthcareBUS.GetListHealthcareInformation(Arguments.FollowerUsername);
 
             if (healthcareList.Count > 0)
             {
@@ -113,6 +115,15 @@ namespace HealthcareFamilyGUI
                 item.SubItems.Add(row["Emotion"].ToString());
                 lvwHeathcareInfo.Items.Add(item); //Add this row to the ListView
             }
+
+            // sharing button
+            sharingDTO = sharingBUS.GetSharingInfo(Arguments.FollowerUsername, Arguments.Username);
+            if (sharingDTO.IsPermitAccessInfo == true)
+            {
+                cmdPrivacy.Text = "Privacy - Disabled";
+            }
+            else
+                cmdPrivacy.Text = "Privacy - Enabled";
         }
 
         private void metroTextButton1_Click(object sender, EventArgs e)
@@ -123,9 +134,20 @@ namespace HealthcareFamilyGUI
         private void metroTextButton1_Click_1(object sender, EventArgs e)
         {
             if (cmdPrivacy.Text == "Privacy - Enabled")
+            {
                 cmdPrivacy.Text = "Privacy - Disabled";
+
+                SharingInfoBUS sharingBUS = new SharingInfoBUS();
+                sharingBUS.UpdateSharingInfo(Arguments.Username, Arguments.FollowerUsername, true);
+            }
             else
+            {
                 cmdPrivacy.Text = "Privacy - Enabled";
+
+                SharingInfoBUS sharingBUS = new SharingInfoBUS();
+                sharingBUS.UpdateSharingInfo(Arguments.Username, Arguments.FollowerUsername, false);
+            }
+                
         }
     }
 }
