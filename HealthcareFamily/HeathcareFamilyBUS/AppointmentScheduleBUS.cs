@@ -24,6 +24,14 @@ namespace HeathcareFamilyBUS
             if (appList == null)
                 return new List<AppointmentScheduleDTO>();
 
+            foreach (AppointmentScheduleDTO app in appList)
+            {
+                if (app.PartnerUsername == username)
+                {
+                    app.PartnerUsername = app.Username;
+                }
+            }
+
             appList.Sort((x, y) => y.Time.CompareTo(x.Time));
             return appList;
         }
@@ -31,9 +39,19 @@ namespace HeathcareFamilyBUS
         public List<AppointmentScheduleDTO> GetListAppointmentSchedule(string username, string follower)
         {
             List<AppointmentScheduleDTO> appList = appDAL.GetListAppointmentSchedule(username, follower);
-            if (appList != null)
-                return appList;
-            return new List<AppointmentScheduleDTO>();
+            if (appList == null)
+                return new List<AppointmentScheduleDTO>();
+
+            foreach (AppointmentScheduleDTO app in appList)
+            {
+                if (app.PartnerUsername == username)
+                {
+                    app.PartnerUsername = app.Username;
+                }
+            }
+
+            appList.Sort((x, y) => y.Time.CompareTo(x.Time));
+            return appList;
         }
         public void CreateAppointmentSchedule(string username, string doctorEmail, string time, string detail)
         {
@@ -48,6 +66,11 @@ namespace HeathcareFamilyBUS
             app.Detail = detail;
 
             appDAL.CreateAppointmentSchedule(app);
+        }
+
+        public void DeleteAppointmentSchedule(AppointmentScheduleDTO appDTO)
+        {
+            appDAL.DeleteAppointmentSchedule(appDTO);
         }
     }
 }

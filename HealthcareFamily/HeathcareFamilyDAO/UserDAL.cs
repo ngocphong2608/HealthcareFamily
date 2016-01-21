@@ -132,24 +132,6 @@ namespace HealthcareFamilyDAL
             return user;
         }
 
-        public bool DeleteFollower(String username, String follower)
-        {
-            String query = "DELETE FROM FOLLOWER_INFORMATION WHERE Username=";
-            query += "'" + username + "'";
-            query += "and";
-            query += "Follower_Username='" + follower + "'";
-
-            try
-            {
-                DataProvider.ExecuteNonQuery(query);
-                return true;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
 
         public bool AllowAccess(String username, String follower)
         {

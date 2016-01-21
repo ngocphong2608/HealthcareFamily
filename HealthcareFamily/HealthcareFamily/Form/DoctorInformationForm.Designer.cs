@@ -89,6 +89,7 @@ namespace HealthcareFamilyGUI
             this.cmdDeleteMeeting.Text = "Delete Meeting";
             this.cmdDeleteMeeting.UseSelectable = true;
             this.cmdDeleteMeeting.UseVisualStyleBackColor = true;
+            this.cmdDeleteMeeting.Click += new System.EventHandler(this.cmdDeleteMeeting_Click);
             // 
             // groupBox3
             // 

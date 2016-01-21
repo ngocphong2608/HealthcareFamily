@@ -86,6 +86,9 @@ namespace HealthcareFamilyGUI
         {
             string info = txtPeopleInfo.Text;
 
+            if (info == "")
+                return;
+
             UserBUS userBUS = new UserBUS();
             List<UserDTO> list = userBUS.GetListUserNotFriend(Arguments.Username, info);
 

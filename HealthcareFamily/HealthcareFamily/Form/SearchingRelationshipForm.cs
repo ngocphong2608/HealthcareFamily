@@ -32,8 +32,6 @@ namespace HealthcareFamilyGUI
             // luc form quay ve can phai xoa het noi dung trong cai list di
             this.Close();
             this.DialogResult = DialogResult.OK;
-            //this.Hide();
-            //this.Close();
         }
 
         private void SearchingRelationshipForm_Load(object sender, EventArgs e)

@@ -111,5 +111,20 @@ namespace HealthcareFamilyGUI
 
             RequestUserForm_ReLoad();
         }
+
+        private void cmdDeleteUser_Click(object sender, EventArgs e)
+        {
+            if (lvwRequestUser.SelectedItems.Count > 0)
+            {
+                FollowerBUS followerBUS = new FollowerBUS();
+
+                followerBUS.DeleteFollowerByEmail(Arguments.Username, lvwRequestUser.SelectedItems[0].SubItems[1].Text);
+
+                RequestUserForm_ReLoad();
+            } else
+            {
+                MetroMessageBox.Show(this, "Please choose an user!", "Error");
+            }
+        }
     }
 }

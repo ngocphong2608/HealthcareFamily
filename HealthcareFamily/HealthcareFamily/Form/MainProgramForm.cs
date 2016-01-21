@@ -211,9 +211,10 @@ namespace HealthcareFamilyGUI
                 flag = true;
 
                 // update database 
+                UserBUS user = new UserBUS();
+                user.SignOut(Arguments.Username);
 
                 this.Close();
- 
             }
         }
 

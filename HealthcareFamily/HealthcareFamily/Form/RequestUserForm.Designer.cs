@@ -57,6 +57,7 @@ namespace HealthcareFamilyGUI
             this.cmdDeleteUser.Text = "Delete User";
             this.cmdDeleteUser.UseSelectable = true;
             this.cmdDeleteUser.UseVisualStyleBackColor = true;
+            this.cmdDeleteUser.Click += new System.EventHandler(this.cmdDeleteUser_Click);
             // 
             // cmdAcceptUser
             // 

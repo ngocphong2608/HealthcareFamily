@@ -70,5 +70,18 @@ namespace HeathcareFamilyBUS
                 followerDAL.AcceptFollowByEmail(username, follower.Username);
             }
         }
+
+        // username: username add follower
+        // email: follower email
+        public bool DeleteFollowerByEmail(String username, String email)
+        {
+            UserDAL userDAL = new UserDAL();
+            UserDTO userDTO = userDAL.GetUserImformationByEmail(email);
+            if (userDTO != null)
+            {
+                return followerDAL.DeleteFollower(username, userDTO.Username);
+            }
+            return false;
+        }
     }
 }

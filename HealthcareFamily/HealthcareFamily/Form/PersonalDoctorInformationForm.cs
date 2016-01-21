@@ -13,6 +13,7 @@ using HealthcareFamilyBUS;
 using HealthcareFamilyDTO;
 using HeathcareFamilyBUS;
 using HeathcareFamilyDTO;
+using MetroFramework;
 
 namespace HealthcareFamilyGUI
 {
@@ -29,7 +30,7 @@ namespace HealthcareFamilyGUI
             Arguments = arg;
         }
 
-        private void PersonalDoctorInformationForm_Load(object sender, EventArgs e)
+        void PersonalDoctorInformationForm_ReLoad()
         {
             // load from database
             UserBUS userBUS = new UserBUS();
@@ -40,12 +41,6 @@ namespace HealthcareFamilyGUI
             txtEmail.Text = userDTO.Email;
             txtCurrentName.Text = userDTO.Name;
             txtUsername.Text = userDTO.Username;
-            // list view
-            lvwMeeting.View = View.Details;
-
-            lvwMeeting.Columns.Add("Partner", 100, HorizontalAlignment.Left);
-            lvwMeeting.Columns.Add("Date", 100, HorizontalAlignment.Left);
-            lvwMeeting.Columns.Add("Description", 100, HorizontalAlignment.Left);
 
             DataTable table = new DataTable();
 
@@ -86,6 +81,18 @@ namespace HealthcareFamilyGUI
             }
         }
 
+        private void PersonalDoctorInformationForm_Load(object sender, EventArgs e)
+        {
+            // list view
+            lvwMeeting.View = View.Details;
+
+            lvwMeeting.Columns.Add("Partner", 100, HorizontalAlignment.Left);
+            lvwMeeting.Columns.Add("Date", 100, HorizontalAlignment.Left);
+            lvwMeeting.Columns.Add("Description", 100, HorizontalAlignment.Left);
+
+            PersonalDoctorInformationForm_ReLoad();
+        }
+
         private void cmdOk_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -93,8 +100,37 @@ namespace HealthcareFamilyGUI
 
         private void cmdCreateMeeting_Click(object sender, EventArgs e)
         {
-            Form frm = new CreateMeetingForm();
+            CreateMeetingFormArguments arg = new CreateMeetingFormArguments();
+            arg.Username = Arguments.Username;
+
+            Form frm = new CreateMeetingForm(arg);
+
             frm.ShowDialog();
+
+            PersonalDoctorInformationForm_ReLoad();
+        }
+
+        private void cmdDeleteMeeting_Click(object sender, EventArgs e)
+        {
+            if (lvwMeeting.SelectedItems.Count > 0)
+            {
+                AppointmentScheduleDTO appDTO = new AppointmentScheduleDTO();
+
+                appDTO.PartnerUsername = lvwMeeting.SelectedItems[0].SubItems[0].Text;
+                DateTime dt = DateTime.Parse(lvwMeeting.SelectedItems[0].SubItems[1].Text);
+                appDTO.Time = dt.ToShortDateString() + " " + dt.Hour + ":" + dt.Minute + ":" + dt.Second;
+                appDTO.Username = Arguments.Username;
+
+                AppointmentScheduleBUS appBUS = new AppointmentScheduleBUS();
+                appBUS.DeleteAppointmentSchedule(appDTO);
+
+                PersonalDoctorInformationForm_ReLoad();
+
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Please choose an meeting!", "Error", MessageBoxButtons.OK);
+            }
         }
     }
 }

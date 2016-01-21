@@ -67,5 +67,19 @@ namespace HealthcareFamilyDAL
 
             return ListAppointment;
         }
+
+        public void DeleteAppointmentSchedule(AppointmentScheduleDTO appDTO)
+        {
+            string query = "SET DATEFORMAT DMY ";
+            query += "DELETE APPOINTMENT_SCHEDULE WHERE ";
+            query += "(Username ='" + appDTO.Username + "' ";
+            query += "AND Partner_Username='" + appDTO.PartnerUsername + "' ";
+            query += "AND Time='" + appDTO.Time + "') ";
+            query += "OR (Username ='" + appDTO.PartnerUsername + "' ";
+            query += "AND Partner_Username='" + appDTO.Username + "' ";
+            query += "AND Time='" + appDTO.Time + "') ";
+
+            DataProvider.ExecuteNonQuery(query);
+        }
     }
 }
