@@ -58,7 +58,7 @@ namespace HealthcareFamilyGUI
 
         private void MainProgramForm_Load(object sender, EventArgs e)
         {
-            
+
             /// load from database 
             UserBUS userBUS = new UserBUS();
             FollowerBUS followerBUS = new FollowerBUS();
@@ -67,7 +67,13 @@ namespace HealthcareFamilyGUI
             List<FollowerDTO> followerList = followerBUS.GetAllFollower(Arguments.Username);
             //
 
-            this.Text = "Home";            
+            this.Text = "Home";
+
+            // user avatar
+            MemoryStream ms = new MemoryStream(userDTO.Avatar);
+            ptbAvatar.Image = Image.FromStream(ms);
+            ptbAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+            ptbAvatar.Refresh();
 
             // user name
             txtName.Text = userDTO.Name;
@@ -116,7 +122,7 @@ namespace HealthcareFamilyGUI
                     r["Status"] = "Offline";
                 table.Rows.Add(r);
             }
-            
+
 
             lvwUserList.Items.Clear();
 
@@ -145,12 +151,12 @@ namespace HealthcareFamilyGUI
 
         private void lvwUserList_DoubleClick(object sender, EventArgs e)
         {
-            
+
         }
 
         private void lvwUserList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         private void cmdProfile_Click(object sender, EventArgs e)
@@ -165,7 +171,8 @@ namespace HealthcareFamilyGUI
             {
                 var frm = new PersonalFamilyInformationForm(arg);
                 frm.Show();
-            } else if (userDTO.AccountType.CompareTo("Doctor") == 0)
+            }
+            else if (userDTO.AccountType.CompareTo("Doctor") == 0)
             {
                 var frm = new PersonalDoctorInformationForm(arg);
                 frm.Show();
@@ -182,7 +189,7 @@ namespace HealthcareFamilyGUI
             // load data, again
         }
 
-        bool flag = false; 
+        bool flag = false;
 
         private void MainProgramForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -229,7 +236,7 @@ namespace HealthcareFamilyGUI
 
         private void cmdEmergency_Click(object sender, EventArgs e)
         {
-            var result = MetroMessageBox.Show(this, "You are in danger, right? Would you like to notify all people in your list?", "Message", 
+            var result = MetroMessageBox.Show(this, "You are in danger, right? Would you like to notify all people in your list?", "Message",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == System.Windows.Forms.DialogResult.Yes)
@@ -241,7 +248,7 @@ namespace HealthcareFamilyGUI
 
                 // send notifycation to each friend
                 DateTime Time = DateTime.Now;
-                foreach(FollowerDTO follower in followerList)
+                foreach (FollowerDTO follower in followerList)
                 {
                     // set notification
                     notiBUS.SetNotification(Arguments.Username, follower.FollowerUsername, Time, "Your friend are in danger!!!");
@@ -296,6 +303,31 @@ namespace HealthcareFamilyGUI
             Form frm = new RequestUserForm(arg);
 
             frm.Show();
+        }
+
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fop = new OpenFileDialog();
+            fop.Filter = "[JPG,JPEG]|*.jpg";
+
+            if (fop.ShowDialog() == DialogResult.OK)
+            {
+                // load image
+                FileStream fs = new FileStream(@fop.FileName, FileMode.Open, FileAccess.Read);
+
+                byte[] img = new byte[fs.Length];
+                fs.Read(img, 0, Convert.ToInt32(fs.Length));
+
+                // save image
+                UserBUS userBUS = new UserBUS();
+                userBUS.UpdateAvatar(Arguments.Username, img);
+
+                // show image
+                MemoryStream ms = new MemoryStream(img);
+                ptbAvatar.Image = Image.FromStream(ms);
+                ptbAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+                ptbAvatar.Refresh();
+            }
         }
     }
 }

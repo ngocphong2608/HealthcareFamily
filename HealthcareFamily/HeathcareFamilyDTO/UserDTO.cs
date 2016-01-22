@@ -13,8 +13,7 @@ namespace HealthcareFamilyDTO
         public string Gender { get; set; }
         public string Email { get; set; }
         public bool IsOnline { get; set; }
-        // avatar
-
+        public byte[] Avatar { get; set; }
         public string AccountType { get; set; }
 
         public List<FollowerDTO> Followers { get; set; }

@@ -41,8 +41,8 @@ namespace HealthcareFamilyGUI
             this.txtAge = new MetroFramework.Controls.MetroLabel();
             this.txtStatus = new MetroFramework.Controls.MetroLabel();
             this.cmdLogout = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.ptbAvatar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // lvwUserList
@@ -167,22 +167,23 @@ namespace HealthcareFamilyGUI
             this.cmdLogout.UseVisualStyleBackColor = true;
             this.cmdLogout.Click += new System.EventHandler(this.cmdLogout_Click);
             // 
-            // pictureBox
+            // ptbAvatar
             // 
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(23, 63);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(81, 80);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 22;
-            this.pictureBox.TabStop = false;
+            this.ptbAvatar.Image = ((System.Drawing.Image)(resources.GetObject("ptbAvatar.Image")));
+            this.ptbAvatar.Location = new System.Drawing.Point(23, 63);
+            this.ptbAvatar.Name = "ptbAvatar";
+            this.ptbAvatar.Size = new System.Drawing.Size(81, 80);
+            this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbAvatar.TabIndex = 22;
+            this.ptbAvatar.TabStop = false;
+            this.ptbAvatar.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // MainProgramForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 729);
-            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.ptbAvatar);
             this.Controls.Add(this.cmdLogout);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.txtAge);
@@ -200,7 +201,7 @@ namespace HealthcareFamilyGUI
             this.Text = "MainPage";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainProgramForm_FormClosing);
             this.Load += new System.EventHandler(this.MainProgramForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,6 +221,6 @@ namespace HealthcareFamilyGUI
         private MetroFramework.Controls.MetroLabel txtStatus;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdLogout;
         private MainProgramFormArguments Arguments;
-        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.PictureBox ptbAvatar;
     }
 }

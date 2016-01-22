@@ -64,5 +64,25 @@ namespace HealthcareFamilyDAL
                 _con.Close();
             }
         }
+
+        public static void ExecuteStoredProcedure(SqlCommand cmd)
+        {
+            try
+            {
+                _con.Open();
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = _con;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error while excute SQL: " + ex.Message);
+            }
+            finally
+            {
+                _con.Close();
+            }
+        }
     }
 }

@@ -3,6 +3,7 @@ using HealthcareFamilyDTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,10 @@ namespace HealthcareFamilyDAL
             user.Birthday = DateTime.Parse(dr["Birthday"].ToString());
             user.Gender = dr["Gender"].ToString();
             user.Email = dr["Email"].ToString();
-            //user.mAvatar = null;
+            if (!DBNull.Value.Equals(dr["Avatar"]))
+                user.Avatar = (byte[])dr["Avatar"];
+            else
+                user.Avatar = null;
             user.AccountType = acc.GetAccountTypeName(dr["AccountType"].ToString());
             user.AccountType = user.AccountType.Replace(' ', '\0');
             user.IsOnline = Boolean.Parse(dr["IsOnline"].ToString());
@@ -231,6 +235,15 @@ namespace HealthcareFamilyDAL
             }
 
             return list;
+        }
+
+        public void UpdateAvatar(string username, byte[] img)
+        {
+            SqlCommand cmd = new SqlCommand("SaveImage");
+            cmd.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
+            cmd.Parameters.Add("@img", SqlDbType.Image).Value = img;
+
+            DataProvider.ExecuteStoredProcedure(cmd);
         }
     }
 }

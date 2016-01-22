@@ -111,5 +111,9 @@ namespace HealthcareFamilyBUS
 
             return list;
         }
+        public void UpdateAvatar(string username, byte[] img)
+        {
+            userDAL.UpdateAvatar(username, img);
+        }
     }
 }
