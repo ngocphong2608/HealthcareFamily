@@ -70,10 +70,13 @@ namespace HealthcareFamilyGUI
             this.Text = "Home";
 
             // user avatar
-            MemoryStream ms = new MemoryStream(userDTO.Avatar);
-            ptbAvatar.Image = Image.FromStream(ms);
-            ptbAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
-            ptbAvatar.Refresh();
+            if (userDTO.Avatar != null)
+            {
+                MemoryStream ms = new MemoryStream(userDTO.Avatar);
+                ptbAvatar.Image = Image.FromStream(ms);
+                ptbAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+                ptbAvatar.Refresh();
+            }
 
             // user name
             txtName.Text = userDTO.Name;
