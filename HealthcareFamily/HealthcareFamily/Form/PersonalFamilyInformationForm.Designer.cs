@@ -224,6 +224,7 @@ namespace HealthcareFamilyGUI
             this.Controls.Add(this.txtCheckHeathCare);
             this.Controls.Add(this.txtCurrentName);
             this.Controls.Add(this.lvwHeathcareInfo);
+            this.MaximizeBox = false;
             this.Name = "PersonalFamilyInformationForm";
             this.Text = "Personal Information";
             this.Load += new System.EventHandler(this.PersonalFamilyInformationForm_Load);

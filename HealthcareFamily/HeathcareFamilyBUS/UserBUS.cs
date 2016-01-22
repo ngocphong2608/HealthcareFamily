@@ -83,7 +83,7 @@ namespace HealthcareFamilyBUS
                 return new List<UserDTO>();
 
             FollowerBUS followerBUS = new FollowerBUS();
-            List<FollowerDTO> followerList = followerBUS.GetListFollower(username);
+            List<FollowerDTO> followerList = followerBUS.GetAllFollower(username);
 
             List<UserDTO> remove = new List<UserDTO>();
 

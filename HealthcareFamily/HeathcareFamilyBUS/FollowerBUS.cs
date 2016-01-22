@@ -30,6 +30,14 @@ namespace HeathcareFamilyBUS
 
             return list;
         }
+        public List<FollowerDTO> GetAllFollowerIsFriend(string username)
+        {
+            List<FollowerDTO> list = followerDAL.GetAllFollowerIsFriend(username);
+            if (list == null)
+                return new List<FollowerDTO>();
+
+            return list;
+        }
         public FollowerDTO GetFollowerInformation(string username, string follower)
         {
             FollowerDTO followerDTO = followerDAL.GetFollowerInformation(username, follower);

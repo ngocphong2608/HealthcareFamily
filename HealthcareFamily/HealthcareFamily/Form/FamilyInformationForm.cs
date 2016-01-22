@@ -46,6 +46,15 @@ namespace HealthcareFamilyGUI
 
         private void FamilyInformationForm_Load(object sender, EventArgs e)
         {
+            // sharing button
+            SharingInfoBUS sharingBUS = new SharingInfoBUS();
+            SharingInfoDTO sharingDTO = sharingBUS.GetSharingInfo(Arguments.Username, Arguments.FollowerUsername);
+            if (sharingDTO.IsPermitAccessInfo == true)
+            {
+                cmdPrivacy.Text = "Privacy - Disabled";
+            }
+            else
+                cmdPrivacy.Text = "Privacy - Enabled";
 
             // capture object from parent form
             //
@@ -61,8 +70,7 @@ namespace HealthcareFamilyGUI
             txtEmail.Text = user.Email;
 
             // check if user share information
-            SharingInfoBUS sharingBUS = new SharingInfoBUS();
-            SharingInfoDTO sharingDTO = sharingBUS.GetSharingInfo(Arguments.FollowerUsername, Arguments.Username);
+            sharingDTO = sharingBUS.GetSharingInfo(Arguments.FollowerUsername, Arguments.Username);
 
             if (sharingDTO != null && sharingDTO.IsPermitAccessInfo == false)
                 return;
@@ -116,14 +124,7 @@ namespace HealthcareFamilyGUI
                 lvwHeathcareInfo.Items.Add(item); //Add this row to the ListView
             }
 
-            // sharing button
-            sharingDTO = sharingBUS.GetSharingInfo(Arguments.FollowerUsername, Arguments.Username);
-            if (sharingDTO.IsPermitAccessInfo == true)
-            {
-                cmdPrivacy.Text = "Privacy - Disabled";
-            }
-            else
-                cmdPrivacy.Text = "Privacy - Enabled";
+            
         }
 
         private void metroTextButton1_Click(object sender, EventArgs e)
@@ -140,7 +141,7 @@ namespace HealthcareFamilyGUI
                 SharingInfoBUS sharingBUS = new SharingInfoBUS();
                 sharingBUS.UpdateSharingInfo(Arguments.Username, Arguments.FollowerUsername, true);
             }
-            else
+            else if (cmdPrivacy.Text == "Privacy - Disabled")
             {
                 cmdPrivacy.Text = "Privacy - Enabled";
 

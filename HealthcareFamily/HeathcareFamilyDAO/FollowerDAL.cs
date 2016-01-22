@@ -43,7 +43,6 @@ namespace HealthcareFamilyDAL
             {
                 FollowerDTO follower = new FollowerDTO();
                 follower.FollowerUsername = dr["Follower_Username"].ToString();
-                //follower.IsPermitAccessInfo = Boolean.Parse(dr["IsPermitAccessInfo"].ToString());
                 follower.IsUserAccepted = Boolean.Parse(dr["IsUserAccepted"].ToString());
                 follower.Relationship = dr["Relationship"].ToString();
                 follower.Username = dr["Username"].ToString();
@@ -53,6 +52,36 @@ namespace HealthcareFamilyDAL
             return ListFollower;
         }
         public List<FollowerDTO> GetAllFollower(string username)
+        {
+            String query = "SELECT * FROM FOLLOWER_INFORMATION WHERE (USERNAME='" + username + "' ";
+            query += "OR Follower_Username='" + username + "') ";
+            DataTable dt = DataProvider.ExecuteQuery(query);
+
+            if (dt.Rows.Count == 0)
+                return null;
+
+            List<FollowerDTO> ListFollower = new List<FollowerDTO>();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                FollowerDTO follower = new FollowerDTO();
+                follower.FollowerUsername = dr["Follower_Username"].ToString();
+                follower.IsUserAccepted = Boolean.Parse(dr["IsUserAccepted"].ToString());
+                follower.Relationship = dr["Relationship"].ToString();
+                follower.Username = dr["Username"].ToString();
+
+                if (follower.FollowerUsername == username)
+                {
+                    follower.FollowerUsername = follower.Username;
+                    follower.Username = username;
+                }
+
+                ListFollower.Add(follower);
+            }
+
+            return ListFollower;
+        }
+        public List<FollowerDTO> GetAllFollowerIsFriend(string username)
         {
             String query = "SELECT * FROM FOLLOWER_INFORMATION WHERE (USERNAME='" + username + "' ";
             query += "OR Follower_Username='" + username + "') ";
@@ -68,7 +97,6 @@ namespace HealthcareFamilyDAL
             {
                 FollowerDTO follower = new FollowerDTO();
                 follower.FollowerUsername = dr["Follower_Username"].ToString();
-                //follower.IsPermitAccessInfo = Boolean.Parse(dr["IsPermitAccessInfo"].ToString());
                 follower.IsUserAccepted = Boolean.Parse(dr["IsUserAccepted"].ToString());
                 follower.Relationship = dr["Relationship"].ToString();
                 follower.Username = dr["Username"].ToString();

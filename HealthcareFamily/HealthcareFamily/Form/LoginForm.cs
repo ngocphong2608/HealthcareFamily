@@ -17,7 +17,6 @@ namespace HealthcareFamilyGUI
         public LoginForm()
         {
             InitializeComponent();
-            
         }
 
         private void cmdSignIn_Click(object sender, EventArgs e)

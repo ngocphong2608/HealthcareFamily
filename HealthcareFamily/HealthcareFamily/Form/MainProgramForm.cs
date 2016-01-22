@@ -56,15 +56,14 @@ namespace HealthcareFamilyGUI
             frm.Show();
         }
 
-        private void MainProgramForm_Load(object sender, EventArgs e)
+        private void MainProgramForm_ReLoad()
         {
-
             /// load from database 
             UserBUS userBUS = new UserBUS();
             FollowerBUS followerBUS = new FollowerBUS();
 
             UserDTO userDTO = userBUS.GetUserInformation(Arguments.Username);
-            List<FollowerDTO> followerList = followerBUS.GetAllFollower(Arguments.Username);
+            List<FollowerDTO> followerList = followerBUS.GetAllFollowerIsFriend(Arguments.Username);
             //
 
             this.Text = "Home";
@@ -83,14 +82,6 @@ namespace HealthcareFamilyGUI
 
             // user age
             txtAge.Text = Convert.ToString(DateTime.Now.Year - userDTO.Birthday.Year);
-
-            // friends list
-            lvwUserList.View = View.Details;
-
-            lvwUserList.Columns.Add("Name", 100, HorizontalAlignment.Left);
-            lvwUserList.Columns.Add("Relationship", 50, HorizontalAlignment.Left);
-            lvwUserList.Columns.Add("Email", 100, HorizontalAlignment.Left);
-            lvwUserList.Columns.Add("Status", 100, HorizontalAlignment.Left);
 
             DataTable table = new DataTable();
 
@@ -139,7 +130,19 @@ namespace HealthcareFamilyGUI
                 item.SubItems.Add(row["Status"].ToString());
                 lvwUserList.Items.Add(item); //Add this row to the ListView
             }
+        }
 
+        private void MainProgramForm_Load(object sender, EventArgs e)
+        {
+            // friends list
+            lvwUserList.View = View.Details;
+
+            lvwUserList.Columns.Add("Name", 100, HorizontalAlignment.Left);
+            lvwUserList.Columns.Add("Relationship", 50, HorizontalAlignment.Left);
+            lvwUserList.Columns.Add("Email", 100, HorizontalAlignment.Left);
+            lvwUserList.Columns.Add("Status", 100, HorizontalAlignment.Left);
+
+            MainProgramForm_ReLoad();
         }
 
         private void lvwUserList_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -247,7 +250,7 @@ namespace HealthcareFamilyGUI
                 // load friend list
                 FollowerBUS followerBUS = new FollowerBUS();
                 NotificationBUS notiBUS = new NotificationBUS();
-                List<FollowerDTO> followerList = followerBUS.GetAllFollower(Arguments.Username);
+                List<FollowerDTO> followerList = followerBUS.GetAllFollowerIsFriend(Arguments.Username);
 
                 // send notifycation to each friend
                 DateTime Time = DateTime.Now;
@@ -305,7 +308,9 @@ namespace HealthcareFamilyGUI
 
             Form frm = new RequestUserForm(arg);
 
-            frm.Show();
+            frm.ShowDialog();
+
+            MainProgramForm_ReLoad();
         }
 
         private void pictureBox_Click(object sender, EventArgs e)
