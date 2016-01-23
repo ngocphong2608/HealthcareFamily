@@ -27,7 +27,7 @@ namespace HealthcareFamilyGUI
 
         private void cmdBack_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.Cancel;
         }
 
         private void cmdFinish_Click(object sender, EventArgs e)
@@ -61,14 +61,17 @@ namespace HealthcareFamilyGUI
 
             if (success)
             {
+                this.DialogResult = DialogResult.OK;
                 MetroMessageBox.Show(this, "Please login to start the App :)", "Finish"
                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
             } else
             {
                 MetroMessageBox.Show(this, "Something wrong, please contact admin to get more information", "Error"
                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.Cancel;
             }
 
+            
             this.Close();
             
             //Environment.Exit(0);

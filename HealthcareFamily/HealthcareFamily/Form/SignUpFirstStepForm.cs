@@ -93,9 +93,12 @@ namespace HealthcareFamilyGUI
             this.Hide();
 
             var frm = new SignUpSecondStepForm(arg);
-            frm.ShowDialog();
-
-            this.Show();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                this.Close();
+            }
+            else
+                this.Show();
         }
 
         private void SignUpFirstStepForm_Load(object sender, EventArgs e)
