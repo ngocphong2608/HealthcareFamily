@@ -105,7 +105,7 @@ namespace HealthcareFamilyGUI
             CreateMeetingFormArguments arg = new CreateMeetingFormArguments();
 
             arg.Username = Arguments.Username;
-            arg.DoctorUsername = Arguments.FollowerUsername;
+            arg.SelectedUsername = Arguments.FollowerUsername;
 
             Form frm = new CreateMeetingForm(arg);
             frm.ShowDialog();

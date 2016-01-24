@@ -12,6 +12,7 @@ using HealthcareFamilyGUI.FormArguments;
 using HealthcareFamilyBUS;
 using HealthcareFamilyDTO;
 using HeathcareFamilyBUS;
+using MetroFramework;
 
 namespace HealthcareFamilyGUI
 {
@@ -29,19 +30,25 @@ namespace HealthcareFamilyGUI
 
         private void cmdOK_Click(object sender, EventArgs e)
         {
-            string email = cbDoctor.SelectedItem.ToString();
-            DateTime date = dtTime.Value;
-            string hour = cbHour.SelectedItem.ToString();
-            string minute = cbMinute.SelectedItem.ToString();
+            if (cbDoctor.Items.Count > 0)
+            {
+                string email = cbDoctor.SelectedItem.ToString();
+                DateTime date = dtTime.Value;
+                string hour = cbHour.SelectedItem.ToString();
+                string minute = cbMinute.SelectedItem.ToString();
 
-            string time = date.ToShortDateString() + " " + hour + ":" + minute + ":0";
+                string time = date.ToShortDateString() + " " + hour + ":" + minute + ":0";
 
-            AppointmentScheduleBUS appBUS = new AppointmentScheduleBUS();
-            appBUS.CreateAppointmentSchedule(Arguments.Username, email, time, txtDetail.Text);
+                AppointmentScheduleBUS appBUS = new AppointmentScheduleBUS();
+                appBUS.CreateAppointmentSchedule(Arguments.Username, email, time, txtDetail.Text);
 
-            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                this.DialogResult = System.Windows.Forms.DialogResult.OK;
 
-            this.Close();
+                this.Close();
+            } else
+            {
+                MetroMessageBox.Show(this, "Please select a user!", "Error");
+            }
         }
 
         private void cmdCancel_Click(object sender, EventArgs e)
@@ -55,30 +62,37 @@ namespace HealthcareFamilyGUI
             cbMinute.SelectedIndex = 0;
 
             UserBUS userBUS = new UserBUS();
+            FollowerBUS followerBUS = new FollowerBUS();
 
-            if (Arguments.DoctorUsername == null)
+            if (Arguments.SelectedUsername == null)
             {
-                FollowerBUS followerBUS = new FollowerBUS();
                 List<FollowerDTO> listFollower = followerBUS.GetAllFollowerIsFriend(Arguments.Username);
 
-                foreach (FollowerDTO follower in listFollower)
+                if (listFollower.Count > 0)
                 {
-                    if (follower.Relationship == "Doctor")
+                    foreach (FollowerDTO follower in listFollower)
                     {
-                        UserDTO user = userBUS.GetUserInformation(follower.FollowerUsername);
-                        cbDoctor.Items.Add(user.Email);
+                        if (follower.Relationship == "Doctor")
+                        {
+                            UserDTO user = userBUS.GetUserInformation(follower.FollowerUsername);
+                            cbDoctor.Items.Add(user.Email);
+                        }
                     }
+                    if (cbDoctor.Items.Count > 0)
+                        cbDoctor.SelectedIndex = 0;
                 }
-                cbDoctor.SelectedIndex = 0;
             }
             else
             {
-                UserDTO doctor = userBUS.GetUserInformation(Arguments.DoctorUsername);
+                UserDTO doctor = userBUS.GetUserInformation(Arguments.SelectedUsername);
 
                 cbDoctor.Items.Add(doctor.Email);
 
                 cbDoctor.SelectedIndex = 0;
             }
+
         }
+
+
     }
 }

@@ -9,6 +9,8 @@ namespace HealthcareFamilyGUI.FormArguments
     public class CreateMeetingFormArguments
     {
         public string Username { get; set; }
-        public string DoctorUsername { get; set; }
+
+        // using when cteate a meeting inside other user information form
+        public string SelectedUsername { get; set; }
     }
 }
