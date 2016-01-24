@@ -18,6 +18,12 @@ namespace HealthcareFamilyGUI
         {
             InitializeComponent();
         }
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            //txtUserName.Focus(s)
+            
+        }
 
         private void cmdSignIn_Click(object sender, EventArgs e)
         {

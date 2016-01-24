@@ -28,7 +28,14 @@ namespace HealthcareFamilyBUS
         }
         public bool SignIn(String username, String password)
         {
-            return userDAL.SignIn(username, password);
+            UserDTO user = userDAL.GetUserInformation(username);
+
+            if (user != null)
+            {
+                if (user.Password == password)
+                    return true;
+            }
+            return false;
         }
         public void SignOut(String username)
         {

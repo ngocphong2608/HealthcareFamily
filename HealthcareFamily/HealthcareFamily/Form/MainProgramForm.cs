@@ -65,7 +65,7 @@ namespace HealthcareFamilyGUI
             UserDTO userDTO = userBUS.GetUserInformation(Arguments.Username);
             List<FollowerDTO> followerList = followerBUS.GetAllFollowerIsFriend(Arguments.Username);
             //
-
+            
             this.Text = "Home";
 
             // user avatar

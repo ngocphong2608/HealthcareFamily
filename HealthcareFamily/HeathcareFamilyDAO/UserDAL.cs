@@ -58,13 +58,12 @@ namespace HealthcareFamilyDAL
         }
         public bool SignIn(String username, String password)
         {
-            String query = "SELECT * FROM USER_INFORMATION WHERE Username='" + username + "' AND Password='" + password + "'";
+            String query = "SELECT * FROM USER_INFORMATION WHERE Username='" + username + "'";
             DataTable dt = DataProvider.ExecuteQuery(query);
 
             if (dt.Rows.Count == 0)
                 return false;
 
-            SetStatus(username, true);
             return true;
         }
         public bool IsUserExisted(string username)
