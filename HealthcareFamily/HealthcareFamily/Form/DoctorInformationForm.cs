@@ -37,18 +37,39 @@ namespace HealthcareFamilyGUI
             // load database
 
             UserBUS userBUS = new UserBUS();
-            UserDTO userDTO = userBUS.GetUserInformation(Arguments.FollowerUsername);
+            SharingInfoBUS sharingBUS = new SharingInfoBUS();
+
+            UserDTO follower = userBUS.GetUserInformation(Arguments.FollowerUsername);
+            UserDTO user = userBUS.GetUserInformation(Arguments.Username);
 
             AppointmentScheduleBUS app = new AppointmentScheduleBUS();
             List<AppointmentScheduleDTO> appList = app.GetListAppointmentSchedule(Arguments.Username, Arguments.FollowerUsername);
 
+            // privacy
+            SharingInfoDTO sharingDTO = sharingBUS.GetSharingInfo(Arguments.Username, Arguments.FollowerUsername);
+
+
+            if (user.AccountType == "Family")
+            {
+                if (sharingDTO.IsPermitAccessInfo == true)
+                {
+                    btnPrivacy.Text = "Privacy - Disabled";
+                }
+                else
+                    btnPrivacy.Text = "Privacy - Enabled";
+            }
+            else if (user.AccountType == "Doctor")
+            {
+                btnPrivacy.Enabled = false;
+            }
+
             //
 
-            txtName.Text = userDTO.Name;
-            txtGender.Text = userDTO.Gender;
-            txtEmail.Text = userDTO.Email;
-            txtCurrentName.Text = userDTO.Name;
-            txtUsername.Text = userDTO.Username;
+            txtName.Text = follower.Name;
+            txtGender.Text = follower.Gender;
+            txtEmail.Text = follower.Email;
+            txtCurrentName.Text = follower.Name;
+            txtUsername.Text = follower.Username;
 
             DataTable table = new DataTable();
 
@@ -137,6 +158,24 @@ namespace HealthcareFamilyGUI
             else
             {
                 MetroMessageBox.Show(this, "Please choose an meeting!", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnPrivacy_Click(object sender, EventArgs e)
+        {
+            if (btnPrivacy.Text == "Privacy - Enabled")
+            {
+                btnPrivacy.Text = "Privacy - Disabled";
+
+                SharingInfoBUS sharingBUS = new SharingInfoBUS();
+                sharingBUS.UpdateSharingInfo(Arguments.Username, Arguments.FollowerUsername, true);
+            }
+            else if (btnPrivacy.Text == "Privacy - Disabled")
+            {
+                btnPrivacy.Text = "Privacy - Enabled";
+
+                SharingInfoBUS sharingBUS = new SharingInfoBUS();
+                sharingBUS.UpdateSharingInfo(Arguments.Username, Arguments.FollowerUsername, false);
             }
         }
     }

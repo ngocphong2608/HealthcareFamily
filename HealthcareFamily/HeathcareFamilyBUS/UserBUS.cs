@@ -33,7 +33,10 @@ namespace HealthcareFamilyBUS
             if (user != null)
             {
                 if (user.Password == password)
+                {
+                    userDAL.SetStatus(username, true);
                     return true;
+                }
             }
             return false;
         }

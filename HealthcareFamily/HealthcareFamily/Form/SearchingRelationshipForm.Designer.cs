@@ -1,4 +1,5 @@
-﻿namespace HealthcareFamilyGUI
+﻿using HealthcareFamilyGUI.FormArguments;
+namespace HealthcareFamilyGUI
 {
     partial class SearchingRelationshipForm
     {
@@ -47,9 +48,6 @@
             // 
             this.cbRelationship.FormattingEnabled = true;
             this.cbRelationship.ItemHeight = 23;
-            this.cbRelationship.Items.AddRange(new object[] {
-            "Family",
-            "Doctor"});
             this.cbRelationship.Location = new System.Drawing.Point(24, 83);
             this.cbRelationship.Name = "cbRelationship";
             this.cbRelationship.Size = new System.Drawing.Size(328, 29);
@@ -105,5 +103,6 @@
         private MetroFramework.Controls.MetroComboBox cbRelationship;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdBack;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdFinish;
+        private SearchingRelationshipFormArguments Arguments;
     }
 }

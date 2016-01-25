@@ -35,7 +35,11 @@ namespace HealthcareFamilyGUI
 
                 string email = lvwPeopleList.SelectedItems[0].SubItems[1].Text;
 
-                var frm = new SearchingRelationshipForm();
+                var arg = new SearchingRelationshipFormArguments();
+                arg.Username = Arguments.Username;
+                arg.FollowerEmail = email;
+                var frm = new SearchingRelationshipForm(arg);
+
 
                 if (frm.ShowDialog() == DialogResult.OK)
                 {

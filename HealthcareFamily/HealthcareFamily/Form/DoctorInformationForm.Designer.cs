@@ -44,6 +44,7 @@ namespace HealthcareFamilyGUI
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.cmdOk = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.lvwMeeting = new System.Windows.Forms.ListView();
+            this.btnPrivacy = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +62,7 @@ namespace HealthcareFamilyGUI
             this.cmdMessage.Image = null;
             this.cmdMessage.Location = new System.Drawing.Point(23, 210);
             this.cmdMessage.Name = "cmdMessage";
-            this.cmdMessage.Size = new System.Drawing.Size(326, 35);
+            this.cmdMessage.Size = new System.Drawing.Size(160, 35);
             this.cmdMessage.TabIndex = 13;
             this.cmdMessage.Text = "Message";
             this.cmdMessage.UseSelectable = true;
@@ -202,11 +203,24 @@ namespace HealthcareFamilyGUI
             this.lvwMeeting.TabIndex = 26;
             this.lvwMeeting.UseCompatibleStateImageBehavior = false;
             // 
+            // btnPrivacy
+            // 
+            this.btnPrivacy.Image = null;
+            this.btnPrivacy.Location = new System.Drawing.Point(189, 210);
+            this.btnPrivacy.Name = "btnPrivacy";
+            this.btnPrivacy.Size = new System.Drawing.Size(160, 35);
+            this.btnPrivacy.TabIndex = 27;
+            this.btnPrivacy.Text = "Privacy";
+            this.btnPrivacy.UseSelectable = true;
+            this.btnPrivacy.UseVisualStyleBackColor = true;
+            this.btnPrivacy.Click += new System.EventHandler(this.btnPrivacy_Click);
+            // 
             // DoctorInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 516);
+            this.Controls.Add(this.btnPrivacy);
             this.Controls.Add(this.lvwMeeting);
             this.Controls.Add(this.cmdOk);
             this.Controls.Add(this.groupBox3);
@@ -244,5 +258,6 @@ namespace HealthcareFamilyGUI
         private MetroFramework.Controls.MetroTextBox.MetroTextButton cmdOk;
         private System.Windows.Forms.ListView lvwMeeting;
         private UserInformationFormArguments Arguments;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnPrivacy;
     }
 }

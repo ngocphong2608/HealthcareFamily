@@ -48,18 +48,29 @@ namespace HealthcareFamilyGUI
         {
             // sharing button
             SharingInfoBUS sharingBUS = new SharingInfoBUS();
+            UserBUS userBUS = new UserBUS();
+            HealthcareBUS healthcareBUS = new HealthcareBUS();
+
+            UserDTO userDTO = userBUS.GetUserInformation(Arguments.Username);
             SharingInfoDTO sharingDTO = sharingBUS.GetSharingInfo(Arguments.Username, Arguments.FollowerUsername);
-            if (sharingDTO.IsPermitAccessInfo == true)
+
+
+            if (userDTO.AccountType == "Family")
             {
-                cmdPrivacy.Text = "Privacy - Disabled";
+                if (sharingDTO.IsPermitAccessInfo == true)
+                {
+                    cmdPrivacy.Text = "Privacy - Disabled";
+                }
+                else
+                    cmdPrivacy.Text = "Privacy - Enabled";
+            } else if (userDTO.AccountType == "Doctor")
+            {
+                cmdPrivacy.Enabled = false;
             }
-            else
-                cmdPrivacy.Text = "Privacy - Enabled";
 
             // capture object from parent form
             //
-            UserBUS userBUS = new UserBUS();
-            HealthcareBUS healthcareBUS = new HealthcareBUS();
+            
 
             UserDTO user = userBUS.GetUserInformation(Arguments.FollowerUsername);
 

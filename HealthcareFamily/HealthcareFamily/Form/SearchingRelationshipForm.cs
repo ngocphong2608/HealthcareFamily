@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
+using HealthcareFamilyGUI.FormArguments;
+using HealthcareFamilyBUS;
+using HealthcareFamilyDTO;
 
 namespace HealthcareFamilyGUI
 {
@@ -18,6 +21,11 @@ namespace HealthcareFamilyGUI
         public SearchingRelationshipForm()
         {
             InitializeComponent();
+        }
+        public SearchingRelationshipForm(SearchingRelationshipFormArguments arg)
+        {
+            InitializeComponent();
+            Arguments = arg;
         }
 
         private void cmdBack_Click(object sender, EventArgs e)
@@ -36,6 +44,19 @@ namespace HealthcareFamilyGUI
 
         private void SearchingRelationshipForm_Load(object sender, EventArgs e)
         {
+            UserBUS userBUS = new UserBUS();
+            UserDTO user = userBUS.GetUserInformation(Arguments.Username);
+            UserDTO follower = userBUS.GetUserInformationByEmail(Arguments.FollowerEmail);
+
+            if (user.AccountType == "Family" && follower.AccountType == "Family")
+            {
+                cbRelationship.Items.Add("Family");
+            } else
+            {
+                cbRelationship.Items.Add("Family");
+                cbRelationship.Items.Add("Doctor");
+            }
+
             cbRelationship.SelectedIndex = 0;
         }
     }
