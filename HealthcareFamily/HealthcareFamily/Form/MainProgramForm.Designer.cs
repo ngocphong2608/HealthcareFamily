@@ -49,7 +49,7 @@ namespace HealthcareFamilyGUI
             // 
             this.lvwUserList.Location = new System.Drawing.Point(23, 273);
             this.lvwUserList.Name = "lvwUserList";
-            this.lvwUserList.Size = new System.Drawing.Size(329, 433);
+            this.lvwUserList.Size = new System.Drawing.Size(400, 433);
             this.lvwUserList.TabIndex = 5;
             this.lvwUserList.UseCompatibleStateImageBehavior = false;
             this.lvwUserList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lvwUserList_ItemCheck);
@@ -60,7 +60,7 @@ namespace HealthcareFamilyGUI
             // cmdProfile
             // 
             this.cmdProfile.Image = null;
-            this.cmdProfile.Location = new System.Drawing.Point(210, 56);
+            this.cmdProfile.Location = new System.Drawing.Point(280, 56);
             this.cmdProfile.Name = "cmdProfile";
             this.cmdProfile.Size = new System.Drawing.Size(142, 32);
             this.cmdProfile.TabIndex = 11;
@@ -72,9 +72,9 @@ namespace HealthcareFamilyGUI
             // cmdMeeting
             // 
             this.cmdMeeting.Image = null;
-            this.cmdMeeting.Location = new System.Drawing.Point(24, 197);
+            this.cmdMeeting.Location = new System.Drawing.Point(23, 197);
             this.cmdMeeting.Name = "cmdMeeting";
-            this.cmdMeeting.Size = new System.Drawing.Size(156, 32);
+            this.cmdMeeting.Size = new System.Drawing.Size(184, 32);
             this.cmdMeeting.TabIndex = 12;
             this.cmdMeeting.Text = "Meeting";
             this.cmdMeeting.UseSelectable = true;
@@ -84,9 +84,9 @@ namespace HealthcareFamilyGUI
             // cmdEmergency
             // 
             this.cmdEmergency.Image = null;
-            this.cmdEmergency.Location = new System.Drawing.Point(186, 197);
+            this.cmdEmergency.Location = new System.Drawing.Point(229, 197);
             this.cmdEmergency.Name = "cmdEmergency";
-            this.cmdEmergency.Size = new System.Drawing.Size(166, 32);
+            this.cmdEmergency.Size = new System.Drawing.Size(193, 32);
             this.cmdEmergency.TabIndex = 13;
             this.cmdEmergency.Text = "Emergency";
             this.cmdEmergency.UseSelectable = true;
@@ -98,7 +98,7 @@ namespace HealthcareFamilyGUI
             this.cmdAddUser.Image = null;
             this.cmdAddUser.Location = new System.Drawing.Point(23, 235);
             this.cmdAddUser.Name = "cmdAddUser";
-            this.cmdAddUser.Size = new System.Drawing.Size(157, 32);
+            this.cmdAddUser.Size = new System.Drawing.Size(184, 32);
             this.cmdAddUser.TabIndex = 14;
             this.cmdAddUser.Text = "Add New User";
             this.cmdAddUser.UseSelectable = true;
@@ -108,7 +108,7 @@ namespace HealthcareFamilyGUI
             // cmdNotification
             // 
             this.cmdNotification.Image = null;
-            this.cmdNotification.Location = new System.Drawing.Point(210, 94);
+            this.cmdNotification.Location = new System.Drawing.Point(280, 93);
             this.cmdNotification.Name = "cmdNotification";
             this.cmdNotification.Size = new System.Drawing.Size(142, 32);
             this.cmdNotification.TabIndex = 15;
@@ -120,9 +120,9 @@ namespace HealthcareFamilyGUI
             // cmdRequestNewUser
             // 
             this.cmdRequestNewUser.Image = null;
-            this.cmdRequestNewUser.Location = new System.Drawing.Point(186, 235);
+            this.cmdRequestNewUser.Location = new System.Drawing.Point(229, 235);
             this.cmdRequestNewUser.Name = "cmdRequestNewUser";
-            this.cmdRequestNewUser.Size = new System.Drawing.Size(166, 32);
+            this.cmdRequestNewUser.Size = new System.Drawing.Size(193, 32);
             this.cmdRequestNewUser.TabIndex = 16;
             this.cmdRequestNewUser.Text = "Request New User";
             this.cmdRequestNewUser.UseSelectable = true;
@@ -133,7 +133,7 @@ namespace HealthcareFamilyGUI
             // 
             this.txtName.Location = new System.Drawing.Point(105, 65);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(81, 19);
+            this.txtName.Size = new System.Drawing.Size(158, 19);
             this.txtName.TabIndex = 17;
             this.txtName.Text = "metroLabel1";
             // 
@@ -158,7 +158,7 @@ namespace HealthcareFamilyGUI
             // cmdLogout
             // 
             this.cmdLogout.Image = null;
-            this.cmdLogout.Location = new System.Drawing.Point(210, 132);
+            this.cmdLogout.Location = new System.Drawing.Point(280, 132);
             this.cmdLogout.Name = "cmdLogout";
             this.cmdLogout.Size = new System.Drawing.Size(142, 32);
             this.cmdLogout.TabIndex = 21;
@@ -182,7 +182,7 @@ namespace HealthcareFamilyGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 729);
+            this.ClientSize = new System.Drawing.Size(446, 729);
             this.Controls.Add(this.ptbAvatar);
             this.Controls.Add(this.cmdLogout);
             this.Controls.Add(this.txtStatus);
