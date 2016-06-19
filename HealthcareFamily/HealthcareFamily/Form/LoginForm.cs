@@ -1,4 +1,4 @@
-﻿using HealthcareFamilyBUS;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,13 +9,16 @@ using System.Windows.Forms;
 using MetroFramework.Forms;
 using MetroFramework;
 using HealthcareFamilyGUI.FormArguments;
+using HealthcareFamilyGUI.BUS_Webservice;
 
 namespace HealthcareFamilyGUI
 {
     public partial class LoginForm : MetroForm
     {
+        HF_BUS_WebserviceSoapClient bus;
         public LoginForm()
         {
+            bus = new HF_BUS_WebserviceSoapClient();
             InitializeComponent();
         }
         protected override void OnShown(EventArgs e)
@@ -30,9 +33,8 @@ namespace HealthcareFamilyGUI
             // doi tuong login
             String username = txtUserName.Text;
             String password = txtPassword.Text;
-            UserBUS userBUS = new UserBUS();
 
-            if (userBUS.SignIn(username, password))
+            if (bus.SignIn(username, password))
             {
                 this.Hide();
 

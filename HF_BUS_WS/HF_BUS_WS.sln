@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HF_BUS_WS", "HF_BUS_WS\HF_BUS_WS.csproj", "{88C004EB-0960-4999-BD14-A6DD67C925A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS", "BUS\BUS.csproj", "{B769F2F6-5B30-430E-8259-9B1C804FAEA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88C004EB-0960-4999-BD14-A6DD67C925A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C004EB-0960-4999-BD14-A6DD67C925A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C004EB-0960-4999-BD14-A6DD67C925A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C004EB-0960-4999-BD14-A6DD67C925A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B769F2F6-5B30-430E-8259-9B1C804FAEA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B769F2F6-5B30-430E-8259-9B1C804FAEA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B769F2F6-5B30-430E-8259-9B1C804FAEA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B769F2F6-5B30-430E-8259-9B1C804FAEA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

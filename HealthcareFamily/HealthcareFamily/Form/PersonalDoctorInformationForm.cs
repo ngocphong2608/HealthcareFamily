@@ -9,11 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using HealthcareFamilyGUI.FormArguments;
-using HealthcareFamilyBUS;
-using HealthcareFamilyDTO;
-using HeathcareFamilyBUS;
-using HeathcareFamilyDTO;
+
 using MetroFramework;
+using HealthcareFamilyGUI.BUS_Webservice;
 
 namespace HealthcareFamilyGUI
 {
@@ -24,17 +22,19 @@ namespace HealthcareFamilyGUI
             InitializeComponent();
         }
 
+        HF_BUS_WebserviceSoapClient bus;
         public PersonalDoctorInformationForm(UserInformationFormArguments arg)
         {
             InitializeComponent();
             Arguments = arg;
+            bus = new HF_BUS_WebserviceSoapClient();
         }
 
         void PersonalDoctorInformationForm_ReLoad()
         {
             // load from database
-            UserBUS userBUS = new UserBUS();
-            UserDTO userDTO = userBUS.GetUserInformation(Arguments.Username);
+            
+            UserDTO userDTO = bus.GetUserInformation(Arguments.Username);
 
             txtName.Text = userDTO.Name;
             txtGender.Text = userDTO.Gender;
@@ -56,8 +56,7 @@ namespace HealthcareFamilyGUI
                 "Description", Type.GetType("System.String"));
             table.Columns.Add(nameColumn);
 
-            AppointmentScheduleBUS app = new AppointmentScheduleBUS();
-            List<AppointmentScheduleDTO> appList = app.GetListAppointmentSchedule(Arguments.Username);
+            List<AppointmentScheduleDTO> appList = new List<AppointmentScheduleDTO>(bus.GetListAppointmentScheduleByUsername(Arguments.Username));
 
             for (int i = 0; i < appList.Count; i++)
             {
@@ -121,8 +120,7 @@ namespace HealthcareFamilyGUI
                 appDTO.Time = dt.ToShortDateString() + " " + dt.Hour + ":" + dt.Minute + ":" + dt.Second;
                 appDTO.Username = Arguments.Username;
 
-                AppointmentScheduleBUS appBUS = new AppointmentScheduleBUS();
-                appBUS.DeleteAppointmentSchedule(appDTO);
+                bus.DeleteAppointmentSchedule(appDTO);
 
                 PersonalDoctorInformationForm_ReLoad();
 

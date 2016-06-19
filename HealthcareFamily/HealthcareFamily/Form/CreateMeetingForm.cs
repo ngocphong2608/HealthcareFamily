@@ -9,10 +9,9 @@ using System.Threading.Tasks;
 //using System.Windows.Forms;
 using MetroFramework.Forms;
 using HealthcareFamilyGUI.FormArguments;
-using HealthcareFamilyBUS;
-using HealthcareFamilyDTO;
-using HeathcareFamilyBUS;
+
 using MetroFramework;
+using HealthcareFamilyGUI.BUS_Webservice;
 
 namespace HealthcareFamilyGUI
 {
@@ -22,10 +21,13 @@ namespace HealthcareFamilyGUI
         {
             InitializeComponent();
         }
+
+        HF_BUS_WebserviceSoapClient bus;
         public CreateMeetingForm(CreateMeetingFormArguments arg)
         {
             InitializeComponent();
             Arguments = arg;
+            bus = new HF_BUS_WebserviceSoapClient();
         }
 
         private void cmdOK_Click(object sender, EventArgs e)
@@ -39,8 +41,8 @@ namespace HealthcareFamilyGUI
 
                 string time = date.ToShortDateString() + " " + hour + ":" + minute + ":0";
 
-                AppointmentScheduleBUS appBUS = new AppointmentScheduleBUS();
-                appBUS.CreateAppointmentSchedule(Arguments.Username, email, time, txtDetail.Text);
+                
+                bus.CreateAppointmentSchedule(Arguments.Username, email, time, txtDetail.Text);
 
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
 
@@ -61,12 +63,12 @@ namespace HealthcareFamilyGUI
             cbHour.SelectedIndex = 0;
             cbMinute.SelectedIndex = 0;
 
-            UserBUS userBUS = new UserBUS();
-            FollowerBUS followerBUS = new FollowerBUS();
+            
+            
 
             if (Arguments.SelectedUsername == null)
             {
-                List<FollowerDTO> listFollower = followerBUS.GetAllFollowerIsFriend(Arguments.Username);
+                List<FollowerDTO> listFollower = new List<FollowerDTO>(bus.GetAllFollowerIsFriend(Arguments.Username));
 
                 if (listFollower.Count > 0)
                 {
@@ -74,7 +76,7 @@ namespace HealthcareFamilyGUI
                     {
                         if (follower.Relationship == "Doctor")
                         {
-                            UserDTO user = userBUS.GetUserInformation(follower.FollowerUsername);
+                            UserDTO user = bus.GetUserInformation(follower.FollowerUsername);
                             cbDoctor.Items.Add(user.Email);
                         }
                     }
@@ -84,7 +86,7 @@ namespace HealthcareFamilyGUI
             }
             else
             {
-                UserDTO doctor = userBUS.GetUserInformation(Arguments.SelectedUsername);
+                UserDTO doctor = bus.GetUserInformation(Arguments.SelectedUsername);
 
                 cbDoctor.Items.Add(doctor.Email);
 

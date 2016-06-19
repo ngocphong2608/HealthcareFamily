@@ -7,11 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using HealthcareFamilyGUI.FormArguments;
-using HealthcareFamilyDTO;
-using HealthcareFamilyBUS;
-using HeathcareFamilyBUS;
-using HeathcareFamilyDTO;
 using MetroFramework;
+using HealthcareFamilyGUI.BUS_Webservice;
 
 namespace HealthcareFamilyGUI
 {
@@ -21,11 +18,13 @@ namespace HealthcareFamilyGUI
         {
             InitializeComponent();
         }
+
+        HF_BUS_WebserviceSoapClient bus;
         public DoctorInformationForm(UserInformationFormArguments arg)
         {
             InitializeComponent();
             Arguments = arg;
-            
+            bus = new HF_BUS_WebserviceSoapClient();
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -36,17 +35,15 @@ namespace HealthcareFamilyGUI
         {
             // load database
 
-            UserBUS userBUS = new UserBUS();
-            SharingInfoBUS sharingBUS = new SharingInfoBUS();
 
-            UserDTO follower = userBUS.GetUserInformation(Arguments.FollowerUsername);
-            UserDTO user = userBUS.GetUserInformation(Arguments.Username);
+            UserDTO follower = bus.GetUserInformation(Arguments.FollowerUsername);
+            UserDTO user = bus.GetUserInformation(Arguments.Username);
 
-            AppointmentScheduleBUS app = new AppointmentScheduleBUS();
-            List<AppointmentScheduleDTO> appList = app.GetListAppointmentSchedule(Arguments.Username, Arguments.FollowerUsername);
+            
+            List<AppointmentScheduleDTO> appList = new List<AppointmentScheduleDTO>(bus.GetListAppointmentSchedule(Arguments.Username, Arguments.FollowerUsername));
 
             // privacy
-            SharingInfoDTO sharingDTO = sharingBUS.GetSharingInfo(Arguments.Username, Arguments.FollowerUsername);
+            SharingInfoDTO sharingDTO = bus.GetSharingInfo(Arguments.Username, Arguments.FollowerUsername);
 
 
             if (user.AccountType == "Family")
@@ -150,8 +147,8 @@ namespace HealthcareFamilyGUI
                 appDTO.Time = dt.ToShortDateString() + " " + dt.Hour + ":" + dt.Minute + ":" + dt.Second;
                 appDTO.Username = Arguments.Username;
 
-                AppointmentScheduleBUS appBUS = new AppointmentScheduleBUS();
-                appBUS.DeleteAppointmentSchedule(appDTO);
+                
+                bus.DeleteAppointmentSchedule(appDTO);
 
                 DoctorInformationForm_ReLoad();
             }
@@ -167,15 +164,13 @@ namespace HealthcareFamilyGUI
             {
                 btnPrivacy.Text = "Privacy - Disabled";
 
-                SharingInfoBUS sharingBUS = new SharingInfoBUS();
-                sharingBUS.UpdateSharingInfo(Arguments.Username, Arguments.FollowerUsername, true);
+                bus.UpdateSharingInfo(Arguments.Username, Arguments.FollowerUsername, true);
             }
             else if (btnPrivacy.Text == "Privacy - Disabled")
             {
                 btnPrivacy.Text = "Privacy - Enabled";
 
-                SharingInfoBUS sharingBUS = new SharingInfoBUS();
-                sharingBUS.UpdateSharingInfo(Arguments.Username, Arguments.FollowerUsername, false);
+                bus.UpdateSharingInfo(Arguments.Username, Arguments.FollowerUsername, false);
             }
         }
     }

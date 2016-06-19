@@ -7,11 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
-using HealthcareFamilyDTO;
-using HealthcareFamilyBUS;
-using HealthcareFamilyGUI.FormArguments;
-using HeathcareFamilyBUS;
 
+using HealthcareFamilyGUI.FormArguments;
+using HealthcareFamilyGUI.BUS_Webservice;
 
 namespace HealthcareFamilyGUI
 {
@@ -21,6 +19,8 @@ namespace HealthcareFamilyGUI
         {
             InitializeComponent();
         }
+
+        HF_BUS_WebserviceSoapClient bus = new HF_BUS_WebserviceSoapClient();
         public SearchingPeopleForm(SearchingPeopleFormArguments arg)
         {
             InitializeComponent();
@@ -47,16 +47,14 @@ namespace HealthcareFamilyGUI
                     string Relationship = frm.Relationship;
 
                     // database
-                    FollowerBUS followerBUS = new FollowerBUS();
-                    SharingInfoBUS sharingBUS = new SharingInfoBUS();
 
                     // kiem tra da them follower chua
 
                     // add follower
-                    followerBUS.AddFollowerByEmail(Arguments.Username, email, Relationship);
+                    bus.AddFollowerByEmail(Arguments.Username, email, Relationship);
 
                     // add sharing info
-                    sharingBUS.SetSharingInfoByEmail(Arguments.Username, email, false);
+                    bus.SetSharingInfoByEmail(Arguments.Username, email, false);
 
                     MetroMessageBox.Show(this, "Add people success!", "Message",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -93,8 +91,7 @@ namespace HealthcareFamilyGUI
             if (info == "")
                 return;
 
-            UserBUS userBUS = new UserBUS();
-            List<UserDTO> list = userBUS.GetListUserNotFriend(Arguments.Username, info);
+            List<UserDTO> list = new List<UserDTO>(bus.GetListUserNotFriend(Arguments.Username, info));
 
             // list view
             DataTable table = new DataTable();

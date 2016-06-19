@@ -1,0 +1,1505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListAccountType">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListAccountTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListAccountTypeResult" type="tns:ArrayOfAccountTypeDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAccountTypeDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AccountTypeDTO" nillable="true" type="tns:AccountTypeDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AccountTypeDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExtensionDataObject" />
+      <s:element name="GetListAppointmentScheduleByUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListAppointmentScheduleByUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListAppointmentScheduleByUsernameResult" type="tns:ArrayOfAppointmentScheduleDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAppointmentScheduleDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AppointmentScheduleDTO" nillable="true" type="tns:AppointmentScheduleDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AppointmentScheduleDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartnerUsername" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Detail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Time" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListAppointmentSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="follower" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListAppointmentScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListAppointmentScheduleResult" type="tns:ArrayOfAppointmentScheduleDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAppointmentSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="doctorEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="detail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAppointmentScheduleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteAppointmentSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appDTO" type="tns:AppointmentScheduleDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAppointmentScheduleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListFollower">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListFollowerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListFollowerResult" type="tns:ArrayOfFollowerDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFollowerDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FollowerDTO" nillable="true" type="tns:FollowerDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FollowerDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FollowerUsername" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Relationship" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsUserAccepted" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllFollower">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllFollowerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllFollowerResult" type="tns:ArrayOfFollowerDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllFollowerIsFriend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllFollowerIsFriendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllFollowerIsFriendResult" type="tns:ArrayOfFollowerDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFollowerInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="follower" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFollowerInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFollowerInformationResult" type="tns:FollowerDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFollowerByEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relationship" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFollowerByEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddFollowerByEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllRequestUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllRequestUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllRequestUserResult" type="tns:ArrayOfFollowerDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptFollowByEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptFollowByEmailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteFollowerByEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFollowerByEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteFollowerByEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListHealthcareInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListHealthcareInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListHealthcareInformationResult" type="tns:ArrayOfHealthcareDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfHealthcareDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HealthcareDTO" nillable="true" type="tns:HealthcareDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HealthcareDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HeartBeat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Emotion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertHealthCareInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="healthcare" type="tns:HealthcareDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertHealthCareInformationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="follower" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListMessageResult" type="tns:ArrayOfMessageDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMessageDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MessageDTO" nillable="true" type="tns:MessageDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MessageDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sender_Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reciever_Username" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Detail" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListNotificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListNotificationResult" type="tns:ArrayOfNotificationDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfNotificationDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NotificationDTO" nillable="true" type="tns:NotificationDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NotificationDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="FollowerUsername" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Detail" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="follower" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dt" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="detail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetNotificationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSharingInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="follower" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSharingInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSharingInfoResult" type="tns:SharingInfoDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SharingInfoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FollowerUsername" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPermitAccessInfo" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateSharingInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="follower" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="share" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSharingInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetSharingInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="follower" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="share" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSharingInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetSharingInfoByEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="share" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSharingInfoByEmailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUserInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInformationResult" type="tns:UserDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Birthday" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsOnline" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Avatar" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Followers" type="tns:ArrayOfFollowerDTO" />
+          <s:element minOccurs="0" maxOccurs="1" name="HeathInfo" type="tns:ArrayOfHealthcareDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserInformationByEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInformationByEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInformationByEmailResult" type="tns:UserDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SignInResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignOutResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SignUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="birthday" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SignUpResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AllowAccessInfoByEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AllowAccessInfoByEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AllowAccessInfoByEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnAllowAccessInfoByEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnAllowAccessInfoByEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnAllowAccessInfoByEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsEmailExisted">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsEmailExistedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsEmailExistedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListUserNotFriend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="info" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListUserNotFriendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListUserNotFriendResult" type="tns:ArrayOfUserDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUserDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserDTO" nillable="true" type="tns:UserDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateAvatar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="img" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAvatarResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListAccountTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListAccountType" />
+  </wsdl:message>
+  <wsdl:message name="GetListAccountTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListAccountTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListAppointmentScheduleByUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListAppointmentScheduleByUsername" />
+  </wsdl:message>
+  <wsdl:message name="GetListAppointmentScheduleByUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListAppointmentScheduleByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListAppointmentScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListAppointmentSchedule" />
+  </wsdl:message>
+  <wsdl:message name="GetListAppointmentScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListAppointmentScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAppointmentScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAppointmentSchedule" />
+  </wsdl:message>
+  <wsdl:message name="CreateAppointmentScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAppointmentScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAppointmentScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAppointmentSchedule" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAppointmentScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAppointmentScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListFollowerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListFollower" />
+  </wsdl:message>
+  <wsdl:message name="GetListFollowerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListFollowerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllFollowerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllFollower" />
+  </wsdl:message>
+  <wsdl:message name="GetAllFollowerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllFollowerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllFollowerIsFriendSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllFollowerIsFriend" />
+  </wsdl:message>
+  <wsdl:message name="GetAllFollowerIsFriendSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllFollowerIsFriendResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFollowerInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFollowerInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetFollowerInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFollowerInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFollowerByEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFollowerByEmail" />
+  </wsdl:message>
+  <wsdl:message name="AddFollowerByEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFollowerByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllRequestUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllRequestUser" />
+  </wsdl:message>
+  <wsdl:message name="GetAllRequestUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllRequestUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AcceptFollowByEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:AcceptFollowByEmail" />
+  </wsdl:message>
+  <wsdl:message name="AcceptFollowByEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:AcceptFollowByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFollowerByEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFollowerByEmail" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFollowerByEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFollowerByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListHealthcareInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListHealthcareInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetListHealthcareInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListHealthcareInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertHealthCareInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertHealthCareInformation" />
+  </wsdl:message>
+  <wsdl:message name="InsertHealthCareInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertHealthCareInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetListMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListNotification" />
+  </wsdl:message>
+  <wsdl:message name="GetListNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:SetNotification" />
+  </wsdl:message>
+  <wsdl:message name="SetNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:SetNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSharingInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSharingInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetSharingInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSharingInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSharingInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSharingInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSharingInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSharingInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSharingInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSharingInfo" />
+  </wsdl:message>
+  <wsdl:message name="SetSharingInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSharingInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSharingInfoByEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSharingInfoByEmail" />
+  </wsdl:message>
+  <wsdl:message name="SetSharingInfoByEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSharingInfoByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInformationByEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInformationByEmail" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInformationByEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInformationByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignInSoapIn">
+    <wsdl:part name="parameters" element="tns:SignIn" />
+  </wsdl:message>
+  <wsdl:message name="SignInSoapOut">
+    <wsdl:part name="parameters" element="tns:SignInResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignOutSoapIn">
+    <wsdl:part name="parameters" element="tns:SignOut" />
+  </wsdl:message>
+  <wsdl:message name="SignOutSoapOut">
+    <wsdl:part name="parameters" element="tns:SignOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignUpSoapIn">
+    <wsdl:part name="parameters" element="tns:SignUp" />
+  </wsdl:message>
+  <wsdl:message name="SignUpSoapOut">
+    <wsdl:part name="parameters" element="tns:SignUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="AllowAccessInfoByEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:AllowAccessInfoByEmail" />
+  </wsdl:message>
+  <wsdl:message name="AllowAccessInfoByEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:AllowAccessInfoByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnAllowAccessInfoByEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:UnAllowAccessInfoByEmail" />
+  </wsdl:message>
+  <wsdl:message name="UnAllowAccessInfoByEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:UnAllowAccessInfoByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsEmailExistedSoapIn">
+    <wsdl:part name="parameters" element="tns:IsEmailExisted" />
+  </wsdl:message>
+  <wsdl:message name="IsEmailExistedSoapOut">
+    <wsdl:part name="parameters" element="tns:IsEmailExistedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListUserNotFriendSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListUserNotFriend" />
+  </wsdl:message>
+  <wsdl:message name="GetListUserNotFriendSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListUserNotFriendResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAvatarSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAvatar" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAvatarSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAvatarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HF_BUS_WebserviceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAccountType">
+      <wsdl:input message="tns:GetListAccountTypeSoapIn" />
+      <wsdl:output message="tns:GetListAccountTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAppointmentScheduleByUsername">
+      <wsdl:input message="tns:GetListAppointmentScheduleByUsernameSoapIn" />
+      <wsdl:output message="tns:GetListAppointmentScheduleByUsernameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAppointmentSchedule">
+      <wsdl:input message="tns:GetListAppointmentScheduleSoapIn" />
+      <wsdl:output message="tns:GetListAppointmentScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAppointmentSchedule">
+      <wsdl:input message="tns:CreateAppointmentScheduleSoapIn" />
+      <wsdl:output message="tns:CreateAppointmentScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppointmentSchedule">
+      <wsdl:input message="tns:DeleteAppointmentScheduleSoapIn" />
+      <wsdl:output message="tns:DeleteAppointmentScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListFollower">
+      <wsdl:input message="tns:GetListFollowerSoapIn" />
+      <wsdl:output message="tns:GetListFollowerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFollower">
+      <wsdl:input message="tns:GetAllFollowerSoapIn" />
+      <wsdl:output message="tns:GetAllFollowerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFollowerIsFriend">
+      <wsdl:input message="tns:GetAllFollowerIsFriendSoapIn" />
+      <wsdl:output message="tns:GetAllFollowerIsFriendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFollowerInformation">
+      <wsdl:input message="tns:GetFollowerInformationSoapIn" />
+      <wsdl:output message="tns:GetFollowerInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFollowerByEmail">
+      <wsdl:input message="tns:AddFollowerByEmailSoapIn" />
+      <wsdl:output message="tns:AddFollowerByEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequestUser">
+      <wsdl:input message="tns:GetAllRequestUserSoapIn" />
+      <wsdl:output message="tns:GetAllRequestUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptFollowByEmail">
+      <wsdl:input message="tns:AcceptFollowByEmailSoapIn" />
+      <wsdl:output message="tns:AcceptFollowByEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFollowerByEmail">
+      <wsdl:input message="tns:DeleteFollowerByEmailSoapIn" />
+      <wsdl:output message="tns:DeleteFollowerByEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListHealthcareInformation">
+      <wsdl:input message="tns:GetListHealthcareInformationSoapIn" />
+      <wsdl:output message="tns:GetListHealthcareInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertHealthCareInformation">
+      <wsdl:input message="tns:InsertHealthCareInformationSoapIn" />
+      <wsdl:output message="tns:InsertHealthCareInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListMessage">
+      <wsdl:input message="tns:GetListMessageSoapIn" />
+      <wsdl:output message="tns:GetListMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListNotification">
+      <wsdl:input message="tns:GetListNotificationSoapIn" />
+      <wsdl:output message="tns:GetListNotificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetNotification">
+      <wsdl:input message="tns:SetNotificationSoapIn" />
+      <wsdl:output message="tns:SetNotificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSharingInfo">
+      <wsdl:input message="tns:GetSharingInfoSoapIn" />
+      <wsdl:output message="tns:GetSharingInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSharingInfo">
+      <wsdl:input message="tns:UpdateSharingInfoSoapIn" />
+      <wsdl:output message="tns:UpdateSharingInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSharingInfo">
+      <wsdl:input message="tns:SetSharingInfoSoapIn" />
+      <wsdl:output message="tns:SetSharingInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSharingInfoByEmail">
+      <wsdl:input message="tns:SetSharingInfoByEmailSoapIn" />
+      <wsdl:output message="tns:SetSharingInfoByEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInformation">
+      <wsdl:input message="tns:GetUserInformationSoapIn" />
+      <wsdl:output message="tns:GetUserInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInformationByEmail">
+      <wsdl:input message="tns:GetUserInformationByEmailSoapIn" />
+      <wsdl:output message="tns:GetUserInformationByEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignIn">
+      <wsdl:input message="tns:SignInSoapIn" />
+      <wsdl:output message="tns:SignInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignOut">
+      <wsdl:input message="tns:SignOutSoapIn" />
+      <wsdl:output message="tns:SignOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignUp">
+      <wsdl:input message="tns:SignUpSoapIn" />
+      <wsdl:output message="tns:SignUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AllowAccessInfoByEmail">
+      <wsdl:input message="tns:AllowAccessInfoByEmailSoapIn" />
+      <wsdl:output message="tns:AllowAccessInfoByEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnAllowAccessInfoByEmail">
+      <wsdl:input message="tns:UnAllowAccessInfoByEmailSoapIn" />
+      <wsdl:output message="tns:UnAllowAccessInfoByEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsEmailExisted">
+      <wsdl:input message="tns:IsEmailExistedSoapIn" />
+      <wsdl:output message="tns:IsEmailExistedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListUserNotFriend">
+      <wsdl:input message="tns:GetListUserNotFriendSoapIn" />
+      <wsdl:output message="tns:GetListUserNotFriendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAvatar">
+      <wsdl:input message="tns:UpdateAvatarSoapIn" />
+      <wsdl:output message="tns:UpdateAvatarSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HF_BUS_WebserviceSoap" type="tns:HF_BUS_WebserviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAccountType">
+      <soap:operation soapAction="http://tempuri.org/GetListAccountType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAppointmentScheduleByUsername">
+      <soap:operation soapAction="http://tempuri.org/GetListAppointmentScheduleByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAppointmentSchedule">
+      <soap:operation soapAction="http://tempuri.org/GetListAppointmentSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAppointmentSchedule">
+      <soap:operation soapAction="http://tempuri.org/CreateAppointmentSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppointmentSchedule">
+      <soap:operation soapAction="http://tempuri.org/DeleteAppointmentSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFollower">
+      <soap:operation soapAction="http://tempuri.org/GetListFollower" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFollower">
+      <soap:operation soapAction="http://tempuri.org/GetAllFollower" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFollowerIsFriend">
+      <soap:operation soapAction="http://tempuri.org/GetAllFollowerIsFriend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFollowerInformation">
+      <soap:operation soapAction="http://tempuri.org/GetFollowerInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFollowerByEmail">
+      <soap:operation soapAction="http://tempuri.org/AddFollowerByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequestUser">
+      <soap:operation soapAction="http://tempuri.org/GetAllRequestUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptFollowByEmail">
+      <soap:operation soapAction="http://tempuri.org/AcceptFollowByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFollowerByEmail">
+      <soap:operation soapAction="http://tempuri.org/DeleteFollowerByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListHealthcareInformation">
+      <soap:operation soapAction="http://tempuri.org/GetListHealthcareInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertHealthCareInformation">
+      <soap:operation soapAction="http://tempuri.org/InsertHealthCareInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListMessage">
+      <soap:operation soapAction="http://tempuri.org/GetListMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListNotification">
+      <soap:operation soapAction="http://tempuri.org/GetListNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetNotification">
+      <soap:operation soapAction="http://tempuri.org/SetNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSharingInfo">
+      <soap:operation soapAction="http://tempuri.org/GetSharingInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSharingInfo">
+      <soap:operation soapAction="http://tempuri.org/UpdateSharingInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSharingInfo">
+      <soap:operation soapAction="http://tempuri.org/SetSharingInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSharingInfoByEmail">
+      <soap:operation soapAction="http://tempuri.org/SetSharingInfoByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInformation">
+      <soap:operation soapAction="http://tempuri.org/GetUserInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInformationByEmail">
+      <soap:operation soapAction="http://tempuri.org/GetUserInformationByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignIn">
+      <soap:operation soapAction="http://tempuri.org/SignIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignOut">
+      <soap:operation soapAction="http://tempuri.org/SignOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignUp">
+      <soap:operation soapAction="http://tempuri.org/SignUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllowAccessInfoByEmail">
+      <soap:operation soapAction="http://tempuri.org/AllowAccessInfoByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnAllowAccessInfoByEmail">
+      <soap:operation soapAction="http://tempuri.org/UnAllowAccessInfoByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsEmailExisted">
+      <soap:operation soapAction="http://tempuri.org/IsEmailExisted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListUserNotFriend">
+      <soap:operation soapAction="http://tempuri.org/GetListUserNotFriend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAvatar">
+      <soap:operation soapAction="http://tempuri.org/UpdateAvatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HF_BUS_WebserviceSoap12" type="tns:HF_BUS_WebserviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAccountType">
+      <soap12:operation soapAction="http://tempuri.org/GetListAccountType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAppointmentScheduleByUsername">
+      <soap12:operation soapAction="http://tempuri.org/GetListAppointmentScheduleByUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAppointmentSchedule">
+      <soap12:operation soapAction="http://tempuri.org/GetListAppointmentSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAppointmentSchedule">
+      <soap12:operation soapAction="http://tempuri.org/CreateAppointmentSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppointmentSchedule">
+      <soap12:operation soapAction="http://tempuri.org/DeleteAppointmentSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFollower">
+      <soap12:operation soapAction="http://tempuri.org/GetListFollower" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFollower">
+      <soap12:operation soapAction="http://tempuri.org/GetAllFollower" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFollowerIsFriend">
+      <soap12:operation soapAction="http://tempuri.org/GetAllFollowerIsFriend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFollowerInformation">
+      <soap12:operation soapAction="http://tempuri.org/GetFollowerInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFollowerByEmail">
+      <soap12:operation soapAction="http://tempuri.org/AddFollowerByEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequestUser">
+      <soap12:operation soapAction="http://tempuri.org/GetAllRequestUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptFollowByEmail">
+      <soap12:operation soapAction="http://tempuri.org/AcceptFollowByEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFollowerByEmail">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFollowerByEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListHealthcareInformation">
+      <soap12:operation soapAction="http://tempuri.org/GetListHealthcareInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertHealthCareInformation">
+      <soap12:operation soapAction="http://tempuri.org/InsertHealthCareInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListMessage">
+      <soap12:operation soapAction="http://tempuri.org/GetListMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListNotification">
+      <soap12:operation soapAction="http://tempuri.org/GetListNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetNotification">
+      <soap12:operation soapAction="http://tempuri.org/SetNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSharingInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetSharingInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSharingInfo">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSharingInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSharingInfo">
+      <soap12:operation soapAction="http://tempuri.org/SetSharingInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSharingInfoByEmail">
+      <soap12:operation soapAction="http://tempuri.org/SetSharingInfoByEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInformation">
+      <soap12:operation soapAction="http://tempuri.org/GetUserInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInformationByEmail">
+      <soap12:operation soapAction="http://tempuri.org/GetUserInformationByEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignIn">
+      <soap12:operation soapAction="http://tempuri.org/SignIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignOut">
+      <soap12:operation soapAction="http://tempuri.org/SignOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignUp">
+      <soap12:operation soapAction="http://tempuri.org/SignUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllowAccessInfoByEmail">
+      <soap12:operation soapAction="http://tempuri.org/AllowAccessInfoByEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnAllowAccessInfoByEmail">
+      <soap12:operation soapAction="http://tempuri.org/UnAllowAccessInfoByEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsEmailExisted">
+      <soap12:operation soapAction="http://tempuri.org/IsEmailExisted" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListUserNotFriend">
+      <soap12:operation soapAction="http://tempuri.org/GetListUserNotFriend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAvatar">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAvatar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HF_BUS_Webservice">
+    <wsdl:port name="HF_BUS_WebserviceSoap" binding="tns:HF_BUS_WebserviceSoap">
+      <soap:address location="http://localhost:4002/HF_BUS_Webservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HF_BUS_WebserviceSoap12" binding="tns:HF_BUS_WebserviceSoap12">
+      <soap12:address location="http://localhost:4002/HF_BUS_Webservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

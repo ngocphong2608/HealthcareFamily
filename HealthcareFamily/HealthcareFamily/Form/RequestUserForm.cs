@@ -9,10 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using HealthcareFamilyGUI.FormArguments;
-using HeathcareFamilyBUS;
-using HealthcareFamilyDTO;
-using HealthcareFamilyBUS;
+
 using MetroFramework;
+using HealthcareFamilyGUI.BUS_Webservice;
 
 namespace HealthcareFamilyGUI
 {
@@ -22,6 +21,8 @@ namespace HealthcareFamilyGUI
         {
             InitializeComponent();
         }
+
+        HF_BUS_WebserviceSoapClient bus = new HF_BUS_WebserviceSoapClient();
         public RequestUserForm(UserInformationFormArguments arg)
         {
             InitializeComponent();
@@ -39,9 +40,8 @@ namespace HealthcareFamilyGUI
             {
                 string email = lvwRequestUser.SelectedItems[0].SubItems[1].Text;
 
-                FollowerBUS followerBUS = new FollowerBUS();
 
-                followerBUS.AcceptFollowByEmail(Arguments.Username, email);
+                bus.AcceptFollowByEmail(Arguments.Username, email);
 
                 MetroMessageBox.Show(this, "Add user successfully", "Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -56,9 +56,7 @@ namespace HealthcareFamilyGUI
 
         private void RequestUserForm_ReLoad()
         {
-            FollowerBUS followerBUS = new FollowerBUS();
-            UserBUS userBUS = new UserBUS();
-            List<FollowerDTO> followerList = followerBUS.GetAllRequestUser(Arguments.Username);
+            List<FollowerDTO> followerList = new List<FollowerDTO>(bus.GetAllRequestUser(Arguments.Username));
 
             DataTable table = new DataTable();
 
@@ -78,7 +76,7 @@ namespace HealthcareFamilyGUI
             {
                 DataRow r = table.NewRow();
                 // get follower information
-                UserDTO follower = userBUS.GetUserInformation(followerList[i].Username);
+                UserDTO follower = bus.GetUserInformation(followerList[i].Username);
 
                 r["Name"] = follower.Name;
                 r["Email"] = follower.Email;
@@ -116,9 +114,7 @@ namespace HealthcareFamilyGUI
         {
             if (lvwRequestUser.SelectedItems.Count > 0)
             {
-                FollowerBUS followerBUS = new FollowerBUS();
-
-                followerBUS.DeleteFollowerByEmail(Arguments.Username, lvwRequestUser.SelectedItems[0].SubItems[1].Text);
+                bus.DeleteFollowerByEmail(Arguments.Username, lvwRequestUser.SelectedItems[0].SubItems[1].Text);
 
                 RequestUserForm_ReLoad();
             } else

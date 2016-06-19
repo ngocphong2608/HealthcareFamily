@@ -48,6 +48,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -152,6 +154,11 @@
       <DependentUpon>SignUpSecondStepForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FormArguments\SignUpSecondStepFromArguments.cs" />
+    <Compile Include="Service References\BUS_Webservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form\CreateMeetingForm.resx">
       <DependentUpon>CreateMeetingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,26 +221,152 @@
     <None Include="Resources\Open_Sans.ttf" />
     <None Include="Resources\Open_Sans_Bold.ttf" />
     <None Include="Resources\Open_Sans_Light.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HeathcareFamilyBUS\HealthcareFamilyBUS.csproj">
-      <Project>{da4c205f-337a-4da4-901b-cd18ea9474a7}</Project>
-      <Name>HealthcareFamilyBUS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HeathcareFamilyDTO\HealthcareFamilyDTO.csproj">
-      <Project>{73bf178e-c896-4108-ae13-70217ede52ef}</Project>
-      <Name>HealthcareFamilyDTO</Name>
-    </ProjectReference>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.AcceptFollowByEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.AccountTypeDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.AddFollowerByEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.AllowAccessInfoByEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.AppointmentScheduleDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.CreateAppointmentScheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.DeleteAppointmentScheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.DeleteFollowerByEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.FollowerDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetAllFollowerIsFriendResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetAllFollowerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetAllRequestUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetFollowerInformationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetListAccountTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetListAppointmentScheduleByUsernameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetListAppointmentScheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetListFollowerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetListHealthcareInformationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetListMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetListNotificationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetListUserNotFriendResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetSharingInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetUserInformationByEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.GetUserInformationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.HealthcareDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.InsertHealthCareInformationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.IsEmailExistedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.MessageDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.NotificationDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.SetNotificationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.SetSharingInfoByEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.SetSharingInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.SharingInfoDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.SignInResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.SignOutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.SignUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.UnAllowAccessInfoByEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.UpdateAvatarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.UpdateSharingInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HealthcareFamilyGUI.BUS_Webservice.UserDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BUS_Webservice\HF_BUS_Webservice.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppConfig.txt" />
     <Content Include="HeathcareFamilyGUI\MetroFramework.Design.dll" />
     <Content Include="HeathcareFamilyGUI\MetroFramework.dll" />
     <Content Include="HeathcareFamilyGUI\MetroFramework.Fonts.dll" />
+    <None Include="Service References\BUS_Webservice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BUS_Webservice\configuration.svcinfo" />
+    <None Include="Service References\BUS_Webservice\configuration91.svcinfo" />
+    <None Include="Service References\BUS_Webservice\HF_BUS_Webservice.disco" />
     <None Include="Resources\mystery_man.png" />
     <Content Include="Resources\Open Sans License.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BUS_Webservice\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

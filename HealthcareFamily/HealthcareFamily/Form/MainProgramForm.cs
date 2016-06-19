@@ -7,12 +7,10 @@ using System.Text;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using MetroFramework;
-using HealthcareFamilyBUS;
-using HealthcareFamilyDTO;
 using HealthcareFamilyGUI.FormArguments;
-using HeathcareFamilyBUS;
 using System.IO;
 using System.Reflection;
+using HealthcareFamilyGUI.BUS_Webservice;
 
 namespace HealthcareFamilyGUI
 {
@@ -20,6 +18,7 @@ namespace HealthcareFamilyGUI
     {
         public MainProgramForm()
         {
+            bus = new HF_BUS_WebserviceSoapClient();
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
             foreach (var scrn in Screen.AllScreens)
@@ -32,8 +31,10 @@ namespace HealthcareFamilyGUI
             }
         }
 
+        HF_BUS_WebserviceSoapClient bus;
         public MainProgramForm(MainProgramFormArguments arg)
         {
+            bus = new HF_BUS_WebserviceSoapClient();
             Arguments = arg;
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
@@ -59,11 +60,10 @@ namespace HealthcareFamilyGUI
         private void MainProgramForm_ReLoad()
         {
             /// load from database 
-            UserBUS userBUS = new UserBUS();
-            FollowerBUS followerBUS = new FollowerBUS();
+            
 
-            UserDTO userDTO = userBUS.GetUserInformation(Arguments.Username);
-            List<FollowerDTO> followerList = followerBUS.GetAllFollowerIsFriend(Arguments.Username);
+            UserDTO userDTO = bus.GetUserInformation(Arguments.Username);
+            List<FollowerDTO> followerList = new List<FollowerDTO>(bus.GetAllFollowerIsFriend(Arguments.Username));
             //
             
             this.Text = "Home";
@@ -105,11 +105,11 @@ namespace HealthcareFamilyGUI
             {
                 DataRow r = table.NewRow();
                 // get follower information
-                UserDTO follower = userBUS.GetUserInformation(followerList[i].FollowerUsername);
+                UserDTO follower = bus.GetUserInformation(followerList[i].FollowerUsername);
 
                 r["Name"] = follower.Name;
                 r["Relationship"] = followerList[i].Relationship;
-                r["Email"] = userBUS.GetUserInformation(followerList[i].FollowerUsername).Email;
+                r["Email"] = bus.GetUserInformation(followerList[i].FollowerUsername).Email;
                 if (follower.IsOnline)
                     r["Status"] = "Online";
                 else
@@ -170,8 +170,7 @@ namespace HealthcareFamilyGUI
             UserInformationFormArguments arg = new UserInformationFormArguments();
             arg.Username = Arguments.Username;
 
-            UserBUS userBUS = new UserBUS();
-            UserDTO userDTO = userBUS.GetUserInformation(Arguments.Username);
+            UserDTO userDTO = bus.GetUserInformation(Arguments.Username);
 
             if (userDTO.AccountType.CompareTo("Family") == 0)
             {
@@ -208,8 +207,7 @@ namespace HealthcareFamilyGUI
                     e.Cancel = true;
 
                     // sign out
-                    UserBUS user = new UserBUS();
-                    user.SignOut(Arguments.Username);
+                    bus.SignOut(Arguments.Username);
 
                     // Call method to save file...
                 }
@@ -224,8 +222,7 @@ namespace HealthcareFamilyGUI
                 flag = true;
 
                 // update database 
-                UserBUS user = new UserBUS();
-                user.SignOut(Arguments.Username);
+                bus.SignOut(Arguments.Username);
 
                 this.Close();
             }
@@ -248,16 +245,14 @@ namespace HealthcareFamilyGUI
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
                 // load friend list
-                FollowerBUS followerBUS = new FollowerBUS();
-                NotificationBUS notiBUS = new NotificationBUS();
-                List<FollowerDTO> followerList = followerBUS.GetAllFollowerIsFriend(Arguments.Username);
+                List<FollowerDTO> followerList = new List<FollowerDTO>(bus.GetAllFollowerIsFriend(Arguments.Username));
 
                 // send notifycation to each friend
                 DateTime Time = DateTime.Now;
                 foreach (FollowerDTO follower in followerList)
                 {
                     // set notification
-                    notiBUS.SetNotification(Arguments.Username, follower.FollowerUsername, Time, "Your friend are in danger!!!");
+                    bus.SetNotification(Arguments.Username, follower.FollowerUsername, Time, "Your friend are in danger!!!");
                 }
             }
         }
@@ -279,10 +274,9 @@ namespace HealthcareFamilyGUI
             {
                 String Relationship = clickedItem.SubItems[1].Text;
 
-                UserBUS userBUS = new UserBUS();
                 UserInformationFormArguments arg = new UserInformationFormArguments();
 
-                UserDTO follower = userBUS.GetUserInformationByEmail(clickedItem.SubItems[2].Text);
+                UserDTO follower = bus.GetUserInformationByEmail(clickedItem.SubItems[2].Text);
                 arg.FollowerUsername = follower.Username;
                 arg.Username = Arguments.Username;
 
@@ -327,8 +321,7 @@ namespace HealthcareFamilyGUI
                 fs.Read(img, 0, Convert.ToInt32(fs.Length));
 
                 // save image
-                UserBUS userBUS = new UserBUS();
-                userBUS.UpdateAvatar(Arguments.Username, img);
+                bus.UpdateAvatar(Arguments.Username, img);
 
                 // show image
                 MemoryStream ms = new MemoryStream(img);

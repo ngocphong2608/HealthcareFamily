@@ -7,8 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
-using HealthcareFamilyBUS;
+
 using HealthcareFamilyGUI.FormArguments;
+using HealthcareFamilyGUI.BUS_Webservice;
 
 namespace HealthcareFamilyGUI
 {
@@ -19,6 +20,7 @@ namespace HealthcareFamilyGUI
             InitializeComponent();
         }
 
+        HF_BUS_WebserviceSoapClient bus = new HF_BUS_WebserviceSoapClient();
         public SignUpSecondStepForm(SignUpSecondStepFromArguments user)
         {
             InitializeComponent();
@@ -54,9 +56,7 @@ namespace HealthcareFamilyGUI
 
             //  xu li database
             ///
-            UserBUS userBUS = new UserBUS();
-
-            bool success = userBUS.SignUp(userControler.Username.ToLower(), userControler.Password, fullname, birthday, gender, userControler.Email, userControler.AccountType);
+            bool success = bus.SignUp(userControler.Username.ToLower(), userControler.Password, fullname, birthday, gender, userControler.Email, userControler.AccountType);
             ////
 
             if (success)

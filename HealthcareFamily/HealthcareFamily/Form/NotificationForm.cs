@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
-using HeathcareFamilyBUS;
-using HeathcareFamilyDTO;
+
 using HealthcareFamilyGUI.FormArguments;
+using HealthcareFamilyGUI.BUS_Webservice;
 
 namespace HealthcareFamilyGUI
 {
@@ -21,10 +21,12 @@ namespace HealthcareFamilyGUI
             InitializeComponent();
         }
 
+        HF_BUS_WebserviceSoapClient bus;
         public NotificationForm(NotificationFormArguments arg)
         {
             InitializeComponent();
             Arguments = arg;
+            bus = new HF_BUS_WebserviceSoapClient();
         }
 
         private void cmdOk_Click(object sender, EventArgs e)
@@ -54,8 +56,8 @@ namespace HealthcareFamilyGUI
                 "Description", Type.GetType("System.String"));
             table.Columns.Add(nameColumn);
 
-            NotificationBUS noti = new NotificationBUS();
-            List<NotificationDTO> notiList = noti.GetListNotification(Arguments.Username);
+            
+            List<NotificationDTO> notiList = new List<NotificationDTO>(bus.GetListNotification(Arguments.Username));
 
             for (int i = 0; i < notiList.Count; i++)
             {

@@ -8,12 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
-using HealthcareFamilyBUS;
-using HeathcareFamilyBUS;
-using HealthcareFamilyDTO;
 using HealthcareFamilyGUI.FormArguments;
-using HeathcareFamilyDTO;
 using MetroFramework;
+using HealthcareFamilyGUI.BUS_Webservice;
 
 namespace HealthcareFamilyGUI
 {
@@ -24,10 +21,12 @@ namespace HealthcareFamilyGUI
             InitializeComponent();
         }
 
+        HF_BUS_WebserviceSoapClient bus;
         public MeetingForm(MeetingFormArguments arg)
         {
             InitializeComponent();
             Arguments = arg;
+            bus = new HF_BUS_WebserviceSoapClient();
         }
 
         private void cmdOK_Click(object sender, EventArgs e)
@@ -51,11 +50,9 @@ namespace HealthcareFamilyGUI
         private void MeetingForm_ReLoad()
         {
             // load from database
-            UserBUS userBUS = new UserBUS();
-            UserDTO userDTO = userBUS.GetUserInformation(Arguments.Username);
+            UserDTO userDTO = bus.GetUserInformation(Arguments.Username);
 
-            AppointmentScheduleBUS app = new AppointmentScheduleBUS();
-            List<AppointmentScheduleDTO> appList = app.GetListAppointmentSchedule(Arguments.Username);
+            List<AppointmentScheduleDTO> appList = new List<AppointmentScheduleDTO>(bus.GetListAppointmentScheduleByUsername(Arguments.Username));
 
             DataTable table = new DataTable();
 
@@ -116,8 +113,7 @@ namespace HealthcareFamilyGUI
                 appDTO.Time = dt.ToShortDateString() + " " + dt.Hour + ":" + dt.Minute + ":" + dt.Second;
                 appDTO.Username = Arguments.Username;
 
-                AppointmentScheduleBUS appBUS = new AppointmentScheduleBUS();
-                appBUS.DeleteAppointmentSchedule(appDTO);
+                bus.DeleteAppointmentSchedule(appDTO);
 
                 MeetingForm_ReLoad();
                 

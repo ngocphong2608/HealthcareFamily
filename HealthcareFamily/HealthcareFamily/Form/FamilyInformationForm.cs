@@ -1,5 +1,4 @@
-﻿using HealthcareFamilyBUS;
-using HealthcareFamilyDTO;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,9 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using HealthcareFamilyGUI.FormArguments;
-using HeathcareFamilyBUS;
-using HeathcareFamilyDTO;
+
 using HealthcareFamilyGUI;
+using HealthcareFamilyGUI.BUS_Webservice;
 
 namespace HealthcareFamilyGUI
 {
@@ -22,9 +21,11 @@ namespace HealthcareFamilyGUI
             InitializeComponent();
         }
 
+        HF_BUS_WebserviceSoapClient bus;
         public FamilyInformationForm(UserInformationFormArguments arg)
         {
             Arguments = arg;
+            bus = new HF_BUS_WebserviceSoapClient();
             InitializeComponent();
         }
 
@@ -47,12 +48,9 @@ namespace HealthcareFamilyGUI
         private void FamilyInformationForm_Load(object sender, EventArgs e)
         {
             // sharing button
-            SharingInfoBUS sharingBUS = new SharingInfoBUS();
-            UserBUS userBUS = new UserBUS();
-            HealthcareBUS healthcareBUS = new HealthcareBUS();
 
-            UserDTO userDTO = userBUS.GetUserInformation(Arguments.Username);
-            SharingInfoDTO sharingDTO = sharingBUS.GetSharingInfo(Arguments.Username, Arguments.FollowerUsername);
+            UserDTO userDTO = bus.GetUserInformation(Arguments.Username);
+            SharingInfoDTO sharingDTO = bus.GetSharingInfo(Arguments.Username, Arguments.FollowerUsername);
 
 
             if (userDTO.AccountType == "Family")
@@ -72,7 +70,7 @@ namespace HealthcareFamilyGUI
             //
             
 
-            UserDTO user = userBUS.GetUserInformation(Arguments.FollowerUsername);
+            UserDTO user = bus.GetUserInformation(Arguments.FollowerUsername);
 
             txtUsername.Text = user.Username;
             txtCurrentName.Text = user.Name;
@@ -81,12 +79,12 @@ namespace HealthcareFamilyGUI
             txtEmail.Text = user.Email;
 
             // check if user share information
-            sharingDTO = sharingBUS.GetSharingInfo(Arguments.FollowerUsername, Arguments.Username);
+            sharingDTO = bus.GetSharingInfo(Arguments.FollowerUsername, Arguments.Username);
 
             if (sharingDTO != null && sharingDTO.IsPermitAccessInfo == false)
                 return;
 
-            List<HealthcareDTO> healthcareList = healthcareBUS.GetListHealthcareInformation(Arguments.FollowerUsername);
+            List<HealthcareDTO> healthcareList = new List<HealthcareDTO>(bus.GetListHealthcareInformation(Arguments.FollowerUsername));
 
             if (healthcareList.Count > 0)
             {
@@ -149,15 +147,13 @@ namespace HealthcareFamilyGUI
             {
                 cmdPrivacy.Text = "Privacy - Disabled";
 
-                SharingInfoBUS sharingBUS = new SharingInfoBUS();
-                sharingBUS.UpdateSharingInfo(Arguments.Username, Arguments.FollowerUsername, true);
+                bus.UpdateSharingInfo(Arguments.Username, Arguments.FollowerUsername, true);
             }
             else if (cmdPrivacy.Text == "Privacy - Disabled")
             {
                 cmdPrivacy.Text = "Privacy - Enabled";
 
-                SharingInfoBUS sharingBUS = new SharingInfoBUS();
-                sharingBUS.UpdateSharingInfo(Arguments.Username, Arguments.FollowerUsername, false);
+                bus.UpdateSharingInfo(Arguments.Username, Arguments.FollowerUsername, false);
             }
                 
         }

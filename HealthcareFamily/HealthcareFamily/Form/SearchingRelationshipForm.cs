@@ -10,8 +10,7 @@ using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
 using HealthcareFamilyGUI.FormArguments;
-using HealthcareFamilyBUS;
-using HealthcareFamilyDTO;
+using HealthcareFamilyGUI.BUS_Webservice;
 
 namespace HealthcareFamilyGUI
 {
@@ -22,6 +21,7 @@ namespace HealthcareFamilyGUI
         {
             InitializeComponent();
         }
+        HF_BUS_WebserviceSoapClient bus = new HF_BUS_WebserviceSoapClient();
         public SearchingRelationshipForm(SearchingRelationshipFormArguments arg)
         {
             InitializeComponent();
@@ -44,9 +44,8 @@ namespace HealthcareFamilyGUI
 
         private void SearchingRelationshipForm_Load(object sender, EventArgs e)
         {
-            UserBUS userBUS = new UserBUS();
-            UserDTO user = userBUS.GetUserInformation(Arguments.Username);
-            UserDTO follower = userBUS.GetUserInformationByEmail(Arguments.FollowerEmail);
+            UserDTO user = bus.GetUserInformation(Arguments.Username);
+            UserDTO follower = bus.GetUserInformationByEmail(Arguments.FollowerEmail);
 
             if (user.AccountType == "Family" && follower.AccountType == "Family")
             {

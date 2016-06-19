@@ -1,5 +1,4 @@
-﻿using HealthcareFamilyBUS;
-using HealthcareFamilyDTO;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using HealthcareFamilyGUI.FormArguments;
-using HeathcareFamilyBUS;
+using HealthcareFamilyGUI.BUS_Webservice;
 
 namespace HealthcareFamilyGUI
 {
@@ -22,6 +21,7 @@ namespace HealthcareFamilyGUI
             InitializeComponent();
         }
 
+        HF_BUS_WebserviceSoapClient bus = new HF_BUS_WebserviceSoapClient();
         public PersonalFamilyInformationForm(UserInformationFormArguments arg)
         {
             InitializeComponent();
@@ -31,11 +31,10 @@ namespace HealthcareFamilyGUI
         {
             // capture object from parent form
             //
-            UserBUS userBUS = new UserBUS();
-            HealthcareBUS healthcareBUS = new HealthcareBUS();
 
-            UserDTO user = userBUS.GetUserInformation(Arguments.Username);
-            List<HealthcareDTO> healthcareList = healthcareBUS.GetListHealthcareInformation(Arguments.Username);
+
+            UserDTO user = bus.GetUserInformation(Arguments.Username);
+            List<HealthcareDTO> healthcareList = new List<HealthcareDTO>(bus.GetListHealthcareInformation(Arguments.Username));
 
             txtUsername.Text = user.Username;
             txtCurrentName.Text = user.Name;
@@ -102,12 +101,12 @@ namespace HealthcareFamilyGUI
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 // insert database
-                HealthcareBUS healthCareBUS = new HealthcareBUS();
+                
                 HealthcareDTO healthcare = new HealthcareDTO();
                 healthcare.Emotion = frm.Emotion;
                 healthcare.HeartBeat = frm.HeartBeat;
                 healthcare.Time = frm.Date;
-                healthCareBUS.InsertHealthCareInformation(Arguments.Username, healthcare);
+                bus.InsertHealthCareInformation(Arguments.Username, healthcare);
                 FormReload();
             }
         }

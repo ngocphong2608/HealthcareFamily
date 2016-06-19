@@ -7,8 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
-using HealthcareFamilyBUS;
+
 using HealthcareFamilyGUI.FormArguments;
+using HealthcareFamilyGUI.BUS_Webservice;
 
 namespace HealthcareFamilyGUI
 {
@@ -19,6 +20,7 @@ namespace HealthcareFamilyGUI
             InitializeComponent();
         }
 
+        HF_BUS_WebserviceSoapClient bus = new HF_BUS_WebserviceSoapClient();
         private void cmdNext_Click(object sender, EventArgs e)
         {
             String userName;
@@ -27,7 +29,6 @@ namespace HealthcareFamilyGUI
             String accountType;
             String email;
 
-            UserBUS user = new UserBUS();
 
             userName = txtUserName.Text;
             password = txtPassword.Text;
@@ -42,7 +43,7 @@ namespace HealthcareFamilyGUI
                 return;
             }
 
-            if (user.GetUserInformation(userName) != null)
+            if (bus.GetUserInformation(userName) != null)
             {
                 MetroMessageBox.Show(this, "Username existed, please choose another", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -70,7 +71,7 @@ namespace HealthcareFamilyGUI
                 return;
             }
 
-            if (user.IsEmailExisted(email))
+            if (bus.IsEmailExisted(email))
             {
                 MetroMessageBox.Show(this, "Email existed, please choose another", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
